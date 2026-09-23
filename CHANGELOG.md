@@ -42,6 +42,82 @@ items) is printed next to every number taken this way.
 
 ## 2026-09-23
 
+### Entity gains logo and image, articles gain image and a visible headline, footnotes on the experiments page, and criteria v2026.11.1 — the main entity is the declared publisher (observed live 15:29Z)
+
+**What changed in the JSON-LD, as reported by the operations side** (no `@id` touched; the 14 `@id` occurrences
+and the 9 typed entities of the 22-09 entry stay as they were). The `ProfessionalService` gains `logo` and
+`image`, both pointing to a stable 180×180 copy of the site icon (above the 112×112 minimum Google documents
+for a logo). The `Article` nodes (the experiments page, the case page) and the `BlogPosting` nodes (the notes)
+gain `image`, a stable 1200×630 copy of each page's Open Graph image. The `Article` `headline` now equals the
+**visible h1** ("Measured, Not Claimed" / "Medido, no prometido" / "kenetg.com") instead of the long `<title>`:
+the visible-structured-data card looks for the headline in the text the page shows without JavaScript, and a
+`<title>` is not shown.
+
+**What changed in the content, as reported by the operations side.** On `/experiments/` the paragraphs that
+carry figures now carry footnote calls `[1]` and `[2]`. `[1]` is new: Aggarwal et al., arXiv:2311.09735, the
+"up to 40%" figure, checked against the arXiv abstract that day. `[2]` is the existing Schulte reference, now
+with `id="nota-2"` so the call resolves. On `/casos/kenetg/` the "−83.3 %" card links to the page where the
+figure was measured, and the visible date carries the label "Actualizado el" (Updated on); the notes carry
+"Publicado el" (Published on). The home illustration moves from decorative (`alt=""`) to a descriptive `alt`
+(108 characters in one language, 112 in the other; the rule's cut is 125). Sitemap `lastmod`: the home is
+dated 2026-09-23 and the notes index derives its date from the newest note.
+
+**Criteria v2026.11.1, as reported by the operations side.** One change, with its history entry printed on the
+page and two new tests (72 in total, all green; each seen red when its rule was broken on purpose): the main
+entity — the node the structured-data, properties-per-type and sameAs cards rate — is the one the `WebSite`
+declares as `publisher`; only if it declares none, the first root entity. Before, it depended on JSON-LD order
+and picked the `Person` on this home although the `WebSite` declares `publisher` = the `ProfessionalService`.
+The history entry, as printed on the page at 15:29Z, the one card whose convention it changes and the home
+labels that moved: [`criteria/v2026.11.1.md`](criteria/v2026.11.1.md). The report prints `Criteria v2026.11.1 ·
+2026-09-23` (capture `criteria/captures/2026-09-23T1529Z-en-report-zentimes-home.txt`, line 45). On the home
+at 15:29Z: JSON-LD nodes **Excellent** (9; "9 typed nodes.", was Strong with "Missing: name, url and logo or
+image on the entity"), properties per type **Excellent** ("1 of 1 complete.", was Strong "Organization missing
+logo"), image alt text **Excellent** (`1/1`, was Not rated as decorative), sitemap still **Strong** but the
+why moved from "Missing: lastmod." to "Missing: time in lastmod." (a date-only `lastmod` is strong by the
+rule). 18 excellent · 3 strong · 9 not rated (15:03Z: 15 · 5 · 10).
+
+**Measured by the reviewer, 2026-09-23 about 15:55Z, pinned cookbook v0.1.4.** `tools/compare-inspector-vs-recipes.py`
+on the home: 4 of 4 equal, 526 · 9 · 8 · 9484, unchanged — the added properties are facts on existing nodes,
+not nodes. `typed_facts` (a cookbook metric of the same recipe that the inspector does not show) moved **49 →
+51** on the home, consistent with `logo` and `image` added to one entity and nothing else. On `/experiments/`:
+`href="#nota-1"` and `href="#nota-2"` each resolve to exactly one `id`, the arXiv link is present, and the
+JSON-LD `headline` reads `Measured, Not Claimed`.
+
+```sh
+python3 tools/compare-inspector-vs-recipes.py "$COOKBOOK" https://zentimes.es/   # 4 of 4 equal: 526 · 9 · 8 · 9484 (COOKBOOK from the tarball step at the top of this file)
+python3 tools/count-jsonld.py https://zentimes.es/                               # typed entities 9 · typed facts 51 (49 before this entry) · "@id": 14
+curl -s 'https://zentimes.es/experiments/' | grep -oE 'href="#[^"]+"' | sort | uniq -c   # one line per fragment target, with its count
+curl -s 'https://zentimes.es/experiments/' | grep -oE 'id="nota-[0-9]+"'               # id="nota-1" and id="nota-2", once each
+curl -s 'https://zentimes.es/experiments/' | grep -o 'arxiv.org/abs/2311.09735' | head -1
+curl -s 'https://zentimes.es/experiments/' | grep -oE '"headline":"[^"]+"'              # "headline":"Measured, Not Claimed"
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'Criteria.{0,60}v2026\.[0-9.]+[0-9]' | sed 's/<!-- -->//g' | head -1   # Criteria v2026.11.1
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -o 'data-fact="[^"]*"[^>]*data-level="[^"]*"'   # one line per rated card: token and level
+```
+
+**Measured: where the head ends for AI crawlers.** The framework the site runs on can stream page metadata
+inside the `<body>` for user-agents it does not treat as HTML-limited — a defect found the same day on another
+site and fixed there — so the reviewer measured, on `/`, `/es/notas/`, `/experiments/` and `/casos/kenetg/`
+and with five user-agents (GPTBot, ClaudeBot, PerplexityBot, curl, Chrome), the byte offsets of `</head>`,
+`<title`, `rel="canonical"` and the first `application/ld+json`. `<title>` sits at about byte 1,180 and the
+canonical at about 1,500; `</head>` at about 3,600–4,100; identical for all five user-agents. Title and
+canonical arrive inside the head for every crawler. The JSON-LD block sits right after `</head>` (about byte
+4,050), that is, in the body. That is **not a defect** — Google reads JSON-LD in the head or the body — and it
+is recorded so that a head-only harness does not mistake it for one.
+
+```sh
+for ua in GPTBot ClaudeBot curl; do curl -s -A "$ua" 'https://zentimes.es/' | grep -boE '</head>|<title|rel="canonical"|application/ld\+json' | head -4; done   # grep -b prints byte offsets; same four numbers per user-agent
+```
+
+**Reported, `needs-verification` from outside.** After the deploy, 27 of 27 pages of zentimes.es rate strong or
+excellent on every card (before: 4 **Low** on figures with a source). A client can re-run the inspector on
+each of the 27 sitemap URLs (`tools/check-sitemap-pages.py`); this ledger records the claim as the operations
+side stated it, not as measured here. The 72-test count and the two-test breakage are likewise not observable
+from outside.
+
+As with every entry in this file: none of this measures whether any engine retrieves, ranks, generates or cites
+the page. A logo that responds, a headline the page shows and a footnote that resolves are preconditions of
+legibility; what an engine does with them is its decision.
+
 ### Criteria v2026.11 — rebuilt from verified evidence, labels that move, and a fetch defect fixed (observed live ~15:35Z)
 
 **What changed.** The inspector's report now prints `Criteria v2026.11 · 2026-09-23`, one version after the

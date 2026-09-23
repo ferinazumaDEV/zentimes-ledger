@@ -60,3 +60,16 @@
 - **A defect of the instrument that had existed since the first version.** The inspector only protected the connection, not the reading of the page. A site that sends the headers fast and the body slowly caused an uncaught error, and the inspector answered 500. A real site uncovered it during prospecting. Now whatever was received is analysed and flagged as slow, a warning distinct from "truncated by size"; if nothing arrives at all, it is a network error. The redirect cap rises from 4 to 10, like Googlebot, and every hop keeps being validated.
 
 - **The 70 rule tests now gate the deploy.** Reported by the operations side. The tests live in the project as a test file outside the framework's type-check, and the deployment script runs them right after the type-check, so a broken rule no longer deploys. It was tested by breaking it on purpose in the real project file: applying `noarchive` to Google as well made the deployment dry run exit 1 with "the Googlebot noarchive index rule does not count"; restoring the file (byte-identical) made the clean dry run exit 0, with 70 of 70 passing.
+
+- **v2026.11.1 and the site held to its own yardstick.** Criteria change: the main entity is now the one the graph itself declares as publisher of the WebSite; only if it declares none, the first root entity. Before, it depended on the order of the JSON-LD. It carries two new tests (72 in total) and was seen red by breaking it.
+
+  **Fixes on the site after running the inspector over the 27 URLs of the sitemap.** Before there were 4 "low" ratings, all of them figures without a source:
+  - on experiments, numbered footnote calls leading to their source: the GEO paper for the "+40 %", checked against its abstract on arXiv, and the work of Schulte et al. for the "±15.8";
+  - on the case study, the "−83.3 %" card links to the measured page;
+  - the business declares a logo;
+  - the articles carry an image, and as headline the title visible on the page;
+  - the visible dates carry their label;
+  - the home illustration has a description: the first version exceeded the 125 characters of our own rule and the inspector caught it;
+  - lastmod on the home and on the notes index.
+
+  **Result measured live:** 27 of 27 pages rated strong or excellent. The four cross-check metrics did not move.

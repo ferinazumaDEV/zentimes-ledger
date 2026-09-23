@@ -13,9 +13,9 @@ capture files; the rule files quote the English page only.
 |---|---|
 | Public pages | https://zentimes.es/tools/ai-inspector/ (EN) · https://zentimes.es/es/herramientas/inspector-ia/ (ES) |
 | Report run used | `?url=https://zentimes.es/` on both pages |
-| Captured | 2026-09-23 13:40Z (v2026.09.2), 14:44Z (v2026.10) and 15:03Z (v2026.11), `curl -sL <page>` — visible text saved under [`captures/`](captures/), one file per page and timestamp |
-| Version captured | **v2026.11** · 2026-09-23, current on the page at 15:03Z: full rule text in [`v2026.11.md`](v2026.11.md), captures `2026-09-23T1503Z-*`. Earlier the same day the page served **v2026.10** (captured 14:44Z, [`v2026.10.md`](v2026.10.md)) and, before that, **v2026.09.2** (captured 13:40Z, [`v2026.09.2.md`](v2026.09.2.md)); v2026.10 was first observed 13:52Z with seven new cards (see [`CHANGELOG.md`](../CHANGELOG.md)). v2026.11 was already live at 15:03Z; the minute it went live between 14:44Z and 15:03Z was not observed. |
-| Versions with their own file | [`v2026.11.md`](v2026.11.md) (full rule text, 31 cards) · [`v2026.10.md`](v2026.10.md) (full rule text, 24 cards) · [`v2026.09.2.md`](v2026.09.2.md) (full rule text, 17 cards) · [`v2026.09.1.md`](v2026.09.1.md) · [`v2026.09.md`](v2026.09.md) (history entries only; earlier rule text was not captured before it changed) |
+| Captured | 2026-09-23 13:40Z (v2026.09.2), 14:44Z (v2026.10), 15:03Z (v2026.11) and 15:29Z (v2026.11.1, report pages only), `curl -sL <page>` — visible text saved under [`captures/`](captures/), one file per page and timestamp |
+| Version captured | **v2026.11.1** · 2026-09-23, current on the page at 15:29Z: delta in [`v2026.11.1.md`](v2026.11.1.md) (one history entry, one convention changed, rule text otherwise identical to v2026.11), captures `2026-09-23T1529Z-*-report-*`. Before it, **v2026.11** (captured 15:03Z, full rule text in [`v2026.11.md`](v2026.11.md), captures `2026-09-23T1503Z-*`), **v2026.10** (captured 14:44Z, [`v2026.10.md`](v2026.10.md)) and **v2026.09.2** (captured 13:40Z, [`v2026.09.2.md`](v2026.09.2.md)); v2026.10 was first observed 13:52Z with seven new cards (see [`CHANGELOG.md`](../CHANGELOG.md)). v2026.11 was already live at 15:03Z and v2026.11.1 at 15:29Z; the minutes they went live (between 14:44Z and 15:03Z, and between 15:03Z and 15:29Z) were not observed. |
+| Versions with their own file | [`v2026.11.1.md`](v2026.11.1.md) (delta: the one changed convention, home labels that moved) · [`v2026.11.md`](v2026.11.md) (full rule text, 31 cards) · [`v2026.10.md`](v2026.10.md) (full rule text, 24 cards) · [`v2026.09.2.md`](v2026.09.2.md) (full rule text, 17 cards) · [`v2026.09.1.md`](v2026.09.1.md) · [`v2026.09.md`](v2026.09.md) (history entries only; earlier rule text was not captured before it changed) |
 | Reference cookbook | The GEO Cookbook **v0.1.4** (tag 2026-09-22), https://github.com/ferinazumaDEV/generative-engine-optimization-cookbook |
 
 ## The promise text (verbatim)
@@ -74,8 +74,10 @@ captured at 15:03Z; the v2026.10 counts are in [`v2026.10.md`](v2026.10.md) and 
 | cookbook link | `data-metric`, `data-recipe`, `data-value` on the card, and a line `p.insp-metrica`: `<metric id> · <recipe path> · cross-checked <date> (<time>Z) against cookbook v0.1.4` | 4 cards |
 | reproduce it | `details.insp-cmd > pre > code` | one shell command per card |
 
-The version/date line at the top of a report reads `Criteria v2026.11 · 2026-09-23`. On the landing page it
-reads `Criteria v2026.11` without the date. The v2026.10 history entry says the criteria "now carry a review
+The version/date line at the top of a report reads `Criteria v2026.11.1 · 2026-09-23` since 15:29Z
+(`Criteria v2026.11 · 2026-09-23` at 15:03Z). On the landing page it reads `Criteria v2026.11.1` without the
+date. The v2026.11.1 counts per field are the same as v2026.11's: 31 cards, 30 labels, the same tallies of
+rhythm and class. The v2026.10 history entry says the criteria "now carry a review
 date"; no such date is printed anywhere on the page or present in its HTML under v2026.10 or v2026.11, only
 that sentence.
 
@@ -98,12 +100,12 @@ text); the history entry names it as "not a cookbook class" itself.
 
 ## The cross-check statement
 
-Four cards print, on 2026-09-23 (the same line under v2026.09.2, v2026.10 and v2026.11: the statement was not
-re-run when the version changed):
+Four cards print, on 2026-09-23 (the same line under v2026.09.2, v2026.10, v2026.11 and v2026.11.1: the
+statement was not re-run when the version changed):
 
 > `<metric id>` · `<recipe path>` · cross-checked 2026-09-23 (13:32Z) against cookbook v0.1.4
 
-| metric id | recipe path | inspector card (v2026.11 title) | `data-value` at 14:44Z and 15:03Z |
+| metric id | recipe path | inspector card (v2026.11 title) | `data-value` at 14:44Z, 15:03Z and 15:29Z |
 |---|---|---|---|
 | `words_visible_no_js` | `04-technical/ssr-vs-csr-rendering` | Words present without running JavaScript | 526 |
 | `typed_entities` | `04-technical/structured-data-jsonld` | Structured data and entity (JSON-LD nodes with @type) | 9 |
@@ -132,7 +134,7 @@ Which checks reuse a cookbook metric id and which use their own grouping:
 | check | relation to the cookbook |
 |---|---|
 | Words without JavaScript | **same metric id** `words_visible_no_js`, same recipe command (`perl -0777`, entities `&#?[a-z0-9]+;` with flag `i`). |
-| Structured data and entity (JSON-LD nodes with @type) | **same metric id** `typed_entities`: counts nodes, nested included, as the recipe does. The label is decided by the inspector's own entity rule (v2026.11: entity with name, url and logo or image, plus a WebSite, on the home page). |
+| Structured data and entity (JSON-LD nodes with @type) | **same metric id** `typed_entities`: counts nodes, nested included, as the recipe does. The label is decided by the inspector's own entity rule (v2026.11: entity with name, url and logo or image, plus a WebSite, on the home page; v2026.11.1: the entity checked is the one the WebSite declares as `publisher`, else the first root entity). |
 | robots.txt — training and user agents (informative) | **same metric id** `ai_user_agents_allowed`: the recipe's eight tokens on the root path, printed but **not rated** (the caveat says so: "The data-value is the recipe's metric"). |
 | /llms.txt (informative) | **same metric id** `llms_txt_bytes` (UTF-8 bytes, not characters), printed but **not rated**. |
 | robots.txt — search engines and assistants | **own grouping.** v2026.11: seven agents (Googlebot, Bingbot, Applebot, OAI-SearchBot, Claude-SearchBot, Claude-User, PerplexityBot) on the page's path; v2026.10: four (OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User) on the root. It decides a label; the cookbook's eight-token count is left intact for the cross-check. Two lists, two names, so one identifier never carries two meanings. |
@@ -151,11 +153,16 @@ Which checks reuse a cookbook metric id and which use their own grouping:
 
 ## Criteria history as printed on the page
 
-All five entries are dated the same day. Quoted verbatim from the English page as captured at 15:03Z; the
-Spanish page carries the same five entries (their Spanish text is in the `-es-` capture files).
+All six entries are dated the same day. Quoted verbatim from the English page as captured at 15:29Z (the
+first five were identical at 15:03Z); the Spanish page carries the same six entries (their Spanish text is in
+the `-es-` capture files).
 
 'GEO agent' and 'a second agent' are the page's own names for reviewer roles, quoted verbatim from the public
 criteria history.
+
+> **v2026.11.1 · 2026-09-23** — The main entity (rated by "structured data", "properties per type" and "sameAs")
+> becomes the one the graph itself declares as the WebSite's publisher; only if it declares none, the first
+> root entity. It used to depend on the JSON-LD order, not on what the site says about itself.
 
 > **v2026.11 · 2026-09-23** — Rules rebuilt from verified evidence (64 sources confirmed by a second agent and
 > reviewed by the GEO agent). Labels that move from v2026.10, and why: one h1 and a number of h2 are no longer
@@ -191,7 +198,7 @@ criteria history.
 
 The captures include the page's navigation and call-to-action text unedited (menu, footer, the mini-audit
 line), because that is what the page prints around the cards; nothing was cut out of the visible text. The
-14:44Z and 15:03Z captures were fetched with `--compressed` and the User-Agent `Mozilla/5.0 (compatible;
+14:44Z, 15:03Z and 15:29Z captures were fetched with `--compressed` and the User-Agent `Mozilla/5.0 (compatible;
 ledger-capture/1.0)`, and had HTML entities unescaped and runs of whitespace collapsed; each file says so in its
 header. In those captures every HTML tag starts a new line, so a history entry appears as two lines (the bold
 version token, then the dated text) and a card's title and label are on separate lines.
@@ -228,9 +235,9 @@ browser is needed to read it.
   v2026.09.2 and v2026.10; the "Vercel/MERJ study, Dec 2024" named in the v2026.11 words rule), the claim is
   quoted as printed and marked `needs-verification` in the version file. v2026.11 no longer prints the llms.txt
   study sentence.
-- The v2026.10 and v2026.11 home-page values were not re-run with the printed commands for this record; they
-  are the report's own output at 14:44Z and 15:03Z. The v2026.09.2 values were re-run at 13:42Z and matched.
+- The v2026.10, v2026.11 and v2026.11.1 home-page values were not re-run with the printed commands for this
+  record; they are the report's own output at 14:44Z, 15:03Z and 15:29Z. The v2026.09.2 values were re-run at 13:42Z and matched.
 - The 64 sources the v2026.11 history entry says were confirmed are not listed on the page; this record cannot
   say which they are.
 
-Author: Fernando Aporta Franco · ferinazumaDEV / Zentimes. Captured 2026-09-23 (13:40Z, 14:44Z and 15:03Z).
+Author: Fernando Aporta Franco · ferinazumaDEV / Zentimes. Captured 2026-09-23 (13:40Z, 14:44Z, 15:03Z and 15:29Z).
