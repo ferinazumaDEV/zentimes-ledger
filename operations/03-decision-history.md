@@ -73,3 +73,14 @@
   - lastmod on the home and on the notes index.
 
   **Result measured live:** 27 of 27 pages rated strong or excellent. The four cross-check metrics did not move.
+- **v2026.11.2: the h1 rule was unfair to titles that start with the brand.** Before, the h1 had to reflect the whole title. Now any of its segments split by `|`, `–` or `—` also counts, because "Brand — topic" is a legitimate convention, not an inconsistency. The test was seen red before the fix; there are 74 tests in total.
+
+  **More changes on the site:**
+  - titles aligned with their h1 on the home, the inspector, the services, the contact and the FAQ pages;
+  - a table of contents with anchors on the case, the experiments, the notes, "about", the FAQ and the glossary;
+  - a FAQ item opens on its own when reached through its link;
+  - HSTS with `includeSubDomains`.
+
+  **Honest consequence:** the `<title>` counts as text visible without JavaScript, so the home metrics moved: 529 words (526 before) and 9,574 bytes of `llms.txt` (9,484 before). The cross-check with the cookbook of 23-09 at 13:32Z no longer matched the live site. The reviewer redid it at 15:59Z with the pinned v0.1.4 recipes: 4 of 4 equal (529, 9, 8 and 9,574). The inspector now shows that time.
+
+  **Result measured live:** 27 of 27 pages rated strong or excellent (519 excellent, 36 strong). The remaining "strong" labels are deliberate: the sitemap `lastmod` without a time where the time is not known, because nothing is invented.

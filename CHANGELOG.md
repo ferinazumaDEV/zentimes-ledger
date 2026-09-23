@@ -42,6 +42,39 @@ items) is printed next to every number taken this way.
 
 ## 2026-09-23
 
+### Titles aligned with the h1, tables of contents, HSTS with includeSubDomains, criteria v2026.11.2, and the cross-check redone (measured 15:59:32Z)
+
+**Criteria v2026.11.2, as reported by the operations side.** One rule changed: on the "Title, description and h1"
+card the h1 may reflect the whole title or any of its segments split by `|`, `–` or `—`, not only the first;
+under the previous rule a brand-first title ("Brand — topic") could never reflect the h1. One history entry
+on the page, one test seen red before the fix, 74 tests in total. Delta file: [`criteria/v2026.11.2.md`](criteria/v2026.11.2.md)
+(captures 17:20Z).
+
+**Page changes, as reported by the operations side:** titles aligned with their h1 on the home, the inspector,
+the services, the contact and the FAQ pages; tables of contents with section ids on the case, experiments, notes,
+about, FAQ and glossary pages; a FAQ item opens when reached through its anchor; the `Strict-Transport-Security`
+header now carries `includeSubDomains` with `max-age=31536000`.
+
+**Measured** (reviewer, 2026-09-23T15:59:32Z, `tools/compare-inspector-vs-recipes.py` with the pinned cookbook
+v0.1.4 recipes against `https://zentimes.es/`): 4 of 4 equal — `words_visible_no_js` **529** (526 in the
+morning entries), `typed_entities` **9**, `ai_user_agents_allowed` **8**, `llms_txt_bytes` **9574** (9484 before);
+`typed_facts` 51, not shown by the inspector. The two values that moved did so because the `<title>` counts as
+visible text without JavaScript and the home title changed, and because `llms.txt` grew with the aligned titles.
+The page's cross-check statement now reads `cross-checked 2026-09-23 (15:59Z) against cookbook v0.1.4` (verified
+in the 17:20Z captures; 0 mentions of 13:32Z remain). HSTS header verified with `curl -sI` at 15:59Z.
+
+**Reported, tagged `needs-verification` from outside:** 27 of 27 pages of zentimes.es rate strong or excellent
+(519 excellent, 36 strong); the remaining strong labels are sitemap entries whose `lastmod` has no time because
+the time is not known.
+
+```sh
+python3 tools/compare-inspector-vs-recipes.py "$COOKBOOK" https://zentimes.es/     # 4 of 4: 529 · 9 · 8 · 9574
+curl -sI 'https://zentimes.es/' | grep -i '^strict-transport-security'            # max-age=31536000; includeSubDomains
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -o 'cross-checked [^"<]*' | head -1
+```
+
+Nothing above measures citation by any AI engine; the labels grade preconditions.
+
 ### Entity gains logo and image, articles gain image and a visible headline, footnotes on the experiments page, and criteria v2026.11.1 — the main entity is the declared publisher (observed live 15:29Z)
 
 **What changed in the JSON-LD, as reported by the operations side** (no `@id` touched; the 14 `@id` occurrences
