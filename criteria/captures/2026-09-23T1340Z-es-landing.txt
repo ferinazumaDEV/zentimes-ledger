@@ -1,0 +1,74 @@
+# Visible text of https://zentimes.es/es/herramientas/inspector-ia/
+# Captured 2026-09-23 13:40Z with: curl -sL 'https://zentimes.es/es/herramientas/inspector-ia/' (HTML tags, <script> and <style> removed; no other edits)
+
+Inspector de citabilidad — hechos, con el comando que los reproduce
+Zentimes
+Menú
+Servicios
+Auditoría GEO
+Implementación GEO
+Monitorización mensual
+Web y SEO técnico
+Todos los servicios
+→
+Trabajo
+Casos
+kenetg.com
+En abierto
+Experimentos
+Código abierto
+Recursos
+Notas
+Lo que no se mide no cuenta: cómo se prueba que el GEO funciona
+Cómo hacer que ChatGPT te cite: háblale en su idioma
+GEO no es SEO (pero lo necesita por debajo)
+Todas las notas
+Consulta
+Glosario
+Preguntas frecuentes
+Herramientas
+Inspector
+Sobre mí
+Contacto
+ES
+/
+EN
+Zentimes
+/
+Inspector
+Herramienta gratuita
+Lo que un cliente de IA ve de verdad en tu página
+Pega una URL. Cada comprobación sale con su valoración, la regla que la decide y el comando que la reproduce, para que no tengas que fiarte de mi palabra en ninguna.
+URL de tu página
+Inspeccionar
+Sin nota global y sin predicción. Cada comprobación lleva una etiqueta con la regla exacta que la decide y el comando para comprobarla. Son propiedades de tu página, no una promesa: ninguna comprobación mide si una IA te cita, y eso es decisión del motor, que no controla nadie de fuera.
+Criterios
+v2026.09.2
+Esto es una foto del día. Lo marcado como Estable (rastreo, robots.txt, canónica, datos estructurados) lleva años valiendo. Lo marcado como Cambiante es la parte que el campo aún está descubriendo: cuando aprendamos algo nuevo, la regla cambiará y lo dirá este historial, con fecha y motivo. Por eso una etiqueta puede cambiar aunque tu web no haya cambiado.
+Historial de criterios
+v2026.09.2
+·
+2026-09-23
+—
+El HSTS sale de «respuesta» a su propia comprobación, «transporte». Es una buena práctica de seguridad, no de legibilidad: no podía bajar la etiqueta de la respuesta HTTP. Lo señaló el GEO agent al revisar v2026.09.1.
+v2026.09.1
+·
+2026-09-23
+—
+Exigencia subida: «excelente» pasa a significar que no queda nada verificable por mejorar en esa área (HSTS, Open Graph, og:locale, retorno de hreflang, sitemap con esta página y lastmod, grafo JSON-LD conectado, jerarquía de encabezados sin saltos, ids únicos). Nueva comprobación: texto alternativo de las imágenes. No se endurecieron las palabras sin JavaScript ni la cantidad de sameAs: ningún dato respalda un listón más alto.
+v2026.09
+·
+2026-09-23
+—
+Primera versión: etiqueta por comprobación con su regla publicada, sin nota global. Revisada antes de publicar por el GEO agent contra el cookbook.
+© 2026 Zentimes — Fernando Aporta Franco
+Notas
+Experimentos
+Código abierto
+Inspector
+Preguntas frecuentes
+Glosario
+Aviso legal
+llms.txt
+GitHub
+LinkedIn

@@ -1,0 +1,17 @@
+# Nothing in this repository is excluded for being sensitive: by design the
+# ledger holds no secrets, paths, hosts or accounts. Only OS and editor junk.
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+
+# Working files the reproduction commands leave behind
+last-conversion.md
+sitemap.xml
+ferinazumaDEV-generative-engine-optimization-cookbook-*/

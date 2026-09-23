@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: "zentimes.es work ledger"
+message: "If you use this record, please cite it."
+type: dataset
+authors:
+  - family-names: "Aporta Franco"
+    given-names: "Fernando"
+    alias: ferinazumaDEV
+abstract: >-
+  A public, dated, reproducible record of the work done on the public pages of
+  zentimes.es: what was measured, with which instrument (The GEO Cookbook at tag
+  v0.1.4, or the site's public inspector with its criteria version), on which date
+  (UTC), and the command that returns the same number. It also captures the rule
+  sets the public inspector printed, verbatim and versioned. Every number grades a
+  precondition of machine legibility; none measures retrieval, reranking,
+  generation or citation by any answer engine.
+url: "https://zentimes.es"
+repository-code: "https://github.com/ferinazumaDEV/zentimes-ledger"
+# ONE license id, as a scalar. A YAML list here breaks the deposit format that
+# archive services read (a list converts to {"id": [...]}, and the deposit is
+# rejected). Keep this equal to the root LICENSE.
+license: CC-BY-SA-4.0
+# version and date-released are bumped together; the date is the day of the
+# snapshot the ledger was assembled from.
+version: "2026.09.23"
+date-released: "2026-09-23"
+keywords:
+  - generative engine optimization
+  - GEO
+  - machine legibility
+  - reproducible measurement
+  - public ledger
+  - zentimes.es

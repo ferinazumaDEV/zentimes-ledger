@@ -1,0 +1,65 @@
+# Visible text of https://zentimes.es/tools/ai-inspector/
+# Captured 2026-09-23 14:44Z with: curl -sL --compressed -A 'Mozilla/5.0 (compatible; ledger-capture/1.0)' 'https://zentimes.es/tools/ai-inspector/' (HTML tags, <script> and <style> removed, entities unescaped, whitespace normalised; no other edits)
+
+AI citability inspector — facts, with the command that reproduces them
+Zentimes
+Menu
+Services
+GEO audit
+GEO implementation
+GEO monitoring
+Web & technical SEO
+All services →
+Work
+Cases
+kenetg.com
+In the open
+Experiments
+Open source
+Resources
+Notes
+Lo que no se mide no cuenta: cómo se prueba que el GEO funciona
+Cómo hacer que ChatGPT te cite: háblale en su idioma
+GEO no es SEO (pero lo necesita por debajo)
+All notes
+Reference
+Glossary
+FAQ
+Tools
+Inspector
+About
+Contact
+EN
+/
+ES
+Zentimes
+/
+Inspector
+Free tool
+What an AI client actually sees on your page
+Paste a URL. Each check comes with its rating, the rule that decides it and the command that reproduces it, so you never have to take my word for any of them.
+Your page URL
+Inspect
+No overall score and no prediction. Each check gets a label with the exact rule behind it and the command to verify it. These are properties of your page, not a promise: no check measures whether an AI cites you, which is the engine's decision and nobody outside it controls.
+Criteria v2026.10
+This is a snapshot of today. Checks marked Stable (crawling, robots.txt, canonical, structured data) have held for years. Checks marked Changing are the part the field is still working out: when we learn something new, the rule changes and this history says so, with the date and the reason. That is why a label can change even if your site has not.
+Criteria history
+v2026.10
+· 2026-09-23 — Closes the gaps that let incomplete pages score "excellent": indexing (noindex, nosnippet, X-Robots-Tag, which overrides everything), viewport, dates, article authorship, minimum properties per structured-data type, broken outbound links and figures with a source. The criteria now carry a review date: if nobody reviews them within 45 days, deployment fails.
+v2026.09.2
+· 2026-09-23 — HSTS moves out of "response" into its own check, "transport". It is a security practice, not a legibility one: it could not lower the HTTP response label. Flagged by the GEO agent reviewing v2026.09.1.
+v2026.09.1
+· 2026-09-23 — Bar raised: "excellent" now means nothing verifiable is left to improve in that area (HSTS, Open Graph, og:locale, hreflang return links, sitemap listing this page with lastmod, linked JSON-LD graph, heading hierarchy without skips, unique ids). New check: image alt text. Words without JavaScript and sameAs count were not tightened: no data backs a higher bar.
+v2026.09
+· 2026-09-23 — First version: one label per check with its rule published, no overall score. Reviewed before release by the GEO agent against the cookbook.
+© 2026 Zentimes · ferinazumaDEV — Fernando Aporta Franco
+Notes
+Experiments
+Open source
+Inspector
+FAQ
+Glossary
+Legal notice
+llms.txt
+GitHub
+LinkedIn

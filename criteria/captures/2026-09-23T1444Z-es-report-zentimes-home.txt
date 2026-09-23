@@ -1,0 +1,346 @@
+# Visible text of https://zentimes.es/es/herramientas/inspector-ia/?url=https://zentimes.es/
+# Captured 2026-09-23 14:44Z with: curl -sL --compressed -A 'Mozilla/5.0 (compatible; ledger-capture/1.0)' 'https://zentimes.es/es/herramientas/inspector-ia/?url=https://zentimes.es/' (HTML tags, <script> and <style> removed, entities unescaped, whitespace normalised; no other edits)
+
+Inspector de citabilidad — hechos, con el comando que los reproduce
+Zentimes
+Menú
+Servicios
+Auditoría GEO
+Implementación GEO
+Monitorización mensual
+Web y SEO técnico
+Todos los servicios →
+Trabajo
+Casos
+kenetg.com
+En abierto
+Experimentos
+Código abierto
+Recursos
+Notas
+Lo que no se mide no cuenta: cómo se prueba que el GEO funciona
+Cómo hacer que ChatGPT te cite: háblale en su idioma
+GEO no es SEO (pero lo necesita por debajo)
+Todas las notas
+Consulta
+Glosario
+Preguntas frecuentes
+Herramientas
+Inspector
+Sobre mí
+Contacto
+ES
+/
+EN
+Zentimes
+/
+Inspector
+Herramienta gratuita
+Lo que un cliente de IA ve de verdad en tu página
+Pega una URL. Cada comprobación sale con su valoración, la regla que la decide y el comando que la reproduce, para que no tengas que fiarte de mi palabra en ninguna.
+URL de tu página
+Inspeccionar
+Sin nota global y sin predicción. Cada comprobación lleva una etiqueta con la regla exacta que la decide y el comando para comprobarla. Son propiedades de tu página, no una promesa: ninguna comprobación mide si una IA te cita, y eso es decisión del motor, que no controla nadie de fuera.
+https://zentimes.es/
+Criterios v2026.10 · 2026-09-23
+Código HTTP y tiempo de respuesta
+Excelente
+200 · 8 ms
+200 directo.
+Estable · semántica HTTP
+Excelente = 200 sin redirigir y por HTTPS · buena = 200 tras 1 redirección · baja = 2 o más redirecciones, o sin HTTPS · nula = no responde 200. La seguridad del transporte (HSTS) se valora aparte.
+technical-seo · v2026.10
+El tiempo es una medición desde un sitio y no se valora: el tiempo de red varía según desde dónde se mida.
+Reprodúcelo
+curl -sIL 'https://zentimes.es/' | grep -iE '^(HTTP/|location:)'
+Seguridad del transporte (HTTPS y HSTS)
+Notable
+max-age=31536000
+HSTS max-age=31536000.
+Cómo mejorarlo
+Añade la cabecera Strict-Transport-Security: max-age=31536000; includeSubDomains. Obliga al navegador a usar siempre HTTPS con tu dominio.
+Estable · RFC 6797
+Seguridad, no legibilidad. Excelente = HTTPS con HSTS de al menos un año e includeSubDomains · notable = HSTS de al menos un año, sin includeSubDomains · buena = HSTS de menos de un año · baja = HTTPS sin HSTS · nula = sin HTTPS. El año es el mínimo de la lista de precarga de los navegadores.
+security · v2026.10
+Reprodúcelo
+curl -sI 'https://zentimes.es/' | grep -i '^strict-transport-security:'
+Directivas de indexación (meta robots, X-Robots-Tag)
+Excelente
+—
+Sin directivas restrictivas.
+Cambiante · cómo aplica cada buscador sus directivas a la IA sigue cambiando
+Directivas de <meta name="robots"> y de la cabecera X-Robots-Tag. Excelente = ninguna que limite · baja = nosnippet o max-snippet:0 (Google las aplica también a sus funciones de IA: el texto no se puede usar para responder) · nula = noindex o none (la página pide no ser indexada, y eso anula todo lo demás).
+technical-seo · v2026.10
+Reprodúcelo
+curl -sI 'https://zentimes.es/' | grep -i '^x-robots-tag:'; curl -s 'https://zentimes.es/' | grep -oiE '<meta[^>]+name="(robots|googlebot)"[^>]*>'
+Viewport para móvil
+Excelente
+width=device-width, initial-scale=1
+viewport: width=device-width, initial-scale=1
+Estable · HTML y WCAG 1.4.4
+Excelente = <meta name="viewport"> con width=device-width y sin bloquear el zoom · notable = width=device-width pero bloquea el zoom (user-scalable=no o maximum-scale=1; WCAG 1.4.4) · buena = viewport sin width=device-width · nula = sin viewport.
+technical-seo · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<meta[^>]+name="viewport"[^>]*>'
+Título y metadescripción
+Buena
+Zentimes — GEO & AI Search Visibility
+Generative Engine Optimization (GEO): I build the structure that makes your brand citable in AI answers — ChatGPT, Perplexity, Google AI Overviews — backed by technical SEO and security engineering. And I prove it: dogfooded and measured, not promised.
+Título: 37 caracteres · descripción: 252. Falta: descripción de 120-160 (tiene 252).
+Cómo mejorarlo
+Un <title> de 30-60 caracteres que diga qué es la página, una <meta name="description"> de 120-160 que la resuma, y sus gemelas og:title y og:description, que son las que leen las previsualizaciones y muchos lectores automáticos.
+Estable · convención de buscadores de hace años
+Excelente = título de 30 a 60 caracteres, descripción de 120 a 160, y og:title y og:description declarados · notable = longitudes bien, sin Open Graph completo · buena = los dos, alguno fuera de longitud · baja = solo uno · nula = ninguno. Las longitudes son una convención (lo que cabe sin cortarse en un resultado), no evidencia.
+technical-seo · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<title[^>]*>[^<]*</title>|<meta[^>]+(name="description"|property="og:(title|description)")[^>]*>'
+Idioma declarado (<html lang>)
+Excelente
+en
+lang="en" · og:locale: en_US.
+Estable · HTML Standard
+Excelente = <html lang> válido y og:locale declarado con el mismo idioma · notable = <html lang> válido, sin og:locale coherente · baja = mal formado · nula = sin declarar.
+technical-seo · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<html[^>]*>|<meta[^>]+property="og:locale"[^>]*>'
+Palabras presentes sin ejecutar JavaScript
+Sin valorar
+526
+526 palabras.
+Cambiante · depende de si los rastreadores de IA ejecutan JavaScript
+Solo se marca el caso claro: nula = menos de 50 palabras sin ejecutar JavaScript, la página llega casi vacía. Por encima se informa del número sin valorar: ningún dato liga una cantidad de palabras a un resultado, así que endurecerlo sería inventar.
+technical-seo · v2026.10
+Es lo que recibe un cliente que no ejecuta scripts. Un número bajo junto a una página que se ve llena significa que el contenido llega por JavaScript.
+words_visible_no_js
+04-technical/ssr-vs-csr-rendering · contrastado el 2026-09-23 (13:32Z) con cookbook v0.1.4
+Reprodúcelo
+curl -s 'https://zentimes.es/' | perl -0777 -pe 's/<script.*?<\/script>//gis; s/<style.*?<\/style>//gis; s/<!--.*?-->//gis; s/<[^>]+>/ /g; s/&#?[a-z0-9]+;/ /gi; s/\s+/ /g; s/^\s+|\s+$//g' | wc -w
+Nodos JSON-LD con @type (incluidos los anidados)
+Notable
+9
+9 nodos. Falta: name, url y logo o image en la entidad y un WebPage.
+Cómo mejorarlo
+Un grafo JSON-LD con tu entidad (con @id estable, name, url y logo), un WebSite y un WebPage que la referencien por su @id. Es la diferencia entre declarar cosas sueltas y describir quién eres y qué publica.
+Estable · vocabulario Schema.org
+Excelente = ningún bloque inválido; tu entidad (Organization, Person, LocalBusiness…) con @id, name, url y logo o image; un WebSite y un WebPage; y el grafo conectado por @id (algún nodo referencia a tu entidad) · notable = entidad y sitio declarados, falta alguno de esos detalles · buena = hay tipos, pero no quién eres · baja = solo bloques inválidos · nula = sin datos estructurados.
+aeo · v2026.10
+Contar nodos no es validarlos. Dice cuántas cosas declaran un tipo, no si el tipo es el correcto.
+typed_entities
+04-technical/structured-data-jsonld · contrastado el 2026-09-23 (13:32Z) con cookbook v0.1.4
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -o '"@type":' | wc -l
+Tipos de Schema.org distintos presentes
+Person, PostalAddress, ProfessionalService, Service, WebSite
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -o '"@type":"[^"]*"' | sort -u | wc -l
+Fechas de publicación y actualización
+Nula
+— · —
+Sin fechas.
+Cómo mejorarlo
+Declara dateModified (y datePublished) en ISO 8601 en el nodo de la página, y actualízala cuando cambie el contenido de verdad, no en cada despliegue.
+Cambiante · cuánto pesa la frescura para cada motor se está midiendo
+Fechas de la página en los datos estructurados (dateModified/datePublished) o en article:modified_time. Excelente = dateModified válida y no futura · notable = solo datePublished · baja = fechas mal formadas o en el futuro · nula = sin fechas. Una fecha de actualización es cómo una máquina sabe si lo que lee sigue vigente.
+geo-precondition · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '"(datePublished|dateModified)":"[^"]*"|<meta[^>]+property="article:(published|modified)_time"[^>]*>'
+Autoría de los artículos
+Sin valorar
+—
+No hay artículo en la página.
+Cambiante · cómo usan los motores la autoría aún se está estudiando
+Solo en artículos (Article, BlogPosting, NewsArticle…). Excelente = author es una Person u Organization con nombre, url y sameAs · notable = con nombre y url · buena = solo nombre · nula = artículo sin autor. Sin artículo en la página: no aplica.
+geo-precondition · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '"author":[^]}]*'
+Completitud de los datos estructurados
+Excelente
+7/7 completos · 9 nodos con tipo, 2 sin lista de mínimos
+7 de 7 completos. 2 de 9 nodos son de tipos sin lista de mínimos (PostalAddress) y no se valoran.
+Cambiante · los mínimos de cada tipo cambian con la documentación de los buscadores
+Cada nodo de un tipo conocido lleva sus propiedades mínimas (por ejemplo: Article = headline, datePublished, author e image; Service = name y provider; Organization = name y url). Excelente = todos completos · notable = 1 incompleto · baja = 2 o más · sin tipos conocidos: no aplica. La lista de mínimos es una convención basada en la documentación de Google y schema.org.
+aeo · v2026.10
+Mínimos que se comprueban: Article (headline, datePublished, author, image) · BlogPosting (headline, datePublished, author, image) · NewsArticle (headline, datePublished, author, image) · Organization (name, url) · ProfessionalService (name, url) · LocalBusiness (name, address) · Person (name) · WebSite (name, url) · WebPage (url) · BreadcrumbList (itemListElement) · FAQPage (mainEntity) · Question (name, acceptedAnswer) · Service (name, provider) · Product (name) · Event (name, startDate, location) · DefinedTerm (name, description).
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<script[^>]+application/ld\+json[^>]*>.*</script>' | head -c 4000
+Vínculos de identidad de tu entidad (sameAs)
+Excelente
+https://github.com/ferinazumaDEV
+https://www.linkedin.com/in/fernando-aporta-franco-340219230/
+2 sameAs: 1 responden, 0 no existen, 1 no comprobables.
+Cambiante · cómo usan los motores las entidades aún se está estudiando
+Excelente = todos los sameAs comprobables responden, al menos uno se ha podido comprobar, todos van por HTTPS y ninguno está repetido · notable = responden, pero falla alguno de esos detalles · baja = alguno da 404/410, o la entidad no tiene sameAs · nula = no hay entidad. Los que bloquean a los bots (403, 429, 999) cuentan como no comprobables, no como rotos. Se comprueban los 8 primeros, y que respondan, no que sean de la misma entidad.
+geo-precondition · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '"sameAs":(\[[^]]*\]|"[^"]*")'
+URL canónica declarada
+Excelente
+https://zentimes.es/
+Apunta a esta misma página.
+Estable · RFC 6596
+Excelente = una sola canónica, absoluta, por HTTPS, sin parámetros, que apunta a esta página y coincide con og:url · notable = apunta a sí misma, pero falla alguno de esos detalles · buena = absoluta a otra URL (puede ser intencionado) · baja = relativa o más de una · nula = sin canónica.
+technical-seo · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<link[^>]*rel="canonical"[^>]*>|<meta[^>]+property="og:url"[^>]*>'
+Valores de hreflang declarados
+Excelente
+en, es, x-default
+3 valores.
+Estable · convención de buscadores de hace años
+Solo se valora si la página declara hreflang. Excelente = x-default, autorreferencia, URLs absolutas y cada versión de idioma enlaza de vuelta a esta (Google ignora los pares sin retorno; se comprueban hasta 5) · notable = todo eso salvo el retorno · buena = falta x-default o la autorreferencia · baja = valores mal formados. Sin hreflang: no aplica a una web de un solo idioma.
+technical-seo · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<link[^>]*hreflang="[^"]*"[^>]*>'
+Estructura de encabezados
+Excelente
+h1: 1 · h2: 5
+1 h1 · 5 h2.
+Cambiante · cada motor trocea a su manera y eso se está midiendo
+Excelente = un solo h1, 2 h2 o más, ningún salto de nivel (un h3 sin h2 antes, un h4 sin h3…) y ningún encabezado vacío · notable = h1 y h2 bien, pero con saltos o vacíos · buena = un h1 y un h2 · baja = varios h1, o ningún h2 · nula = sin h1. Es una convención: comparte clase con la receta de troceado del cookbook, pero no es su métrica.
+geo-precondition · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | perl -0777 -pe 's/<script.*?<\/script>//gis; s/<!--.*?-->//gs' | grep -oiE '<h[1-6][ >]' | tr -d '< >'
+Enlaces a secciones de esta página (#id)
+Excelente
+1
+1 enlaces, todos resuelven, sin ids repetidos.
+Estable · HTML Standard
+Enlaces de esta página a una sección suya (#id). Excelente = todos llevan a un id que existe una sola vez y además no hay ningún id repetido en toda la página (el HTML lo exige) · notable = los enlaces resuelven, pero hay ids repetidos · baja = alguno no lleva a ningún sitio. Sin enlaces así: no aplica. Misma regla que unresolved_fragment_links del cookbook, aplicada a toda la página.
+geo-precondition · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE 'href="#[^"]*"' | sort -u
+Texto alternativo de las imágenes
+Excelente
+1/1 con alt
+1 de 1 con alt útil (100 %).
+Estable · WCAG 1.1.1
+Excelente = todas las imágenes llevan alt y ninguno es un nombre de fichero (alt="" vale para las decorativas) · notable = 90 % o más · buena = 70 % o más · baja = menos del 70 % · nula = ninguna. Sin imágenes: no aplica. Los porcentajes son una convención; la regla de fondo es WCAG 1.1.1.
+technical-seo · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<img[^>]*>'
+Enlaces salientes (otros dominios)
+Excelente
+3
+3 enlaces externos · 3 comprobados: 2 responden, 0 rotos, 1 no comprobables. No comprobables: https://www.linkedin.com/in/fernando-aporta-franco-340219230/.
+Estable · semántica HTTP
+Enlaces de esta página a otros dominios (se comprueban hasta 10). Excelente = al menos uno comprobable y ninguno da 404/410 · baja = alguno da 404/410 · sin enlaces externos, o ninguno comprobable: no se valora. Los que bloquean a los bots (403, 429, 999) cuentan como no comprobables.
+technical-seo · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE 'href="https?://[^"]*"' | sort -u
+Cifras con fuente
+Sin valorar
+—
+Sin porcentajes en el texto.
+Cambiante · cómo se atribuyen las cifras en una respuesta se está midiendo
+Párrafos y elementos de lista con un porcentaje. Excelente = todos llevan su fuente enlazable: un enlace http(s) en el mismo párrafo o en el bloque que lo contiene, como una tarjeta (de cualquier dominio, como en la receta de anclaje), o una nota al pie (#ancla) cuyo destino lleva ese enlace · notable = 80 % o más · buena = 50 % o más · baja = menos · sin porcentajes: no aplica. Es la idea de la receta de anclaje del cookbook (la fuente al lado de la afirmación) aplicada a las cifras; los porcentajes son una convención.
+geo-precondition · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '[0-9]+([.,][0-9]+)? ?%'
+robots.txt — agentes de IA
+8/8 · GPTBot: ✓ · ClaudeBot: ✓ · anthropic-ai: ✓ · PerplexityBot: ✓ · Google-Extended: ✓ · CCBot: ✓ · Applebot-Extended: ✓ · Bytespider: ✓
+Los ocho de la receta, para la raíz (/). La mayoría son de entrenamiento o de uso: bloquearlos es decisión tuya, no un defecto, así que esta tarjeta no se valora. Google-Extended gobierna solo entrenamiento y grounding — no afecta a la Búsqueda de Google.
+ai_user_agents_allowed
+04-technical/ai-crawler-access · contrastado el 2026-09-23 (13:32Z) con cookbook v0.1.4
+Reprodúcelo
+curl -sf 'https://zentimes.es/robots.txt' | python3 -c 'import sys,re
+G={};C=[];S=0
+for l in sys.stdin:
+l=l.split("#")[0].strip()
+if ":" not in l: continue
+f,_,v=l.partition(":");f=f.strip().lower();v=v.strip()
+if f=="user-agent":
+C=C if S else [];C.append(v.lower());G.setdefault(v.lower(),[]);S=1
+elif f in("allow","disallow"):
+S=0
+for a in C:G[a].append((f,v))
+def m(p):
+e=p.endswith("$");b=p[:-1] if e else p
+return re.match("".join(".*" if c=="*" else re.escape(c) for c in b)+("$" if e else ""),"/")
+def ok(u):
+R=G.get(u.lower(),G.get("*"))
+if R is None:return 1
+L,A=-1,1
+for d,v in R:
+if v=="":
+if d!="disallow":continue
+n,x=0,1
+elif m(v):n,x=len(v),d=="allow"
+else:continue
+if n>L or(n==L and x):L,A=n,x
+return A
+print(sum(ok(u) for u in "GPTBot ClaudeBot anthropic-ai PerplexityBot Google-Extended CCBot Applebot-Extended Bytespider".split()))'
+robots.txt — asistentes que buscan para responder
+Excelente
+4/4 · OAI-SearchBot: ✓ · ChatGPT-User: ✓ · PerplexityBot: ✓ · Perplexity-User: ✓
+4 de 4 pueden leer la raíz.
+Cambiante · la regla es RFC 9309, pero la lista de agentes cambia cada pocos meses
+Sobre la raíz (/), solo los agentes que buscan para responder (OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User). Excelente = hay un robots.txt y los 4 pueden leer · notable = pueden leer, pero solo porque no hay robots.txt (política por omisión; convención) · baja = alguno · nula = ninguno. Los de entrenamiento no cuentan aquí: bloquearlos es una decisión, no un defecto.
+technical-seo · v2026.10
+Reprodúcelo
+curl -sf 'https://zentimes.es/robots.txt' | python3 -c 'import sys,re
+G={};C=[];S=0
+for l in sys.stdin:
+l=l.split("#")[0].strip()
+if ":" not in l: continue
+f,_,v=l.partition(":");f=f.strip().lower();v=v.strip()
+if f=="user-agent":
+C=C if S else [];C.append(v.lower());G.setdefault(v.lower(),[]);S=1
+elif f in("allow","disallow"):
+S=0
+for a in C:G[a].append((f,v))
+def m(p):
+e=p.endswith("$");b=p[:-1] if e else p
+return re.match("".join(".*" if c=="*" else re.escape(c) for c in b)+("$" if e else ""),"/")
+def ok(u):
+R=G.get(u.lower(),G.get("*"))
+if R is None:return 1
+L,A=-1,1
+for d,v in R:
+if v=="":
+if d!="disallow":continue
+n,x=0,1
+elif m(v):n,x=len(v),d=="allow"
+else:continue
+if n>L or(n==L and x):L,A=n,x
+return A
+print(sum(ok(u) for u in "OAI-SearchBot ChatGPT-User PerplexityBot Perplexity-User".split()))'
+Sitemap
+Excelente
+https://zentimes.es/sitemap.xml · 27 URLs
+Sitemap válido.
+Estable · protocolo sitemaps.org 0.9
+Excelente = declarado en robots.txt, responde, es un XML de sitemaps válido, incluye esta página y lleva fechas lastmod · notable = declarado y válido, pero no incluye esta página o no lleva lastmod · buena = responde y es válido, sin declarar · baja = responde pero no es un sitemap válido · nula = no se encuentra.
+technical-seo · v2026.10
+Reprodúcelo
+curl -s 'https://zentimes.es/robots.txt' | grep -i '^sitemap:'; curl -s 'https://zentimes.es/sitemap.xml' | grep -o '<loc>' | wc -l
+/llms.txt
+HTTP 200 · 9484 bytes
+Sin valorar, a propósito: tenerlo no es una palanca de visibilidad. En un estudio de 137.210 dominios, el 97% de los llms.txt publicados recibió cero peticiones en un mes. Se informa porque se pregunta, no porque se recomiende.
+llms_txt_bytes
+04-technical/ai-crawler-access · contrastado el 2026-09-23 (13:32Z) con cookbook v0.1.4
+Reprodúcelo
+curl -s 'https://zentimes.es/llms.txt' | wc -c
+Esto mira una página. La mini-auditoría aplica los mismos criterios a las páginas que importan de tu web y te dice qué arreglar primero.
+Pedir la mini-auditoría
+Criterios v2026.10
+Esto es una foto del día. Lo marcado como Estable (rastreo, robots.txt, canónica, datos estructurados) lleva años valiendo. Lo marcado como Cambiante es la parte que el campo aún está descubriendo: cuando aprendamos algo nuevo, la regla cambiará y lo dirá este historial, con fecha y motivo. Por eso una etiqueta puede cambiar aunque tu web no haya cambiado.
+Historial de criterios
+v2026.10
+· 2026-09-23 — Se cierran los huecos que dejaban sacar «excelente» a páginas incompletas: indexación (noindex, nosnippet, X-Robots-Tag, que manda sobre todo), viewport, fechas, autoría de artículos, propiedades mínimas por tipo de datos estructurados, enlaces salientes rotos y cifras con fuente. Los criterios pasan a tener fecha de revisión: si nadie los revisa en 45 días, el despliegue falla.
+v2026.09.2
+· 2026-09-23 — El HSTS sale de «respuesta» a su propia comprobación, «transporte». Es una buena práctica de seguridad, no de legibilidad: no podía bajar la etiqueta de la respuesta HTTP. Lo señaló el GEO agent al revisar v2026.09.1.
+v2026.09.1
+· 2026-09-23 — Exigencia subida: «excelente» pasa a significar que no queda nada verificable por mejorar en esa área (HSTS, Open Graph, og:locale, retorno de hreflang, sitemap con esta página y lastmod, grafo JSON-LD conectado, jerarquía de encabezados sin saltos, ids únicos). Nueva comprobación: texto alternativo de las imágenes. No se endurecieron las palabras sin JavaScript ni la cantidad de sameAs: ningún dato respalda un listón más alto.
+v2026.09
+· 2026-09-23 — Primera versión: etiqueta por comprobación con su regla publicada, sin nota global. Revisada antes de publicar por el GEO agent contra el cookbook.
+© 2026 Zentimes — Fernando Aporta Franco
+Notas
+Experimentos
+Código abierto
+Inspector
+Preguntas frecuentes
+Glosario
+Aviso legal
+llms.txt
+GitHub
+LinkedIn

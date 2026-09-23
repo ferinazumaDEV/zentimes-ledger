@@ -1,0 +1,348 @@
+# Visible text of https://zentimes.es/tools/ai-inspector/?url=https://zentimes.es/
+# Captured 2026-09-23 13:40Z with: curl -sL 'https://zentimes.es/tools/ai-inspector/?url=https://zentimes.es/' (HTML tags, <script> and <style> removed; no other edits)
+
+AI citability inspector — facts, with the command that reproduces them
+Zentimes
+Menu
+Services
+GEO audit
+GEO implementation
+GEO monitoring
+Web & technical SEO
+All services
+→
+Work
+Cases
+kenetg.com
+In the open
+Experiments
+Open source
+Resources
+Notes
+Lo que no se mide no cuenta: cómo se prueba que el GEO funciona
+Cómo hacer que ChatGPT te cite: háblale en su idioma
+GEO no es SEO (pero lo necesita por debajo)
+All notes
+Reference
+Glossary
+FAQ
+Tools
+Inspector
+About
+Contact
+EN
+/
+ES
+Zentimes
+/
+Inspector
+Free tool
+What an AI client actually sees on your page
+Paste a URL. Each check comes with its rating, the rule that decides it and the command that reproduces it, so you never have to take my word for any of them.
+Your page URL
+Inspect
+No overall score and no prediction. Each check gets a label with the exact rule behind it and the command to verify it. These are properties of your page, not a promise: no check measures whether an AI cites you, which is the engine's decision and nobody outside it controls.
+https://zentimes.es/
+Criteria
+v2026.09.2
+·
+2026-09-23
+HTTP status and time to response
+Excellent
+200 · 25 ms
+200 direct.
+Stable
+·
+HTTP semantics
+Excellent = 200 with no redirect, over HTTPS · good = 200 after 1 redirect · low = 2 or more redirects, or no HTTPS · none = no 200. Transport security (HSTS) is rated separately.
+technical-seo
+·
+v2026.09.2
+The time is one measurement from one place and is not rated: network timing varies with where it is measured from.
+Reproduce it
+curl -sIL 'https://zentimes.es/' | grep -iE '^(HTTP/|location:)'
+Transport security (HTTPS and HSTS)
+Strong
+max-age=31536000
+HSTS max-age=31536000.
+How to improve it
+Add the header Strict-Transport-Security: max-age=31536000; includeSubDomains. It forces the browser to always use HTTPS with your domain.
+Stable
+·
+RFC 6797
+Security, not legibility. Excellent = HTTPS with HSTS of at least one year and includeSubDomains · strong = HSTS of at least one year, no includeSubDomains · good = HSTS under one year · low = HTTPS without HSTS · none = no HTTPS. One year is the browsers' preload-list minimum.
+security
+·
+v2026.09.2
+Reproduce it
+curl -sI 'https://zentimes.es/' | grep -i '^strict-transport-security:'
+Title and meta description
+Good
+Zentimes — GEO & AI Search Visibility
+Generative Engine Optimization (GEO): I build the structure that makes your brand citable in AI answers — ChatGPT, Perplexity, Google AI Overviews — backed by technical SEO and security engineering. And I prove it: dogfooded and measured, not promised.
+Title: 37 characters · description: 252. Missing: a 120–160 description (it has 252).
+How to improve it
+A 30–60 character <title> saying what the page is, a 120–160 character <meta name="description"> summing it up, and their twins og:title and og:description, which previews and many automated readers use.
+Stable
+·
+a search convention for years
+Excellent = title of 30–60 characters, description of 120–160, and og:title and og:description declared · strong = lengths right, Open Graph incomplete · good = both, one outside length · low = only one · none = neither. The lengths are a convention (what fits uncut in a result), not evidence.
+technical-seo
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -oE '<title[^>]*>[^<]*</title>|<meta[^>]+(name="description"|property="og:(title|description)")[^>]*>'
+Declared language (<html lang>)
+Excellent
+en
+lang="en" · og:locale: en_US.
+Stable
+·
+HTML Standard
+Excellent = valid <html lang> and og:locale declared with the same language · strong = valid <html lang>, no matching og:locale · low = malformed · none = not declared.
+technical-seo
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -oE '<html[^>]*>|<meta[^>]+property="og:locale"[^>]*>'
+Words present without running JavaScript
+Not rated
+526
+526 words.
+Changing
+·
+depends on whether AI crawlers run JavaScript
+Only the clear case is flagged: none = under 50 words without running JavaScript, the page arrives nearly empty. Above that the number is reported unrated: no data ties a word count to an outcome, so tightening it would be made up.
+technical-seo
+·
+v2026.09.2
+This is what a client that does not execute scripts receives. A low number next to a full-looking page means the content arrives by JavaScript.
+words_visible_no_js
+04-technical/ssr-vs-csr-rendering · cross-checked 2026-09-23 (13:32Z) against cookbook v0.1.4
+Reproduce it
+curl -s 'https://zentimes.es/' | perl -0777 -pe 's/<script.*?<\/script>//gis; s/<style.*?<\/style>//gis; s/<!--.*?-->//gis; s/<[^>]+>/ /g; s/&#?[a-z0-9]+;/ /gi; s/\s+/ /g; s/^\s+|\s+$//g' | wc -w
+JSON-LD nodes carrying an @type (nested included)
+Strong
+9
+9 nodes. Missing: name, url and logo or image on the entity and a WebPage.
+How to improve it
+A JSON-LD graph with your entity (stable @id, name, url and logo), plus a WebSite and a WebPage that reference it by its @id. It is the difference between declaring loose things and describing who you are and what you publish.
+Stable
+·
+Schema.org vocabulary
+Excellent = no invalid blocks; your entity (Organization, Person, LocalBusiness…) with @id, name, url and logo or image; a WebSite and a WebPage; and the graph linked by @id (some node references your entity) · strong = entity and site declared, one of those details missing · good = types present, but not who you are · low = only invalid blocks · none = no structured data.
+aeo
+·
+v2026.09.2
+Counting nodes is not validating them. This says how many things declare a type, not whether the type is the right one.
+typed_entities
+04-technical/structured-data-jsonld · cross-checked 2026-09-23 (13:32Z) against cookbook v0.1.4
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -o '"@type":' | wc -l
+Distinct Schema.org types present
+Person, PostalAddress, ProfessionalService, Service, WebSite
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -o '"@type":"[^"]*"' | sort -u | wc -l
+Your entity's identity links (sameAs)
+Excellent
+https://github.com/ferinazumaDEV
+https://www.linkedin.com/in/fernando-aporta-franco-340219230/
+2 sameAs: 1 respond, 0 missing, 1 uncheckable.
+Changing
+·
+how engines use entities is still being studied
+Excellent = every checkable sameAs responds, at least one could actually be checked, all use HTTPS and none is repeated · strong = they respond, but one of those details fails · low = some return 404/410, or the entity has no sameAs · none = no entity. Links that block bots (403, 429, 999) count as uncheckable, not broken. The first 8 are checked, for responding, not for being the same entity.
+geo-precondition
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -oE '"sameAs":(\[[^]]*\]|"[^"]*")'
+Declared canonical URL
+Excellent
+https://zentimes.es/
+Points to this same page.
+Stable
+·
+RFC 6596
+Excellent = a single absolute HTTPS canonical, no query string, pointing to this page and matching og:url · strong = self-referencing, but one of those details fails · good = absolute to another URL (may be intended) · low = relative, or more than one · none = no canonical.
+technical-seo
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -oE '<link[^>]*rel="canonical"[^>]*>|<meta[^>]+property="og:url"[^>]*>'
+hreflang values declared
+Excellent
+en, es, x-default
+3 values.
+Stable
+·
+a search convention for years
+Rated only if the page declares hreflang. Excellent = x-default, self-reference, absolute URLs, and every language version links back to this one (Google ignores pairs without a return link; up to 5 checked) · strong = all that except the return links · good = missing x-default or self-reference · low = malformed values. No hreflang: does not apply to a single-language site.
+technical-seo
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -oE '<link[^>]*hreflang="[^"]*"[^>]*>'
+Heading structure
+Excellent
+h1: 1 · h2: 5
+1 h1 · 5 h2.
+Changing
+·
+each engine chunks its own way, and that is being measured
+Excellent = one h1, 2 or more h2, no skipped levels (an h3 with no h2 before it, an h4 with no h3…) and no empty headings · strong = h1 and h2 right, but with skips or empties · good = one h1 and one h2 · low = several h1, or no h2 · none = no h1. A convention: same class as the cookbook's chunking recipe, not its metric.
+geo-precondition
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/' | perl -0777 -pe 's/<script.*?<\/script>//gis; s/<!--.*?-->//gs' | grep -oiE '<h[1-6][ >]' | tr -d '< >'
+Links to sections of this page (#id)
+Excellent
+1
+1 links, all resolve, no repeated ids.
+Stable
+·
+HTML Standard
+Links on this page to one of its own sections (#id). Excellent = all reach an id that exists exactly once, and no id is repeated anywhere on the page (HTML requires it) · strong = links resolve, but some ids are repeated · low = some lead nowhere. No such links: not applicable. Same rule as the cookbook's unresolved_fragment_links, applied to the whole page.
+geo-precondition
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -oE 'href="#[^"]*"' | sort -u
+Image alt text
+Excellent
+1/1 con alt
+1 of 1 with a useful alt (100%).
+Stable
+·
+WCAG 1.1.1
+Excellent = every image has alt and none is a file name (alt="" is fine for decorative ones) · strong = 90% or more · good = 70% or more · low = under 70% · none = none. No images: not applicable. The percentages are a convention; the underlying rule is WCAG 1.1.1.
+technical-seo
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/' | grep -oiE '<img[^>]*>'
+robots.txt — AI agents
+8/8 · GPTBot: ✓ · ClaudeBot: ✓ · anthropic-ai: ✓ · PerplexityBot: ✓ · Google-Extended: ✓ · CCBot: ✓ · Applebot-Extended: ✓ · Bytespider: ✓
+The recipe's eight tokens, for the root path (/). Most of them are training or usage tokens: blocking them is your decision, not a defect, so this card is not rated. Google-Extended governs training and grounding only — it does not affect Google Search.
+ai_user_agents_allowed
+04-technical/ai-crawler-access · cross-checked 2026-09-23 (13:32Z) against cookbook v0.1.4
+Reproduce it
+curl -sf 'https://zentimes.es/robots.txt' | python3 -c 'import sys,re
+G={};C=[];S=0
+for l in sys.stdin:
+l=l.split("#")[0].strip()
+if ":" not in l: continue
+f,_,v=l.partition(":");f=f.strip().lower();v=v.strip()
+if f=="user-agent":
+C=C if S else [];C.append(v.lower());G.setdefault(v.lower(),[]);S=1
+elif f in("allow","disallow"):
+S=0
+for a in C:G[a].append((f,v))
+def m(p):
+e=p.endswith("$");b=p[:-1] if e else p
+return re.match("".join(".*" if c=="*" else re.escape(c) for c in b)+("$" if e else ""),"/")
+def ok(u):
+R=G.get(u.lower(),G.get("*"))
+if R is None:return 1
+L,A=-1,1
+for d,v in R:
+if v=="":
+if d!="disallow":continue
+n,x=0,1
+elif m(v):n,x=len(v),d=="allow"
+else:continue
+if n>L or(n==L and x):L,A=n,x
+return A
+print(sum(ok(u) for u in "GPTBot ClaudeBot anthropic-ai PerplexityBot Google-Extended CCBot Applebot-Extended Bytespider".split()))'
+robots.txt — assistants that search to answer
+Excellent
+4/4 · OAI-SearchBot: ✓ · ChatGPT-User: ✓ · PerplexityBot: ✓ · Perplexity-User: ✓
+4 of 4 may read the root.
+Changing
+·
+the rule is RFC 9309, but the agent list changes every few months
+For the root (/), only the agents that search to answer (OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User). Excellent = a robots.txt exists and all 4 may read · strong = they may, but only because there is no robots.txt (policy by omission; a convention) · low = some · none = none. Training crawlers do not count here: blocking them is a decision, not a defect.
+technical-seo
+·
+v2026.09.2
+Reproduce it
+curl -sf 'https://zentimes.es/robots.txt' | python3 -c 'import sys,re
+G={};C=[];S=0
+for l in sys.stdin:
+l=l.split("#")[0].strip()
+if ":" not in l: continue
+f,_,v=l.partition(":");f=f.strip().lower();v=v.strip()
+if f=="user-agent":
+C=C if S else [];C.append(v.lower());G.setdefault(v.lower(),[]);S=1
+elif f in("allow","disallow"):
+S=0
+for a in C:G[a].append((f,v))
+def m(p):
+e=p.endswith("$");b=p[:-1] if e else p
+return re.match("".join(".*" if c=="*" else re.escape(c) for c in b)+("$" if e else ""),"/")
+def ok(u):
+R=G.get(u.lower(),G.get("*"))
+if R is None:return 1
+L,A=-1,1
+for d,v in R:
+if v=="":
+if d!="disallow":continue
+n,x=0,1
+elif m(v):n,x=len(v),d=="allow"
+else:continue
+if n>L or(n==L and x):L,A=n,x
+return A
+print(sum(ok(u) for u in "OAI-SearchBot ChatGPT-User PerplexityBot Perplexity-User".split()))'
+Sitemap
+Excellent
+https://zentimes.es/sitemap.xml · 27 URLs
+Valid sitemap.
+Stable
+·
+sitemaps.org protocol 0.9
+Excellent = declared in robots.txt, responding, a valid sitemap XML, includes this page and carries lastmod dates · strong = declared and valid, but misses this page or lastmod · good = responding and valid, not declared · low = responds but is not a valid sitemap · none = not found.
+technical-seo
+·
+v2026.09.2
+Reproduce it
+curl -s 'https://zentimes.es/robots.txt' | grep -i '^sitemap:'; curl -s 'https://zentimes.es/sitemap.xml' | grep -o '<loc>' | wc -l
+/llms.txt
+HTTP 200 · 9484 bytes
+Not rated, on purpose: having one is not a visibility lever. In a study of 137,210 domains, 97% of published llms.txt files got zero requests in a month. It is reported because it is asked about, not because it is recommended.
+llms_txt_bytes
+04-technical/ai-crawler-access · cross-checked 2026-09-23 (13:32Z) against cookbook v0.1.4
+Reproduce it
+curl -s 'https://zentimes.es/llms.txt' | wc -c
+This looks at one page. The mini-audit applies the same criteria to the pages that matter on your site and tells you what to fix first.
+Ask for the mini-audit
+Criteria
+v2026.09.2
+This is a snapshot of today. Checks marked Stable (crawling, robots.txt, canonical, structured data) have held for years. Checks marked Changing are the part the field is still working out: when we learn something new, the rule changes and this history says so, with the date and the reason. That is why a label can change even if your site has not.
+Criteria history
+v2026.09.2
+·
+2026-09-23
+—
+HSTS moves out of "response" into its own check, "transport". It is a security practice, not a legibility one: it could not lower the HTTP response label. Flagged by the GEO agent reviewing v2026.09.1.
+v2026.09.1
+·
+2026-09-23
+—
+Bar raised: "excellent" now means nothing verifiable is left to improve in that area (HSTS, Open Graph, og:locale, hreflang return links, sitemap listing this page with lastmod, linked JSON-LD graph, heading hierarchy without skips, unique ids). New check: image alt text. Words without JavaScript and sameAs count were not tightened: no data backs a higher bar.
+v2026.09
+·
+2026-09-23
+—
+First version: one label per check with its rule published, no overall score. Reviewed before release by the GEO agent against the cookbook.
+© 2026 Zentimes · ferinazumaDEV — Fernando Aporta Franco
+Notes
+Experiments
+Open source
+Inspector
+FAQ
+Glossary
+Legal notice
+llms.txt
+GitHub
+LinkedIn
