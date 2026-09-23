@@ -82,7 +82,7 @@ controls in §5 exist.
 ## 3. Why labels grade preconditions and never citation
 
 The public inspector on zentimes.es (<https://zentimes.es/tools/ai-inspector/>) prints one label per check —
-`excelente / notable / buena / baja / nula`, plus an unrated state — with the rule that decides it, the
+`excellent / strong / good / low / none`, plus an unrated state — with the rule that decides it, the
 discipline it belongs to, a criteria version and the command that reproduces the value. The captured rule
 sets are in [`criteria/`](criteria/). Three things fix what a label may say:
 
@@ -143,8 +143,8 @@ Two rules, applied before any number or check in this ledger is trusted.
 
 **A check is broken on purpose before it is trusted.** A check that has only been seen passing has not been
 tested; it may be passing because the hard case was not in the sample, or because it never runs. Three cases
-from the days this ledger covers, all recorded in [`operations/02-guardas.md`](operations/02-guardas.md) and
-[`operations/03-historial-de-decisiones.md`](operations/03-historial-de-decisiones.md):
+from the days this ledger covers, all recorded in [`operations/02-guards.md`](operations/02-guards.md) and
+[`operations/03-decision-history.md`](operations/03-decision-history.md):
 
 - a guard for EN/ES `@id` parity was written and proven by breaking it in the morning; by the afternoon it
   sat behind an unconditional `exit 0` and never ran, with the same face as a guard that always passes. It

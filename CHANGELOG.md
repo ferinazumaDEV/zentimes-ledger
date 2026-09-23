@@ -92,7 +92,7 @@ defect of the site's own page.
 curl -sI 'https://zentimes.es/' | grep -i '^strict-transport-security:'   # strict-transport-security: max-age=31536000
 ```
 
-Full rule text of the seventeen v2026.09.2 cards, both languages: [`criteria/v2026.09.2.md`](criteria/v2026.09.2.md).
+Full rule text of the seventeen v2026.09.2 cards, quoted from the English page: [`criteria/v2026.09.2.md`](criteria/v2026.09.2.md).
 
 ### Criteria v2026.09.1 — the bar raised, and what was deliberately not raised
 
@@ -175,7 +175,7 @@ each `reproduce.sh` is `diff -q`'d against that tarball before anyone trusts it.
 the right commit does not prove the working tree is that commit. And the statement "cross-checked against
 vX" names a version on purpose: the next cookbook tag makes it stale by its own wording until it is re-run. The
 deploy guards fail if the statement's date is older than 120 days
-([`operations/02-guardas.md`](operations/02-guardas.md); internal, `needs-verification` from outside).
+([`operations/02-guards.md`](operations/02-guards.md); internal, `needs-verification` from outside).
 
 ### Menu moved from home anchors to pages — sitemap 21 → 27 URLs
 
@@ -189,7 +189,7 @@ site, 24 site-scoped (hanging off the origin) and 36 page-scoped (hanging off a 
 equals the sitemap `<loc>` on all 27; 22 pages declare `hreflang` `en, es, x-default`. The 5 Spanish-only notes
 under `/es/notas/<slug>/` declare no `hreflang`, which is consistent with having no English twin — recorded here
 because the operations record first said "no page without hreflang", a sentence true only of the 22 paired
-pages; that line of `operations/03-historial-de-decisiones.md` was corrected on 2026-09-23 to "22 of 27".
+pages; that line of `operations/03-decision-history.md` was corrected on 2026-09-23 to "22 of 27".
 Before: 21 URLs on the evening of 22-09 (operations record; `needs-verification`, the earlier sitemap is
 not served any more).
 
@@ -507,7 +507,7 @@ produced by the old word extraction. The v0.1.4 value for that day's page was no
 - **Guards.** Two checks in the deploy battery returned green without checking anything: the EN/ES service-id
   parity guard had ended up behind an `exit 0` and never ran; the title comparison passed for Spanish only because
   the Spanish title contains no `&` (`&amp;` against `&`). Both were fixed and each was broken on purpose in the
-  place it lives before being trusted again ([`operations/02-guardas.md`](operations/02-guardas.md); internal,
+  place it lives before being trusted again ([`operations/02-guards.md`](operations/02-guards.md); internal,
   `needs-verification` from outside). The rule kept: a check is accepted only after it has been seen to fail, and
   expected values are derived from the source of truth, never written by hand beside it.
 

@@ -6,7 +6,8 @@ the criteria version it was rated under, and the shell command that reproduces t
 those published criteria so that any report someone kept can be read against the rule set that produced it.
 
 Nothing here is the inspector's source code. It is a record of what the public pages say, quoted verbatim, with
-the date and the command used to capture them.
+the date and the command used to capture them. The Spanish page's wording is preserved verbatim in the `-es-`
+capture files; the rule files quote the English page only.
 
 | | |
 |---|---|
@@ -19,15 +20,12 @@ the date and the command used to capture them.
 
 ## The promise text (verbatim)
 
-Printed above the form on both pages and repeated on every report:
+Printed above the form on both pages and repeated on every report (English page; the Spanish page's wording is in
+the `-es-` capture files):
 
 > No overall score and no prediction. Each check gets a label with the exact rule behind it and the command to
 > verify it. These are properties of your page, not a promise: no check measures whether an AI cites you, which
 > is the engine's decision and nobody outside it controls.
-
-> Sin nota global y sin predicción. Cada comprobación lleva una etiqueta con la regla exacta que la decide y el
-> comando para comprobarla. Son propiedades de tu página, no una promesa: ninguna comprobación mide si una IA te
-> cita, y eso es decisión del motor, que no controla nadie de fuera.
 
 This matches the grading in the cookbook the inspector cross-checks against: cookbook v0.1.4 `CLAIMS.md` grades
 the *engine effect* of every recipe as `experimental` ("no recipe measures retrieval, reranking, generation or
@@ -109,7 +107,7 @@ The statement names a date, a time and a cookbook version on purpose: it is only
 new cookbook tag makes it stale by its own wording until it is re-run. (Earlier that week, a first "cross-checked
 2026-09-22" statement had been made against a copy of the recipes that was not v0.1.4 for one of the four
 metrics; the values were 3 of 4 equal and the words metric 2 apart, 524 against 526. The 13:32Z statement of
-2026-09-23 is the one printed now. Source: [`operations/03-historial-de-decisiones.md`](../operations/03-historial-de-decisiones.md);
+2026-09-23 is the one printed now. Source: [`operations/03-decision-history.md`](../operations/03-decision-history.md);
 the page itself shows only the current statement. The 2-word gap reproduces on 2026-09-23 13:45Z by swapping
 the entity expression: `curl -s 'https://zentimes.es/' | perl -0777 -pe 's/<script.*?<\/script>//gis; s/<style.*?<\/style>//gis; s/<!--.*?-->//gis; s/<[^>]+>/ /g; s/&[a-z]+;/ /g; s/\s+/ /g; s/^\s+|\s+$//g' | wc -w`
 gives 524; the v0.1.4 expression `&#?[a-z0-9]+;` with flag `i` gives 526.)
@@ -138,7 +136,7 @@ Which checks reuse a cookbook metric id and which use their own grouping:
 ## Criteria history as printed on the page
 
 All four entries are dated the same day. Quoted verbatim from the English page as captured at 14:44Z; the
-Spanish page carries the same four entries (the ES text of each is in the version files).
+Spanish page carries the same four entries (their Spanish text is in the `-es-` capture files).
 
 'GEO agent' is the page's own name for the reviewer role, quoted verbatim from the public criteria history.
 

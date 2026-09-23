@@ -105,7 +105,7 @@ facts** and **14 occurrences of `"@id":`** (declarations and references together
 
 **What the homes do not carry.** The home pages emit no page-scope node: no `WebPage`, no `BreadcrumbList`
 (7 ids on `/` and `/es/` against 9–26 on the other pages, A3/A4). The inspector labels the home's JSON-LD
-"notable" rather than "excellent" for this reason and for entities lacking `logo`/`image` (A12).
+"strong" rather than "excellent" for this reason and for entities lacking `logo`/`image` (A12).
 
 ## 4. Rendering without JavaScript
 
@@ -178,9 +178,9 @@ attributes gives (A12, 13:41:53Z; repeated 13:49:53Z with the same result):
 
 The inspector's report for `https://zentimes.es/` states, next to each of the four, "cross-checked 2026-09-23
 (13:32Z) against cookbook v0.1.4", and heads the report "Criteria v2026.09.2 · 2026-09-23". Its labels for the
-home on that run: status excellent (200, direct, HTTPS), transport security notable (HSTS one year without
+home on that run: status excellent (200, direct, HTTPS), transport security strong (HSTS one year without
 `includeSubDomains`), title and meta description good (description outside the 120–160 convention), language
-excellent, words-without-JS not rated (reported as a number only), JSON-LD nodes notable, entity excellent,
+excellent, words-without-JS not rated (reported as a number only), JSON-LD nodes strong, entity excellent,
 canonical excellent, hreflang excellent, headings excellent, anchors excellent, images excellent,
 search-robots excellent (4 of 4 answer-engine tokens), sitemap excellent. The inspector publishes the rule
 behind each label and a command per number; those commands were not re-executed one by one here beyond the
@@ -203,7 +203,7 @@ None of these is a defect against a published rule; each is a fact the owner may
    content; whether that is intended is `needs-verification`.
 2. **Four sitemap entries without `<lastmod>`**: the two homes and the two notes listings (§2).
 3. **The homes emit no `WebPage` node** and the entities carry no `logo`/`image` (§3); the inspector rates its
-   own home "notable" here.
+   own home "strong" here.
 4. **Meta descriptions above 160 characters** on the homes, the case study and four of the five notes (§8).
 5. **HSTS without `includeSubDomains`** (§8).
 6. **Instrument hygiene, for anyone re-measuring:** a helper that strips `<noscript>` or uses a narrower
