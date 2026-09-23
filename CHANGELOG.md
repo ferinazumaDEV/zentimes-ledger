@@ -42,6 +42,93 @@ items) is printed next to every number taken this way.
 
 ## 2026-09-23
 
+### Criteria v2026.11 — rebuilt from verified evidence, labels that move, and a fetch defect fixed (observed live ~15:35Z)
+
+**What changed.** The inspector's report now prints `Criteria v2026.11 · 2026-09-23`, one version after the
+v2026.10 observed at 13:52Z (entry below). This version was not written by adding rules; it was rebuilt from
+its sources. 64 cited sources were confirmed by a second reviewer and re-opened by that reviewer before release:
+38 are backed by a literal sentence on the cited page as read on 2026-09-23; **4 statements were cited to the
+wrong page** and were re-attributed (the 12-hour / 30-day robots.txt caching behaviour is on Google's robots.txt
+specification page, not elsewhere; the 10-redirect-hop limit is on Google's HTTP status codes page; Googlebot's
+2 MB fetch limit is on the Googlebot page dated 2026-02-03; the `lastmod` format is on sitemaps.org); **8
+statements said more than their source** and were rewritten as inferences, marked as such on the page: treating
+`429` like `5xx` is an inference from two Google pages, not RFC 9309; Google does not state what `Google-Extended`
+does to AI Overviews; `nosnippet` / `max-snippet` for Bing is a convention, not a documented rule; "do not block by
+IP" is Anthropic's advice only; Common Crawl implies but does not state robots.txt compliance; "content after
+500 KiB is ignored" is Google's sentence, not the RFC's; "clear sourcing" is in Google's helpful-content guide,
+not its AI-features guide. Full rule text of the v2026.11 cards, quoted from the English page:
+[`criteria/v2026.11.md`](criteria/v2026.11.md).
+
+**Labels that move, and why (from the page's own v2026.11 history entry).** Each item is a rule that was
+stricter than its source, or a card that decided a level it had no ground to decide:
+
+- one `h1` and a number of `h2` no longer required — HTML allows several `h1`;
+- `x-default` no longer required — Google recommends it, does not require it;
+- `og:url` and the title / description lengths no longer decide the level — the description has no limit per Google;
+- redirects from the pasted URL no longer count against the page — Googlebot follows up to 10;
+- no sitemap becomes **not rated** rather than a low label;
+- HSTS preload not required — hstspreload.org itself does not recommend it;
+- "no entity" becomes **not rated** on inner pages;
+- robots.txt is evaluated on the page's own path for the 7 agents that decide appearing in search and answers
+  (Googlebot, Bingbot, Applebot, OAI-SearchBot, Claude-SearchBot, Claude-User, PerplexityBot); training-crawler
+  policy becomes informative;
+- indexing is computed per engine (Google and Bing; the card shows the worse of the two);
+- language, viewport and images move to a class `accessibility`, marked on the page as not a cookbook class;
+- new cards: HTML size, encoding, valid `<head>`, crawlable links, hidden text (informative), visible structured
+  data, owner and contact;
+- outbound links and `llms.txt` become informative;
+- "chunking for AI" is explicitly **not rated** — Google states no requirement to break content into small
+  pieces. That is a statement about *rating*, not about the cookbook's chunk metric
+  (`03-content/chunk-friendly-structure`), which measures a precondition and is unchanged.
+
+**Vocabulary.** The class definitions printed on the page are the cookbook dataset's schema definitions,
+verbatim: `technical-seo`, `aeo` and `geo-precondition` are defined by what the number finishes, not by who reads
+it. `security` and `accessibility` are the inspector's own classes and are marked as not cookbook classes. The
+four cards that carry a cookbook metric id keep the dataset's class (`typed_entities` stays `aeo`).
+
+**Measured after release (2026-09-23 ~15:35Z, https://zentimes.es/, pinned cookbook v0.1.4 recipes through
+`tools/compare-inspector-vs-recipes.py`).** 4 of 4 equal: 526 · 9 · 8 · 9484. The cross-check statement on the
+cards still reads `13:32Z`, and that is correct: no `data-value` moved, so the statement was not re-issued. Home
+labels observed: JSON-LD nodes **Strong** (9; entity missing `name` / `url` / `logo`), heading hierarchy
+**Excellent** (1 `h1` · 5 `h2` · 0 skips · 0 empty), hreflang **Excellent** (`en, es, x-default`; 1 of 1 versions
+link back), sitemap **Strong** (missing `lastmod`), transport **Strong** (HSTS one year, no `includeSubDomains`),
+language **Excellent** and viewport **Excellent** (both `accessibility`), robots.txt for search engines and
+assistants **Excellent** 7/7, outbound links informative (3 links, 2 respond, 1 uncheckable), figures with a
+source **Not rated** (no percentages on the home). On https://zentimes.es/casos/kenetg/: article authorship
+**Excellent** (author visible), indexing per engine **Excellent / Excellent**, figures with a source **Low** 0/1 —
+the one percentage on the case page still links to nothing. That is a finding about the page, not about the
+instrument, and it stays printed.
+
+```sh
+python3 tools/compare-inspector-vs-recipes.py "$COOKBOOK" https://zentimes.es/   # 4 of 4 equal: 526 · 9 · 8 · 9484 (COOKBOOK from the tarball step at the top of this file)
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -o 'v2026\.11' | head -1   # v2026.11
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -o 'data-fact="[^"]*"[^>]*data-level="[^"]*"'   # one line per rated card: token and level
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2Fcasos%2Fkenetg%2F' | grep -o 'data-fact="[^"]*"[^>]*data-level="[^"]*"'   # the case page: authorship, indexing per engine, figures 0/1
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'insp-regla-v"[^>]*>(<!-- -->)?[a-z-]+(<!-- -->)? · (<!-- -->)?v2026\.[0-9.]+[0-9]' | sed 's/<!-- -->//g; s/.*>//' | sort | uniq -c   # classes per card, all v2026.11
+```
+
+**Release checks, as reported by the operations side** (`needs-verification` from outside: a client cannot run
+them). 70 tests over the real reading and criteria functions, all green; then five rules broken on purpose —
+`noarchive` applied to Google as well; the ACT zoom threshold changed from `< 2` to `< 1`; Applebot evaluated
+without inheriting Googlebot's group; a `canonical` outside `<head>` ignored; an hreflang without return link left
+unpenalised — each turning only its own test red. One test carried a wrong expectation (the `<summary>` of a
+closed `<details>` is visible text: 44 %, not 50 %) and the test, not the code, was fixed. Live measurement on
+five sites before release, including a real **Low** on a well-known encyclopedia page whose JSON-LD `headline`
+is a database description rather than the page title (visible structured data 0/2): the check finds a real
+mismatch on a page nobody would suspect, which is what it is for.
+
+**Instrument defect found and fixed in the same release, present since v2026.09** (reported by the operations
+side; the dated entry in [`operations/03-decision-history.md`](operations/03-decision-history.md) will follow).
+The fetch guard protected the connection but not the body read: a site that sends headers fast and the body
+slowly raised an uncaught timeout, and the inspector page answered `HTTP 500` instead of a report. Now, if some
+body arrived it is analysed with its own "slow" warning, kept separate from "truncated by size" so the HTML-size
+card does not lie about why the page is short; if nothing arrived it is reported as a network error. The redirect
+cap went from 4 to 10 hops (as Googlebot), each hop validated. Every label taken with v2026.09–v2026.10 on a
+page that answered `200` is unaffected; what the defect hid was the reports that were never produced.
+
+As with every entry in this file: none of these labels measures whether an engine retrieves, ranks, generates or
+cites. A rule dropped for lack of a source is a rule dropped; it is not evidence that the practice is harmless.
+
 ### Criteria v2026.10 published on the inspector — observed live at 13:52Z
 
 **What changed.** The inspector's report now prints `Criteria v2026.10 · 2026-09-23`. This is one version later

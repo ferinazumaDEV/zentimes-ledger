@@ -13,9 +13,9 @@ capture files; the rule files quote the English page only.
 |---|---|
 | Public pages | https://zentimes.es/tools/ai-inspector/ (EN) · https://zentimes.es/es/herramientas/inspector-ia/ (ES) |
 | Report run used | `?url=https://zentimes.es/` on both pages |
-| Captured | 2026-09-23 13:40Z (v2026.09.2) and 2026-09-23 14:44Z (v2026.10), `curl -sL <page>` — visible text saved under [`captures/`](captures/), one file per page and timestamp |
-| Version captured | **v2026.10** · 2026-09-23, current on the page at 14:44Z: full rule text in [`v2026.10.md`](v2026.10.md), captures `2026-09-23T1444Z-*`. Earlier the same day the page served **v2026.09.2** (captured 13:40Z, [`v2026.09.2.md`](v2026.09.2.md)); v2026.10 was first observed 13:52Z with seven new cards (see [`CHANGELOG.md`](../CHANGELOG.md)). |
-| Versions with their own file | [`v2026.10.md`](v2026.10.md) (full rule text, 24 cards) · [`v2026.09.2.md`](v2026.09.2.md) (full rule text, 17 cards) · [`v2026.09.1.md`](v2026.09.1.md) · [`v2026.09.md`](v2026.09.md) (history entries only; earlier rule text was not captured before it changed) |
+| Captured | 2026-09-23 13:40Z (v2026.09.2), 14:44Z (v2026.10) and 15:03Z (v2026.11), `curl -sL <page>` — visible text saved under [`captures/`](captures/), one file per page and timestamp |
+| Version captured | **v2026.11** · 2026-09-23, current on the page at 15:03Z: full rule text in [`v2026.11.md`](v2026.11.md), captures `2026-09-23T1503Z-*`. Earlier the same day the page served **v2026.10** (captured 14:44Z, [`v2026.10.md`](v2026.10.md)) and, before that, **v2026.09.2** (captured 13:40Z, [`v2026.09.2.md`](v2026.09.2.md)); v2026.10 was first observed 13:52Z with seven new cards (see [`CHANGELOG.md`](../CHANGELOG.md)). v2026.11 was already live at 15:03Z; the minute it went live between 14:44Z and 15:03Z was not observed. |
+| Versions with their own file | [`v2026.11.md`](v2026.11.md) (full rule text, 31 cards) · [`v2026.10.md`](v2026.10.md) (full rule text, 24 cards) · [`v2026.09.2.md`](v2026.09.2.md) (full rule text, 17 cards) · [`v2026.09.1.md`](v2026.09.1.md) · [`v2026.09.md`](v2026.09.md) (history entries only; earlier rule text was not captured before it changed) |
 | Reference cookbook | The GEO Cookbook **v0.1.4** (tag 2026-09-22), https://github.com/ferinazumaDEV/generative-engine-optimization-cookbook |
 
 ## The promise text (verbatim)
@@ -43,35 +43,41 @@ Six states. The page's HTML carries the Spanish token in `data-level`; the Engli
 | `buena` | Buena | Good | the basic property holds; a convention is missed |
 | `baja` | Baja | Low | the property is present but defective |
 | `nula` | Nula | None | the property is absent or the page does not respond |
-| `sin-evaluar` | Sin valorar | Not rated | a number is printed with no label, on purpose |
+| `sin-evaluar` | Sin valorar | Not rated | a value is printed and, on purpose, not graded: informative cards, and since v2026.11 every "not applicable" outcome |
 
-Three cards carry no `data-level` at all (informational: distinct Schema.org types, the eight-token robots.txt
-card, `/llms.txt`). Several rules also define a "not applicable" outcome (no hreflang, no images, no `#id` links)
-that is printed as text, not as a label. Since v2026.10, two of the new cards (article authorship, figures with a
-source) print their "not applicable" outcome as the `sin-evaluar` label instead, with `—` as the value.
+Under v2026.10, three cards carried no `data-level` at all (informational: distinct Schema.org types, the
+eight-token robots.txt card, `/llms.txt`), several rules defined a "not applicable" outcome (no hreflang, no
+images, no `#id` links) that was printed as text, not as a label, and two of the new cards (article authorship,
+figures with a source) printed their "not applicable" outcome as the `sin-evaluar` label with `—` as the value.
+Under v2026.11 only one card has no `data-level` (distinct Schema.org types); the robots.txt eight-token card and
+`/llms.txt` carry `data-level="sin-evaluar"` with a rhythm line and an evidence class, every rule that defines a
+"not applicable" outcome prints it as the `sin-evaluar` label, and three cards are informative by rule (hidden
+text, outbound links, `/llms.txt`), so they are always `sin-evaluar`.
 
 ## Fields printed on every card
 
-Read from the report HTML (class names as served on 2026-09-23; counts are for **v2026.10**, the version
-captured at 14:44Z; the v2026.09.2 counts are in [`v2026.09.2.md`](v2026.09.2.md)):
+Read from the report HTML (class names as served on 2026-09-23; counts are for **v2026.11**, the version
+captured at 15:03Z; the v2026.10 counts are in [`v2026.10.md`](v2026.10.md) and the v2026.09.2 counts in
+[`v2026.09.2.md`](v2026.09.2.md)):
 
 | field | where | values seen |
 |---|---|---|
-| title of the check | `dt > span` | 24 cards (17 in v2026.09.2) |
-| label | `span.insp-nivel.n-<level>` | see vocabulary |
-| measured value | `p.insp-valor` | e.g. `200 · 22 ms`, `526`, `9`, `—` |
-| why | `p.insp-porque` | one sentence, e.g. "200 direct." |
+| title of the check | `dt > span` | 31 cards (24 in v2026.10, 17 in v2026.09.2) |
+| label | `span.insp-nivel.n-<level>` | see vocabulary; 30 cards carry one |
+| measured value | `p.insp-valor` | e.g. `200 · 25 ms`, `526`, `9`, `48 KB`, `—` |
+| why | `p.insp-porque` | one or two sentences, e.g. "Returns 200 directly." |
 | how to improve it | `div.insp-mejora` | only when the label is below excellent |
-| rhythm + reason | `span.insp-ritmo.r-estable` / `.r-cambiante` | **Stable** (12 cards) or **Changing** (9 cards), followed by the reason, e.g. "RFC 6797", "depends on whether AI crawlers run JavaScript" |
-| the rule | second `span` in `p.insp-regla` | verbatim in [`v2026.10.md`](v2026.10.md) |
-| evidence class + version | `span.insp-regla-v` | `technical-seo` (12) · `geo-precondition` (6) · `aeo` (2) · `security` (1), each followed by `v2026.10` |
-| caveat | `p.insp-matiz` | e.g. "Counting nodes is not validating them."; on the completeness card it is the full list of minimums per type |
-| cookbook link | `data-metric`, `data-recipe`, `data-value` on the card, and a line `<metric id> · <recipe path> · cross-checked <date> (<time>Z) against cookbook v0.1.4` | 4 cards |
+| rhythm + reason | `span.insp-ritmo.r-estable` / `.r-cambiante` | **Stable** (21 cards) or **Changing** (9 cards), followed by the reason, e.g. "RFC 6797 and the HSTS preload list requirements", "if AI crawlers start running JavaScript, the rule changes"; 30 cards carry one |
+| the rule | second `span` in `p.insp-regla` | verbatim in [`v2026.11.md`](v2026.11.md); since v2026.11 most rules end with a "Source(s): … Convention(s): …" sentence |
+| evidence class + version | `span.insp-regla-v` | `technical-seo` (20) · `geo-precondition` (4) · `aeo` (2) · `security` (1) · `accessibility` (3), each followed by `v2026.11`; `security` and `accessibility` are not cookbook classes |
+| caveat | `p.insp-matiz` | 3 cards in v2026.11 (HTTP response, robots.txt eight tokens, structured data and entity), e.g. "Counting nodes is not validating them." |
+| cookbook link | `data-metric`, `data-recipe`, `data-value` on the card, and a line `p.insp-metrica`: `<metric id> · <recipe path> · cross-checked <date> (<time>Z) against cookbook v0.1.4` | 4 cards |
 | reproduce it | `details.insp-cmd > pre > code` | one shell command per card |
 
-The version/date line at the top of a report reads `Criteria v2026.10 · 2026-09-23`. On the landing page it
-reads `Criteria v2026.10` without the date. The v2026.10 history entry says the criteria "now carry a review
-date"; no such date is printed anywhere on the page or present in its HTML, only that sentence.
+The version/date line at the top of a report reads `Criteria v2026.11 · 2026-09-23`. On the landing page it
+reads `Criteria v2026.11` without the date. The v2026.10 history entry says the criteria "now carry a review
+date"; no such date is printed anywhere on the page or present in its HTML under v2026.10 or v2026.11, only
+that sentence.
 
 ### Rhythm is not evidence class
 
@@ -87,22 +93,29 @@ The `Stable / Changing` field says that, with its reason. The landing page expla
 
 `security` is the inspector's own class: cookbook v0.1.4's schema allows exactly three values and its
 `validate.py` refuses a fourth, so the transport check could not have been filed under any cookbook class.
+Since v2026.11 there is a second such class, `accessibility` (declared language, viewport and zoom, image alt
+text); the history entry names it as "not a cookbook class" itself.
 
 ## The cross-check statement
 
-Four cards print, on 2026-09-23 (the same line under v2026.09.2 and v2026.10: the statement was not re-run
-when the version changed):
+Four cards print, on 2026-09-23 (the same line under v2026.09.2, v2026.10 and v2026.11: the statement was not
+re-run when the version changed):
 
 > `<metric id>` · `<recipe path>` · cross-checked 2026-09-23 (13:32Z) against cookbook v0.1.4
 
-| metric id | recipe path | inspector card |
-|---|---|---|
-| `words_visible_no_js` | `04-technical/ssr-vs-csr-rendering` | Words present without running JavaScript |
-| `typed_entities` | `04-technical/structured-data-jsonld` | JSON-LD nodes carrying an @type (nested included) |
-| `ai_user_agents_allowed` | `04-technical/ai-crawler-access` | robots.txt — AI agents (eight tokens) |
-| `llms_txt_bytes` | `04-technical/ai-crawler-access` | /llms.txt |
+| metric id | recipe path | inspector card (v2026.11 title) | `data-value` at 14:44Z and 15:03Z |
+|---|---|---|---|
+| `words_visible_no_js` | `04-technical/ssr-vs-csr-rendering` | Words present without running JavaScript | 526 |
+| `typed_entities` | `04-technical/structured-data-jsonld` | Structured data and entity (JSON-LD nodes with @type) | 9 |
+| `ai_user_agents_allowed` | `04-technical/ai-crawler-access` | robots.txt — training and user agents (informative) | 8 |
+| `llms_txt_bytes` | `04-technical/ai-crawler-access` | /llms.txt (informative) | 9484 |
 
 All four ids exist in cookbook v0.1.4 (`<recipe>/reproduce.sh` and `dataset/geo-offline-measurements.csv`).
+Across the v2026.10 → v2026.11 change the four cards kept their `data-metric`, `data-recipe` and `data-value`
+(526 · 9 · 8 · 9484) and the cross-check statement still reads 13:32Z. Their evidence class also matches the
+class the ledger's [`METHOD.md`](../METHOD.md) records for the three v0.1.4 recipes (`technical-seo`, `aeo`,
+`technical-seo`): the words card and the structured-data card print the same class as before; the robots.txt
+eight-token card and `/llms.txt` printed no class at all under v2026.10 and now print `technical-seo`.
 The statement names a date, a time and a cookbook version on purpose: it is only true for that version, and a
 new cookbook tag makes it stale by its own wording until it is re-run. (Earlier that week, a first "cross-checked
 2026-09-22" statement had been made against a copy of the recipes that was not v0.1.4 for one of the four
@@ -119,26 +132,43 @@ Which checks reuse a cookbook metric id and which use their own grouping:
 | check | relation to the cookbook |
 |---|---|
 | Words without JavaScript | **same metric id** `words_visible_no_js`, same recipe command (`perl -0777`, entities `&#?[a-z0-9]+;` with flag `i`). |
-| JSON-LD nodes with @type | **same metric id** `typed_entities`: counts nodes, nested included, as the recipe does. |
-| robots.txt — AI agents | **same metric id** `ai_user_agents_allowed`: the recipe's eight tokens, printed but **not rated**. |
-| /llms.txt | **same metric id** `llms_txt_bytes` (UTF-8 bytes, not characters), printed but **not rated**. |
-| robots.txt — assistants that search to answer | **own grouping** (OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User). It decides a label; the cookbook's eight-token count is left intact for the cross-check. Two lists, two names, so one identifier never carries two meanings. |
-| Heading structure | **same class, own rule.** The rule says: "A convention: same class as the cookbook's chunking recipe, not its metric." The cookbook metric is `self_contained_chunks` (`03-content/chunk-friendly-structure`); the inspector counts h1/h2 and skips. |
-| Links to sections of this page (#id) | **same rule as `unresolved_fragment_links`, applied to the whole page** (the rule says so). That id is **not in cookbook v0.1.4**: it is the check proposed in cookbook pull request #32 (open on 2026-09-23, https://github.com/ferinazumaDEV/generative-engine-optimization-cookbook/pull/32). `needs-verification` until the PR is merged and tagged: the inspector cites a rule the pinned cookbook does not yet contain. |
-| Your entity's identity links (sameAs) | **own rule.** Grades whether sameAs targets respond. The cookbook's `entities_resolved` (`05-authority/entity-clarity-sameas`) counts names resolved to one Wikidata Q-ID; the inspector does not use it. |
+| Structured data and entity (JSON-LD nodes with @type) | **same metric id** `typed_entities`: counts nodes, nested included, as the recipe does. The label is decided by the inspector's own entity rule (v2026.11: entity with name, url and logo or image, plus a WebSite, on the home page). |
+| robots.txt — training and user agents (informative) | **same metric id** `ai_user_agents_allowed`: the recipe's eight tokens on the root path, printed but **not rated** (the caveat says so: "The data-value is the recipe's metric"). |
+| /llms.txt (informative) | **same metric id** `llms_txt_bytes` (UTF-8 bytes, not characters), printed but **not rated**. |
+| robots.txt — search engines and assistants | **own grouping.** v2026.11: seven agents (Googlebot, Bingbot, Applebot, OAI-SearchBot, Claude-SearchBot, Claude-User, PerplexityBot) on the page's path; v2026.10: four (OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User) on the root. It decides a label; the cookbook's eight-token count is left intact for the cross-check. Two lists, two names, so one identifier never carries two meanings. |
+| Heading hierarchy (v2026.11; "Heading structure" until v2026.10) | **own rule.** Until v2026.10 the rule said "same class as the cookbook's chunking recipe, not its metric" (class `geo-precondition`; the cookbook metric is `self_contained_chunks`, `03-content/chunk-friendly-structure`). v2026.11 drops that sentence, moves the card to `technical-seo` and Stable, and sources it to the HTML Living Standard. |
+| Links to sections of this page (#id) | **same rule as `unresolved_fragment_links`, applied to the whole page** (the rule says so, unchanged in v2026.11). That id is **not in cookbook v0.1.4**: it is the check proposed in cookbook pull request #32 (open on 2026-09-23, https://github.com/ferinazumaDEV/generative-engine-optimization-cookbook/pull/32). `needs-verification` until the PR is merged and tagged: the inspector cites a rule the pinned cookbook does not yet contain. |
+| Your entity's identity links (sameAs) | **own rule.** Grades whether sameAs targets respond. The cookbook's `entities_resolved` (`05-authority/entity-clarity-sameas`) counts names resolved to one Wikidata Q-ID; the inspector does not use it (v2026.11 says so: "Wikidata and quantity are not rewarded"). |
 | Distinct Schema.org types | informational, no cookbook id. Note the printed reproduce command prints the **count** (`sort -u \| wc -l`), while the card displays the **names**. |
-| Figures with a source (v2026.10) | **same idea, own rule.** The rule says it is "the cookbook's anchoring idea (the source next to the claim) applied to figures" and that any domain counts "as in the anchoring recipe"; it prints no metric id and no recipe path. Which recipe is meant: `needs-verification`. |
-| Structured data completeness (v2026.10) | **own rule**, class `aeo`, no cookbook id: sixteen types with a minimum property list, printed in full on the card. |
-| Publication and update dates, article authorship (v2026.10) | **own rules**, class `geo-precondition`, no cookbook id. |
-| Indexing directives, mobile viewport, outbound links (v2026.10) | **own rules**, class `technical-seo`, sourced to a standard or a stated convention (robots meta / X-Robots-Tag, "HTML and WCAG 1.4.4", HTTP semantics). |
-| status, transport, title/description, language, canonical, hreflang, images, sitemap | own rules, sourced to a standard or a stated convention (HTTP semantics, RFC 6797, RFC 6596, HTML Standard, WCAG 1.1.1, sitemaps.org 0.9, "a search convention for years"). |
+| Figures with a source | **same idea, own rule.** The rule says a source counts "as in the cookbook's anchoring recipe" (v2026.11) / "the cookbook's anchoring idea … applied to figures" (v2026.10); it prints no metric id and no recipe path. Which recipe is meant: `needs-verification`. The ledger's [`METHOD.md`](../METHOD.md) lists `06-measurement/citation-anchoring` (`claim_source_pairs`, markdown list items with an inline link), which counts something else. |
+| Properties per type (v2026.11; "Structured data completeness" in v2026.10) | **own rule**, class `aeo`, no cookbook id. v2026.10: sixteen types with a minimum list each, printed as a caveat. v2026.11: only types with properties documented by Google (Product, BreadcrumbList, ProfilePage required; Article, BlogPosting, NewsArticle, Organization recommended), inside the rule. |
+| Article dates, article authorship | **own rules**, no cookbook id. v2026.10: every page, class `geo-precondition`, Changing. v2026.11: articles only, class `technical-seo`, Stable, sourced to Google's Article documentation. |
+| Indexing directives (per engine), outbound links | **own rules**, class `technical-seo`. v2026.11 rates indexing per engine (Google and Bing, worse label wins) and makes outbound links informative (always not rated; "no source backs a scale for this"). |
+| HTML size, character encoding, head readable by Google, crawlable links, structured data visible on the page, owner and contact (new in v2026.11) | **own rules**, class `technical-seo`, no cookbook id, each sourced to a named document (a Googlebot page dated 2026-02-03, the HTML Standard and W3C, Google's documentation on valid metadata, crawlable links, its general structured data policy, its quality guidelines) with the cuts declared as conventions. |
+| Hidden text (informative, new in v2026.11) | **own rule**, class `geo-precondition`, no cookbook id, never rated ("there is no evidence-based threshold"). |
+| Declared language, viewport and zoom, image alt text | **own rules**, class `accessibility` since v2026.11 (`technical-seo` until v2026.10), sourced to WCAG 3.1.1, WCAG 1.4.4 with W3C ACT rule b4f0c3, and WCAG 1.1.1. |
+| status, transport, title/description/h1, canonical, hreflang, sitemap | own rules, class `technical-seo` (`security` for transport), sourced to a standard or a named document (HTTP semantics and Google's redirect documentation, RFC 6797 and hstspreload.org, Google's title-link, canonicalization and localized-versions documentation, sitemaps.org 0.9 with Google and Bing documentation). |
 
 ## Criteria history as printed on the page
 
-All four entries are dated the same day. Quoted verbatim from the English page as captured at 14:44Z; the
-Spanish page carries the same four entries (their Spanish text is in the `-es-` capture files).
+All five entries are dated the same day. Quoted verbatim from the English page as captured at 15:03Z; the
+Spanish page carries the same five entries (their Spanish text is in the `-es-` capture files).
 
-'GEO agent' is the page's own name for the reviewer role, quoted verbatim from the public criteria history.
+'GEO agent' and 'a second agent' are the page's own names for reviewer roles, quoted verbatim from the public
+criteria history.
+
+> **v2026.11 · 2026-09-23** — Rules rebuilt from verified evidence (64 sources confirmed by a second agent and
+> reviewed by the GEO agent). Labels that move from v2026.10, and why: one h1 and a number of h2 are no longer
+> required (HTML allows several h1); x-default is no longer required (Google recommends it, does not require
+> it); og:url and title/description lengths no longer decide the level (Google does not ask for them; the
+> description has no limit); redirects from the pasted URL no longer count (they depend on how it is pasted;
+> Googlebot follows up to 10); having no sitemap becomes "not rated" (Google does not need one on small,
+> well-linked sites); HSTS preload is not required (hstspreload.org does not recommend it); "no entity" becomes
+> "not rated" on inner pages; robots.txt is evaluated on the page's path and for the 7 agents that decide
+> appearing in search and answers, and training policy becomes informative; indexing is computed per engine
+> (Google and Bing). Classes: language, viewport and images move to accessibility (not a cookbook class). New:
+> HTML size, encoding, valid head, crawlable links, hidden text (informative), visible structured data, and
+> owner and contact. Outbound links and llms.txt become informative.
 
 > **v2026.10 · 2026-09-23** — Closes the gaps that let incomplete pages score "excellent": indexing (noindex,
 > nosnippet, X-Robots-Tag, which overrides everything), viewport, dates, article authorship, minimum properties
@@ -161,9 +191,10 @@ Spanish page carries the same four entries (their Spanish text is in the `-es-` 
 
 The captures include the page's navigation and call-to-action text unedited (menu, footer, the mini-audit
 line), because that is what the page prints around the cards; nothing was cut out of the visible text. The
-14:44Z captures were fetched with `--compressed` and the User-Agent `Mozilla/5.0 (compatible;
+14:44Z and 15:03Z captures were fetched with `--compressed` and the User-Agent `Mozilla/5.0 (compatible;
 ledger-capture/1.0)`, and had HTML entities unescaped and runs of whitespace collapsed; each file says so in its
-header.
+header. In those captures every HTML tag starts a new line, so a history entry appears as two lines (the bold
+version token, then the dated text) and a card's title and label are on separate lines.
 
 ```sh
 # the pages (visible text is what captures/ holds; tags, <script> and <style> stripped, nothing else edited)
@@ -193,9 +224,13 @@ browser is needed to read it.
 - It does not carry the rule text of v2026.09 or v2026.09.1: both were replaced the same day they were published
   and no capture of their rule text exists. Their files hold the history entry and what the operations history
   records about them, marked as such.
-- Where the page cites a source this record could not open (the llms.txt study of 137,210 domains), the claim is
-  quoted as printed and marked `needs-verification` in the version file.
-- The v2026.10 home-page values were not re-run with the printed commands for this record; they are the
-  report's own output at 14:44Z. The v2026.09.2 values were re-run at 13:42Z and matched.
+- Where the page cites a source this record could not open (the llms.txt study of 137,210 domains under
+  v2026.09.2 and v2026.10; the "Vercel/MERJ study, Dec 2024" named in the v2026.11 words rule), the claim is
+  quoted as printed and marked `needs-verification` in the version file. v2026.11 no longer prints the llms.txt
+  study sentence.
+- The v2026.10 and v2026.11 home-page values were not re-run with the printed commands for this record; they
+  are the report's own output at 14:44Z and 15:03Z. The v2026.09.2 values were re-run at 13:42Z and matched.
+- The 64 sources the v2026.11 history entry says were confirmed are not listed on the page; this record cannot
+  say which they are.
 
-Author: Fernando Aporta Franco · ferinazumaDEV / Zentimes. Captured 2026-09-23 (13:40Z and 14:44Z).
+Author: Fernando Aporta Franco · ferinazumaDEV / Zentimes. Captured 2026-09-23 (13:40Z, 14:44Z and 15:03Z).

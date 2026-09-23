@@ -49,3 +49,14 @@
   - footnotes did not count as a source: Wikipedia came out with "0 of 3", and the manual check gives 3 of 3.
 
   New findings on our own site: the home declares no dates, and the BlogPosting of one note carries no `image`.
+- **v2026.11: criteria rebuilt from verified evidence.** A workflow of 16 agents searched for sources (official documentation of the engines, standards, academic work). Another agent opened every one of them: 64 were confirmed and 20 were discarded, 17 of them because the source did not say what was attributed to it. Then an independent reviewer reopened the 44 sources that support labels already shown and corrected citations attributed to the wrong page and claims stronger than their source. What was an inference is written as an inference.
+
+  **Own rules withdrawn for lack of evidence:** "a single h1", "mandatory x-default", "og:url equal to the canonical", title and description lengths, counting redirects from the pasted URL, mandatory sitemap and HSTS preload.
+
+  **What comes in, with an official source:** robots.txt evaluated on the page's path for the seven search and answer agents; indexing directives per search engine (Google and Bing); valid head; encoding; HTML size; crawlable links; structured data visible on the page; responsible party and contact.
+
+  **Tests:** 70 tests on the real functions, and five rules broken on purpose, each one red only in its own test. The four cookbook metrics did not move (526, 9, 8 and 9,484).
+
+- **A defect of the instrument that had existed since the first version.** The inspector only protected the connection, not the reading of the page. A site that sends the headers fast and the body slowly caused an uncaught error, and the inspector answered 500. A real site uncovered it during prospecting. Now whatever was received is analysed and flagged as slow, a warning distinct from "truncated by size"; if nothing arrives at all, it is a network error. The redirect cap rises from 4 to 10, like Googlebot, and every hop keeps being validated.
+
+- **The 70 rule tests now gate the deploy.** Reported by the operations side. The tests live in the project as a test file outside the framework's type-check, and the deployment script runs them right after the type-check, so a broken rule no longer deploys. It was tested by breaking it on purpose in the real project file: applying `noarchive` to Google as well made the deployment dry run exit 1 with "the Googlebot noarchive index rule does not count"; restoring the file (byte-identical) made the clean dry run exit 0, with 70 of 70 passing.
