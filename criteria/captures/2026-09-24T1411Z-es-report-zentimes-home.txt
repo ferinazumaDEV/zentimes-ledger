@@ -1,0 +1,631 @@
+# Visible text capture — https://zentimes.es/es/herramientas/inspector-ia/?url=https%3A%2F%2Fzentimes.es%2F
+# Fetched 2026-09-24T1411Z (UTC) with: curl -sL --compressed -A 'Mozilla/5.0 (compatible; ledger-capture/1.0)' '<url>' (one request, after the 10-minute window that followed the 13:57Z EN fetch)
+# Tags stripped, scripts/styles/comments removed, entities unescaped, one visible line per line.
+# The page returned a SAVED report (its own notice, line 51 of this file: the same site is not re-inspected for a few minutes), with the version line "Criterios v2026-09-24 · 2026-09-24 13:57 UTC". It is complete and carries no provisional copies: every card appears once, final.
+
+Lo que un cliente de IA ve en tu página — inspector de citabilidad
+Saltar al contenido
+Zentimes
+Menú
+Servicios
+Auditoría GEO
+Implementación GEO
+Monitorización mensual
+Web y SEO técnico
+Todos los servicios →
+Trabajo
+Casos
+kenetg.com
+En abierto
+Experimentos
+Código abierto
+Recursos
+Notas
+Lo que no se mide no cuenta: cómo se prueba que el GEO funciona
+Cómo hacer que ChatGPT te cite: háblale en su idioma
+GEO no es SEO (pero lo necesita por debajo)
+Todas las notas
+Consulta
+Glosario
+Preguntas frecuentes
+Herramientas
+Inspector
+Sobre mí
+Contacto
+ES
+/
+EN
+Zentimes
+/
+Inspector
+Herramienta gratuita
+Lo que un cliente de IA ve de verdad en tu página
+Pega una URL. Cada comprobación sale con su valoración, la regla que la decide y el comando que la reproduce, para que no tengas que fiarte de mi palabra en ninguna.
+URL de tu página
+Inspeccionar
+Sin nota global y sin predicción. Los requisitos técnicos se cumplen o no; cada problema es un hallazgo con su gravedad; solo el contenido puede llegar a «excelente», y solo el 8 % mejor de una muestra publicada. Son propiedades de tu página, no una promesa: ninguna comprobación mide si una IA te cita, y eso es decisión del motor, que no controla nadie de fuera.
+https://zentimes.es/
+Criterios v2026-09-24 · 2026-09-24 13:57 UTC
+Tipo de página detectado:
+portada (home). `sustancia` con la curva de homes si está en español; en otro idioma, solo los mínimos y los hallazgos, con el percentil de referencia.
+Informe guardado: para no cargar tu servidor, el mismo sitio no se vuelve a inspeccionar en unos minutos.
+Revisé esta página y 6 de 27 URLs de tu sitio. Recorrer el sitio entero queda fuera de este inspector.
+Ver las páginas revisadas (7)
+https://zentimes.es/
+https://zentimes.es/legal/
+https://zentimes.es/es/casos/kenetg/
+https://zentimes.es/es/sobre-mi/
+https://zentimes.es/es/
+https://zentimes.es/es/herramientas/inspector-ia/
+https://zentimes.es/es/experimentos/
+18 peticiones a tu servidor en total (tope 24).
+Resumen
+Puertas: abiertas (la página se puede indexar y rastrear).
+Lo que una IA puede citar aquí: sin valorar. 268 palabras en frases legibles sin JavaScript. La muestra es de homes en español (44 de 56 tienen más): solo de referencia.
+Hallazgos: 0 críticos · 0 graves · 0 moderados · 1 menor, en 7 páginas revisadas.
+Requisitos técnicos: cumple 12 de 12 (lo normal; no es un mérito).
+Lo que más pesa para que te citen —que tu página responda a la pregunta concreta y dónde queda entre los resultados— no se puede medir desde una URL (Martinez, arXiv 2607.14035: «Topical Relevance and Position: The Two Most Robust Factors»). Esto mide lo que sí se puede: si hay algo que leer y citar, y si nada lo impide.
+Qué necesitas
+Menor
+2 páginas con la misma descripción.
+B2 · Tu sitio, no solo esta página
+Dónde:
+https://zentimes.es/ · https://zentimes.es/legal/
+Generative Engine Optimization (GEO): I build the structure that makes your bra…
+Por qué importa:
+Google: «Identical or similar descriptions on every page of a site aren't helpful when individual pages appear in search results».
+Cómo arreglarlo:
+Una descripción propia en cada página, o ninguna.
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<meta[^>]+name="description"[^>]*>'
+B1 · Contenido que una IA puede leer y citar
+Lo que una IA puede leer y citar aquí
+Sin valorar
+268
+Sin valorar: la curva es de homes en español y esta página está en en. El percentil es solo de referencia. 268 palabras en frases legibles sin JavaScript (sin menú, pie, banner de cookies ni texto oculto). Percentil 21 de 56 homes de pymes españolas (muestra 2026-09). Compara, no promete: no hay un número de palabras que garantice que te citen. Al lado: 423 palabras en toda la página · 407 en el contenido principal · 37 % de plantilla · 12 bloques-frase · 64 ocultas por CSS · 0 del banner de consentimiento.
+Cambiante · la muestra se recalibra cada 90 días, y si los rastreadores de IA empiezan a ejecutar JavaScript la regla cambia
+Palabras en frases (bloques de 10 palabras o más, Kohlschütter et al., WSDM 2010: «we mark every block with at least 10 words as content») legibles sin JavaScript, sin menú, pie, banner de cookies ni texto oculto, frente a 56 homes de pymes españolas (muestra 2026-09, publicada sin nombres). Nula = menos de 250 caracteres en frases · baja = por debajo del p25 (294.8) · buena = del p25 al p75 (948.8) · notable = del p75 al p92 (1405.4) · excelente = p92 o más, y además legible (Readability, 140/20), menos del 15 % de bloques repetidos y ningún hallazgo de contenido. Excelente es el 8 % mejor, como el verde de Lighthouse: «the 25th percentile of HTTP Archive data becomes a score of 50 … and the 8th percentile becomes a score of 90» (allí menos es mejor; en palabras, más, así que su p25 y su p8 son nuestros p75 y p92). A menos del 5 % de un corte se dice «en el límite» y la etiqueta no cambia. Solo homes en español: en otro idioma no hay factor de conversión con evidencia y se da el dato con el percentil de referencia. Artículos, ofertas y otras: nula o buena por mínimos; notable y excelente, sin valorar hasta tener muestra de páginas interiores. Contacto, legal y listado: no se aplica. Por qué el texto sin JavaScript: Vercel/MERJ (dic-2024), «none of the major AI crawlers currently render JavaScript»; Google (ai-features), «Making sure that important content is available in textual form». Límite: Google, «there's no magical word count target». Convenciones: los cortes, el mínimo de 250, las condiciones del excelente y el 5 %.
+percentil · technical-seo · v2026-09-24
+El comando es una aproximación: el lector del inspector quita además los banners de consentimiento, el texto oculto por clase o estilo y los restos de plantilla.
+Reprodúcelo
+curl -s 'https://zentimes.es/' | python3 -c 'import sys,re
+from html.parser import HTMLParser
+B=set("p div li h1 h2 h3 h4 h5 h6 td th dd dt blockquote section article figcaption tr ul ol table address pre form main".split())
+F=set("script style noscript template svg iframe nav aside header footer select textarea button label".split())
+V=set("area base br col embed hr img input link meta source track wbr".split())
+class P(HTMLParser):
+def __init__(s):super().__init__();s.f=0;s.o=None;s.d=0;s.m=0;s.hm=0;s.b=[["",0]]
+def handle_starttag(s,t,a):
+if s.o:
+if t==s.o:s.d+=1
+return
+a=dict(a);e=(a.get("style") or "").replace(" ","").lower()
+if t not in V and ("hidden" in a or a.get("aria-hidden")=="true" or "display:none" in e or "visibility:hidden" in e):
+s.o=t;s.d=1;return
+if t=="main":s.m+=1;s.hm=1
+if t in F:s.f+=1
+elif t in B:s.b.append(["",s.m])
+def handle_endtag(s,t):
+if s.o:
+if t==s.o:
+s.d-=1
+if s.d==0:s.o=None
+return
+if t=="main":s.m=max(0,s.m-1)
+if t in F:s.f=max(0,s.f-1)
+elif t in B:s.b.append(["",s.m])
+def handle_data(s,d):
+if not s.f and not s.o:s.b[-1][0]+=" "+d
+p=P();p.feed(sys.stdin.read())
+n=lambda x:len([w for w in x.split() if re.search(r"\w",w)])
+print(sum(n(x) for x,m in p.b if n(x)>=10 and (m or not p.hm)))'
+B2 · Tu sitio, no solo esta página
+Las páginas revisadas del sitio
+Buena
+6/6
+6 de 6 páginas revisadas de 27 URLs del sitio sin hallazgos moderados o peores. 1 menor.
+Menor
+2 páginas con la misma descripción.
+Cómo mejorarlo
+Arregla los hallazgos de la lista, empezando por los graves. Recorrer el sitio entero queda fuera de este inspector.
+Cambiante · la muestra de páginas rota con cada versión de los criterios
+Se revisan hasta 6 páginas del sitio además de la pedida, elegidas de forma determinista (menú, huérfanas del sitemap, otros tipos del sitemap, la entrada más reciente y llms.txt). Buena = ningún hallazgo; con hallazgos, la etiqueta la pone el peor (moderado = baja, grave = baja, crítico = nula; menor = buena con nota). No encontrar defectos en 6 páginas es lo esperado, no un mérito, y no prueba que no los haya: «no encontrado en lo revisado». Método de recuento a la manera de Ahrefs («Only “Error” (red) issues lower health score»); contar desde moderado es convención.
+regla · technical-seo · v2026-09-24
+Reprodúcelo
+curl -sI 'https://zentimes.es/legal/' | head -1; curl -sI 'https://zentimes.es/es/casos/kenetg/' | head -1; curl -sI 'https://zentimes.es/es/sobre-mi/' | head -1; curl -sI 'https://zentimes.es/es/' | head -1; curl -sI 'https://zentimes.es/es/herramientas/inspector-ia/' | head -1; curl -sI 'https://zentimes.es/es/experimentos/' | head -1
+Sin valorar o no aplica: Profundidad del sitio
+Profundidad del sitio
+Sin valorar
+Mediana de 1316 palabras en frases en 4 página(s) interiores. Sin valorar: aún no hay muestra de páginas interiores con la que comparar.
+Cambiante · sin valorar hasta que exista la muestra de páginas interiores
+Mediana de palabras en frases de las páginas de la muestra de tipo artículo, oferta u otra, frente a una muestra de páginas interiores del mismo tipo. Esa muestra aún no existe, así que sale sin valorar; no se inventan cortes provisionales. Llegará en una versión posterior.
+percentil · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/legal/' | python3 -c 'import sys,re
+from html.parser import HTMLParser
+B=set("p div li h1 h2 h3 h4 h5 h6 td th dd dt blockquote section article figcaption tr ul ol table address pre form main".split())
+F=set("script style noscript template svg iframe nav aside header footer select textarea button label".split())
+V=set("area base br col embed hr img input link meta source track wbr".split())
+class P(HTMLParser):
+def __init__(s):super().__init__();s.f=0;s.o=None;s.d=0;s.m=0;s.hm=0;s.b=[["",0]]
+def handle_starttag(s,t,a):
+if s.o:
+if t==s.o:s.d+=1
+return
+a=dict(a);e=(a.get("style") or "").replace(" ","").lower()
+if t not in V and ("hidden" in a or a.get("aria-hidden")=="true" or "display:none" in e or "visibility:hidden" in e):
+s.o=t;s.d=1;return
+if t=="main":s.m+=1;s.hm=1
+if t in F:s.f+=1
+elif t in B:s.b.append(["",s.m])
+def handle_endtag(s,t):
+if s.o:
+if t==s.o:
+s.d-=1
+if s.d==0:s.o=None
+return
+if t=="main":s.m=max(0,s.m-1)
+if t in F:s.f=max(0,s.f-1)
+elif t in B:s.b.append(["",s.m])
+def handle_data(s,d):
+if not s.f and not s.o:s.b[-1][0]+=" "+d
+p=P();p.feed(sys.stdin.read())
+n=lambda x:len([w for w in x.split() if re.search(r"\w",w)])
+print(sum(n(x) for x,m in p.b if n(x)>=10 and (m or not p.hm)))'
+B3 · Quién está detrás
+Quién está detrás (entidad)
+Buena
+ProfessionalService · Zentimes
+ProfessionalService «Zentimes» · 3 sameAs (1 responden, 0 rotos, 2 no comprobables).
+Cómo mejorarlo
+Declara tu entidad con su name (el mismo que se lee en la página), enlaza tus perfiles reales con sameAs y ten una página de contacto que responda. No crees perfiles para pasar un control.
+Cambiante · cómo usan las entidades los motores aún se está estudiando
+Buena = se cumplen las cuatro: hay una entidad principal (Organization, LocalBusiness o Person) con name; ese name se lee en la página sin JavaScript (sin tildes ni mayúsculas); al menos un sameAs por HTTPS responde, o no hay sameAs pero sí dirección o teléfono visibles; y la página de «sobre» o contacto responde. Baja = sin entidad, el name no se ve (Google, sd-policies: «Don't mark up content that is not visible to readers of the page») o algún sameAs da 404/410. Nula = sin entidad, sin enlaces a «sobre» o contacto y sin datos de contacto visibles. 403, 429 y 999 cuentan como no comprobables. No hay notable ni excelente: no hay evidencia para graduar por número de sameAs. Convención: las cuatro condiciones.
+regla · geo-precondition · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '"(name|sameAs)":(\[[^]]*\]|"[^"]*")' | head
+Página de contacto o «sobre»
+Buena
+https://zentimes.es/contact/
+Responde y cumple: https://zentimes.es/contact/
+Cómo mejorarlo
+Enlaza desde el menú o el pie una página de contacto que funcione.
+Estable · principio de las guías de calidad de Google
+La página de «sobre» o de contacto enlazada tiene que responder 200 y cumplir lo de su tipo (un contacto con vías de contacto). Buena = sí · baja = no hay enlace (moderado), responde pero no cumple su tipo (moderado) o el enlace está roto (grave). Quién está detrás y cómo contactar es un criterio de confianza de las guías de calidad de Google, no una señal de ranking. Convención: las gravedades.
+regla · technical-seo · v2026-09-24
+Reprodúcelo
+curl -sIL 'https://zentimes.es/contact/' | grep -iE '^HTTP/'
+Sin valorar o no aplica: Autoría del artículo · Fechas del artículo
+Autoría del artículo
+Sin valorar
+No es un artículo.
+Estable · documentación de Article de Google
+Solo en artículos. Buena = hay autor (estructurado o en firma visible) y ningún hallazgo. Hallazgos: author de tipo Person con el nombre del sitio o del publisher, u Organization con nombre de persona (moderado; Google: «Use the Person type for people, and the Organization type for organizations»); la URL del autor redirige a la home (moderado, convención); un sameAs del autor apunta a un contenido y no a un perfil (menor); artículo sin autor (moderado, convención). Un author Organization que es la propia marca es válido: Google admite «Person or Organization». Convención: la lista de nombres de pila.
+regla · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '"@type":"(Article|BlogPosting|NewsArticle)"'
+Fechas del artículo
+Sin valorar
+— · —
+No es un artículo.
+Estable · documentación de fechas y de Article de Google; la frescura como factor queda fuera a propósito
+Solo en artículos. Buena = fecha estructurada ISO 8601 o fecha visible, no futura, sin contradicciones. Baja = fecha mal formada o futura, dateModified anterior a datePublished, o visible y estructurada que no coinciden el mismo día (moderado); o artículo sin ninguna fecha (moderado). Se informa si falta la zona horaria o la etiqueta («Publicado», «Actualizado»). Fuentes: documentación de fechas y de Article de Google; Vishwakarma et al. (SIGIR 2026): lo que ayuda de forma consistente es que la fecha sea reciente, y tener fecha frente a no tenerla solo es significativo en 2-3 de 6 modelos. Convenciones: el margen de 24 h y la coincidencia al día. La frescura como factor queda fuera a propósito.
+regla · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '"(datePublished|dateModified)":"[^"]*"|<meta[^>]+property="article:(published|modified)_time"[^>]*>|<time[^>]*>'
+B4 · Cómo se presenta
+Título de la página
+Buena
+Zentimes — GEO: make your brand citable by AI
+«Zentimes — GEO: make your brand citable by AI» · nombre del sitio: Zentimes.
+Cómo mejorarlo
+Un título que diga qué hay en la página: «Qué ofreces en dónde | Marca».
+Estable · documentación de Google sobre enlaces de título
+El título se parte por separadores rodeados de espacios (« | », « – », « — », « - », « · », « : »), así que «Coca-Cola» no se rompe. Baja = algún trozo es un rótulo vago de la lista versionada (Home, Inicio, Portada, Bienvenido…, Página principal, Untitled, Index, el lema por defecto de WordPress en inglés y en español), con hallazgo moderado (Google: «Avoid vague descriptors like “Home” for your home page»); o el título es solo el nombre del sitio (moderado, convención) · nula = sin título · buena = lo demás. El nombre del sitio sale de og:site_name, del name del WebSite o, si no hay, del dominio. Limitación: no detecta títulos de sección poco descriptivos.
+regla · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<title[^>]*>[^<]*</title>|<meta[^>]+property="og:site_name"[^>]*>'
+Título visible (h1)
+Buena
+I make your brand citable by AI — and I publish the proof.
+h1: «I make your brand citable by AI — and I publish the proof.».
+Cómo mejorarlo
+Un h1 con el tema de la página, coherente con el título.
+Estable · documentación de Google sobre enlaces de título
+Sin h1 = baja: el título visible de la página no está marcado, y el h1 es una de las fuentes que Google usa para el enlace de título («Heading elements, such as <h1> elements»); que sea baja es convención, ninguna fuente abierta dice que el h1 sea obligatorio · h1 genérico («Inicio», «Bienvenidos») = baja · h1 que refleja el título o uno de sus trozos (uno contiene al otro o comparten al menos la mitad de las palabras) = buena · h1 que es solo el nombre del sitio = buena, con nota · home sin contenido = sin valorar (ya lo dice el hallazgo de contenido; no se castiga dos veces). h1 vacío = menor (convención); h1 en un lateral = menor (Google: «When there's more than one large, prominent heading, and it isn't clear which text is the main title of the page»).
+regla · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<h1[^>]*>[^<]*|<aside[^>]*>'
+Jerarquía de encabezados
+Buena
+h1: 1 · h2: 5
+1 h1 · 5 h2 · 0 saltos · 0 vacíos.
+Estable · HTML Living Standard
+Buena = la página tiene encabezados. Los saltos de nivel (un h3 justo tras un h1), los vacíos y el número de h1 o h2 se informan y no bajan: Google, «no magical, ideal amount of headings», y el HTML Standard permite varios h1. El h1 se valora en su propia tarjeta. Sin encabezados, o página sin contenido = sin valorar.
+regla · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | perl -0777 -pe 's/<script.*?<\/script>//gis; s/<!--.*?-->//gs' | grep -oiE '<h[1-6][ >]' | tr -d '< >'
+Datos estructurados
+Buena
+9 nodos con tipo (Person, PostalAddress, ProfessionalService, WebSite, Service).
+Cómo mejorarlo
+JSON-LD válido, con las propiedades de cada tipo y describiendo lo que se ve en la página.
+Cambiante · las propiedades exigidas cambian con la documentación de Google
+Buena = JSON-LD sin bloques inválidos, sin nodos a los que les falte una propiedad requerida por Google (Product: name y offers, aggregateRating o review; ProfilePage: mainEntity) y con lo declarado visible en la página. Baja = algún bloque inválido (moderado), algún nodo sin requeridas (moderado: no es elegible para su resultado enriquecido), nombre, teléfono, dirección, titular o autor declarados y no visibles (moderado; Google, sd-policies: «Don't mark up content that is not visible to readers of the page»), o la home sin datos estructurados (moderado, convención: Google dice que no son necesarios para la búsqueda generativa, así que se valora como elegibilidad en la Búsqueda). Fuera de la home, sin datos = sin valorar. Solo Microdata o RDFa = sin valorar (no se leen). Un BreadcrumbList con menos de 2 ListItem no cuenta como completo pero no baja: Google, «define a BreadcrumbList that contains at least two ListItems», es la condición para las migas enriquecidas, no un error.
+regla · aeo · v2026-09-24
+Contar nodos no es validarlos. Google dice que los datos estructurados no son necesarios para la búsqueda generativa: se valoran como elegibilidad en la Búsqueda, con techo buena.
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<script[^>]+application/ld\+json[^>]*>.*</script>' | head -c 4000
+Enlaces a secciones de esta página (#id)
+Buena
+1
+1 enlaces a secciones propias.
+Cómo mejorarlo
+Cada enlace a #algo necesita un elemento con id="algo".
+Estable · HTML Standard
+Enlaces de la página a una sección suya (#id). Se ignoran los skip-links y #top, #content y #main: si solo hay esos, sin valorar. Buena = todos llevan a un id que existe. Un #id sin destino = menor (el HTML Standard exige que el id exista; la gravedad es convención). Los ids repetidos se informan.
+regla · geo-precondition · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE 'href="#[^"]*"' | sort -u
+Enlaces rastreables
+Buena
+56/56
+56 de 56 rastreables y con texto (100 %).
+Cómo mejorarlo
+Usa <a href="/ruta">texto</a> para toda la navegación y pon texto o alt en cada enlace.
+Estable · documentación de Google sobre enlaces rastreables
+Un enlace rastreable es un <a> con href resoluble y con texto de ancla (su texto o el alt de la imagen enlazada). Buena = el 90 % o más lo son · baja = menos del 90 % (moderado; el 90 % es convención) · sin valorar = menos de 5 enlaces. Google (links-crawlable): «Generally, Google can only crawl your link if it's an <a> HTML element … with an href attribute» y «Anchor text … tells people and Google something about the page you're linking to».
+regla · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<a [^>]*>' | head -50
+Sin valorar o no aplica: Texto alternativo de las imágenes
+Texto alternativo de las imágenes
+Sin valorar
+1 imágenes de contenido · 0 sin alt · 0 decorativas (alt="").
+Estable · WCAG 1.1.1
+Solo imágenes de contenido. Buena = todas llevan atributo alt. Imagen de contenido sin atributo alt = moderado (WCAG 1.1.1; convención la gravedad). alt="" es decorativa y no cuenta: el héroe que es todo el contenido con alt="" lo cubre el hallazgo de contenido en imagen. Con menos de 5 imágenes de contenido = sin valorar (mínimo de casos, convención), aunque el hallazgo se lista.
+regla · accessibility · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<img[^>]*>'
+Requisitos
+· cumple 12 de 12
+Respuesta HTTP
+Cumple
+200
+Responde 200 directo.
+Estable · semántica HTTP y documentación de códigos de estado de Google
+Cumple = la URL final responde 2xx. No cumple: no responde 2xx (crítico); responde 200 pero el título o el h1 dicen 404 o «no encontrado» y hay menos de 250 caracteres en frases (soft 404, crítico; Google: «an empty page or an error message»); meta refresh (menor: Google lo trata como redirección). 403 o 429 = sin valorar: puede ser un bloqueo al inspector; si Googlebot recibe lo mismo, es crítico. Los saltos no deciden: dependen de cómo se pegue la URL.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -sIL 'https://zentimes.es/' | grep -iE '^(HTTP/|location:)'
+HTTPS
+Cumple
+https
+Se sirve por HTTPS.
+Estable · documentación de Google sobre HTTPS y contenido mixto
+Cumple = la página se sirve por HTTPS. Sin HTTPS = grave. HSTS se informa aparte: es seguridad, no legibilidad.
+requisito · security · v2026-09-24
+Reprodúcelo
+curl -sI 'http://zentimes.es/' | grep -iE '^(HTTP/|location:)'
+Directivas de indexación (por buscador)
+Cumple
+—
+Google: — · Bing: —.
+Cambiante · cómo aplica cada buscador sus directivas a la IA sigue cambiando (la fuente de Bing es de 2023)
+Se mira Google y Bing por separado. Cumple = nada que saque la página o su texto. No cumple: noindex o none para los dos (crítico); para uno de los dos, o unavailable_after ya pasado en Google (grave); nosnippet o max-snippet:0, o noarchive para Bing, que según su anuncio de sep-2023 la saca de las respuestas de Copilot (grave); data-nosnippet sobre la mitad o más del texto principal (moderado, el 50 % es convención). max-snippet entre 1 y 159 y nocache se informan. Fuentes: robots-meta-tag y ai-features de Google; anuncio de Bing de septiembre de 2023. Un noindex en el HTML inicial cuenta aunque un script lo quite después.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -sI 'https://zentimes.es/' | grep -i '^x-robots-tag:'; curl -s 'https://zentimes.es/' | grep -oiE '<meta[^>]+name="(robots|googlebot|bingbot)"[^>]*>|data-nosnippet'
+robots.txt — buscadores y asistentes
+Cumple
+8/8 · Googlebot ✓ · Bingbot ✓ · Applebot ✓ · OAI-SearchBot ✓ · ChatGPT-User ✓ · Claude-SearchBot ✓ · Claude-User ✓ · PerplexityBot ✓
+8 de 8 agentes de búsqueda permitidos en esta ruta.
+Cambiante · la lista de agentes y sus funciones cambia cada pocos meses
+Sobre la ruta de esta página, solo para los agentes de búsqueda y recuperación: Googlebot, Bingbot, Applebot, OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot. Cumple = los permite. No cumple: los bloquea a todos (crítico) o robots.txt responde 5xx o 429 (crítico: los rastreadores asumen bloqueo); bloquea a alguno (grave: si lo decidiste tú, es una decisión legítima, pero puede reducir tu visibilidad en ese servicio; para OAI-SearchBot, OpenAI: «Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links»). Bloquear rastreadores de entrenamiento (GPTBot, Google-Extended, CCBot…) nunca es un defecto: se informa aparte. Sin robots.txt = cumple (todo permitido). Fuentes: RFC 9309 y especificación de robots.txt de Google.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -sf 'https://zentimes.es/robots.txt' | python3 -c 'import sys,re
+G={};C=[];S=0
+for l in sys.stdin:
+l=l.split("#")[0].strip()
+if ":" not in l: continue
+f,_,v=l.partition(":");f=f.strip().lower();v=v.strip()
+if f=="user-agent":
+C=C if S else [];C.append(v.lower());G.setdefault(v.lower(),[]);S=1
+elif f in("allow","disallow"):
+S=0
+for a in C:G[a].append((f,v))
+def m(p):
+e=p.endswith("$");b=p[:-1] if e else p
+return re.match("".join(".*" if c=="*" else re.escape(c) for c in b)+("$" if e else ""),"/")
+def ok(u):
+R=G.get(u.lower(),G.get("*"))
+if R is None:return 1
+L,A=-1,1
+for d,v in R:
+if v=="":
+if d!="disallow":continue
+n,x=0,1
+elif m(v):n,x=len(v),d=="allow"
+else:continue
+if n>L or(n==L and x):L,A=n,x
+return A
+print(sum(ok(u) for u in "Googlebot Bingbot Applebot OAI-SearchBot ChatGPT-User Claude-SearchBot Claude-User PerplexityBot".split()))'
+Tamaño del HTML
+Cumple
+48 KB
+48 KB.
+Cambiante · es un límite de implementación de Google, modificable
+Cumple = 2 MB o menos de HTML sin comprimir: lo que pasa del corte no se indexa. El límite está en la página de Googlebot, fechada 2026-02-03 (su resumen para máquinas aún dice 15 MB). Más de 2 MB = grave.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | wc -c
+Codificación de caracteres
+Cumple
+utf-8
+BOM: — · cabecera: utf-8 · meta: utf-8.
+Estable · HTML Standard y recomendación del W3C
+Cumple = codificación declarada por al menos una vía (BOM, cabecera Content-Type o <meta charset> en los primeros 1024 bytes) y sin contradicciones. Precedencia BOM > cabecera > meta (HTML Standard). Si falla = grave (convención). No UTF-8 se informa.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -sI 'https://zentimes.es/' | grep -i '^content-type:'; curl -s 'https://zentimes.es/' | head -c 1024 | grep -oiE '<meta[^>]*charset[^>]*>'
+Head legible para Google
+Cumple
+—
+Head sin elementos no válidos.
+Estable · documentación de Google sobre metadatos válidos
+Google lee el <head> hasta el primer elemento que no sea title, meta, link, script, style, base, noscript o template; lo de detrás lo ignora. No cumple = hay uno y deja metadatos detrás (moderado). Si no deja nada detrás, se informa.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | sed -n '/<head/,/<\/head>/p' | grep -oE '<[a-zA-Z][a-zA-Z0-9-]*' | sort | uniq -c
+URL canónica
+Cumple
+https://zentimes.es/
+Una sola, absoluta, a esta misma página.
+Estable · documentación de canonicalización de Google
+Cumple = como mucho una canónica, dentro del head efectivo y sin contradecir la cabecera Link. No cumple (moderado): varias canónicas distintas, contradicción entre HTML y cabecera, o canónica fuera del head (Google la ignora). No tener canónica no es un fallo (Google elige); apuntar a otra URL o ir en ruta relativa se informa. Fuente: documentación de canonicalización de Google.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -sI 'https://zentimes.es/' | grep -i '^link:'; curl -s 'https://zentimes.es/' | grep -oE '<link[^>]*rel="canonical"[^>]*>'
+Idioma declarado (<html lang>)
+Cumple
+en
+lang="en" · og:locale en_US · el texto está en en.
+Estable · WCAG 3.1.1
+Cumple = <html lang> presente, válido (BCP 47, aproximado por expresión regular) y del idioma del texto. Sin él, o con un idioma que no es el del texto, = menor. Se exige por accesibilidad, WCAG 3.1.1 (nivel A): Google dice que no usa lang para detectar el idioma. El idioma del texto lo da un detector de palabras vacías, poco fiable entre español, catalán, gallego y euskera: entre ellos no se compara.
+requisito · accessibility · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<html[^>]*>'
+Viewport y zoom
+Cumple
+width=device-width, initial-scale=1
+viewport: width=device-width, initial-scale=1
+Estable · WCAG 1.4.4 y regla ACT b4f0c3 del W3C
+Cumple = hay viewport y no bloquea el zoom. No cumple: sin viewport (grave); zoom bloqueado, user-scalable=no/0 o maximum-scale menor que 2 (moderado, accesibilidad: falla WCAG 1.4.4 según la regla ACT b4f0c3 del W3C). Sin width=device-width se informa. Ninguna fuente dice que lo usen los motores de IA: se exige por accesibilidad y móvil.
+requisito · accessibility · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<meta[^>]+name="viewport"[^>]*>'
+Sitemap
+Cumple
+https://zentimes.es/sitemap.xml
+Sitemap válido · declarado en robots.txt · esta página: incluida · lastmod: solo fecha.
+Estable · protocolo sitemaps.org 0.9
+Cumple = XML válido según sitemaps.org 0.9, en UTF-8, dentro de límites (50.000 URLs, 50 MB) y con URLs absolutas del mismo host. No cumple (moderado): no es un sitemap válido, supera los límites, no es UTF-8 o lleva URLs relativas o de otro host. Sin sitemap = no aplica: Google no lo necesita en sitios pequeños y bien enlazados. Si incluye esta página, su lastmod y si está declarado en robots.txt se informan.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/robots.txt' | grep -i '^sitemap:'; curl -s 'https://zentimes.es/sitemap.xml' | grep -o '<loc>' | wc -l
+Versiones de idioma (hreflang)
+Cumple
+en, es, x-default
+3 valores, con x-default · 1 de 1 versiones devuelven el enlace.
+Estable · documentación de Google sobre versiones localizadas
+Solo se leen <link rel="alternate" hreflang> y la cabecera Link (un <a hreflang> no declara nada). Cumple = códigos válidos, URLs absolutas, dentro del head y cada versión comprobada (hasta 5) enlaza de vuelta. No cumple (moderado): alguna versión no devuelve el enlace (Google: los retornos son obligatorios; ese par se ignora), códigos no válidos, URLs relativas o anotaciones tras el corte del head. Sin hreflang = no aplica. Ninguna versión comprobable = sin valorar. Autorreferencia y x-default se informan.
+requisito · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '<link[^>]*hreflang="[^"]*"[^>]*>'; curl -s 'https://zentimes.es/es/' | grep -oE '<link[^>]*hreflang="[^"]*"[^>]*>'
+Datos sin valorar
+Palabras presentes sin ejecutar JavaScript
+539
+539 palabras en toda la página sin ejecutar JavaScript, contadas como la receta (menú, pie y banners incluidos).
+Informativa: es la métrica words_visible_no_js del cookbook, que cuenta TODO el texto del HTML inicial. La que se valora es `sustancia`, que solo cuenta frases del contenido principal.
+informativa · technical-seo · v2026-09-24
+words_visible_no_js
+04-technical/ssr-vs-csr-rendering · contrastado el 2026-09-24 (13:43Z) con cookbook v0.1.4
+Reprodúcelo
+curl -s 'https://zentimes.es/' | perl -0777 -pe 's/<script.*?<\/script>//gis; s/<style.*?<\/style>//gis; s/<!--.*?-->//gis; s/<[^>]+>/ /g; s/&#?[a-z0-9]+;/ /gi; s/\s+/ /g; s/^\s+|\s+$//g' | wc -w
+robots.txt — entrenamiento y agentes de usuario (informativa)
+8/8 · GPTBot ✓ · ClaudeBot ✓ · anthropic-ai ✓ · PerplexityBot ✓ · Google-Extended ✓ · CCBot ✓ · Applebot-Extended ✓ · Bytespider ✓
+Entrenamiento: GPTBot ✓ · ClaudeBot ✓ · anthropic-ai ✓ · Google-Extended ✓ · Applebot-Extended ✓ · CCBot ✓ · Bytespider ✓. Usuario: ChatGPT-User ✓ · Perplexity-User ✓.
+Cambiante · los agentes de entrenamiento y de usuario cambian de nombre y de función con frecuencia
+Informativa: bloquear rastreadores de entrenamiento (GPTBot, ClaudeBot, CCBot, Bytespider, Google-Extended, Applebot-Extended) es una decisión, nunca un defecto. Google-Extended, según Google, no afecta a la inclusión en la Búsqueda.
+informativa · technical-seo · v2026-09-24
+El data-value es la métrica de la receta: los ocho tokens sobre la raíz (/). Google-Extended gobierna solo entrenamiento y grounding — no afecta a la Búsqueda de Google.
+ai_user_agents_allowed
+04-technical/ai-crawler-access · contrastado el 2026-09-24 (13:43Z) con cookbook v0.1.4
+Reprodúcelo
+curl -sf 'https://zentimes.es/robots.txt' | python3 -c 'import sys,re
+G={};C=[];S=0
+for l in sys.stdin:
+l=l.split("#")[0].strip()
+if ":" not in l: continue
+f,_,v=l.partition(":");f=f.strip().lower();v=v.strip()
+if f=="user-agent":
+C=C if S else [];C.append(v.lower());G.setdefault(v.lower(),[]);S=1
+elif f in("allow","disallow"):
+S=0
+for a in C:G[a].append((f,v))
+def m(p):
+e=p.endswith("$");b=p[:-1] if e else p
+return re.match("".join(".*" if c=="*" else re.escape(c) for c in b)+("$" if e else ""),"/")
+def ok(u):
+R=G.get(u.lower(),G.get("*"))
+if R is None:return 1
+L,A=-1,1
+for d,v in R:
+if v=="":
+if d!="disallow":continue
+n,x=0,1
+elif m(v):n,x=len(v),d=="allow"
+else:continue
+if n>L or(n==L and x):L,A=n,x
+return A
+print(sum(ok(u) for u in "GPTBot ClaudeBot anthropic-ai PerplexityBot Google-Extended CCBot Applebot-Extended Bytespider".split()))'
+Nodos JSON-LD con @type (informativa)
+9
+9 nodos JSON-LD con @type, anidados incluidos.
+Informativa: es la métrica typed_entities del cookbook. Contar nodos no es validarlos: la calidad de los datos estructurados se valora en su tarjeta, con techo buena.
+informativa · technical-seo · v2026-09-24
+typed_entities
+04-technical/structured-data-jsonld · contrastado el 2026-09-24 (13:43Z) con cookbook v0.1.4
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -o '"@type":' | wc -l
+Tipos de Schema.org distintos presentes
+Person, PostalAddress, ProfessionalService, Service, WebSite
+Person, PostalAddress, ProfessionalService, Service, WebSite
+Informativa: los tipos de Schema.org distintos, anidados incluidos. Ninguno sube ni baja una etiqueta por estar.
+informativa · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -o '"@type":"[^"]*"' | sort -u | wc -l
+/llms.txt (informativa)
+HTTP 200 · 9332 bytes
+Existe (9332 bytes, 34 URLs).
+Cambiante · es una propuesta sin adopción documentada por los motores
+Informativa: tenerlo no sube ninguna etiqueta y no tenerlo no baja ninguna. Google: «You don't need to create new machine readable files, AI text files, or markup». Se informa porque se pregunta.
+informativa · technical-seo · v2026-09-24
+llms_txt_bytes
+04-technical/ai-crawler-access · contrastado el 2026-09-24 (13:43Z) con cookbook v0.1.4
+Reprodúcelo
+curl -s 'https://zentimes.es/llms.txt' | wc -c
+HSTS (informativa)
+max-age=31536000; includeSubDomains
+HSTS max-age=31536000; includeSubDomains.
+Estable · RFC 6797
+Informativa: HSTS (RFC 6797) es una buena práctica de seguridad, no de legibilidad, y no baja ninguna etiqueta. Lo recomendable según hstspreload.org es un año con includeSubDomains.
+informativa · security · v2026-09-24
+Reprodúcelo
+curl -sI 'https://zentimes.es/' | grep -i '^strict-transport-security:'
+Texto oculto y banner de consentimiento (informativa)
+64 palabras ocultas por clase o estilo · 0 en el banner de consentimiento · fechas ISO: 0 visibles fuera de <time>, 0 ocultas.
+Cambiante · depende de cómo renderice cada sistema
+Informativa: ocultar texto solo es un problema si es «solely to manipulate search engines» (políticas de spam de Google); hay ocultos legítimos, como la fecha hAtom de los temas o los menús. Estas palabras no cuentan en `sustancia`.
+informativa · geo-precondition · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<[a-z]+[^>]*(hidden|aria-hidden="true"|display: *none|visibility: *hidden|cookie)[^>]*>' | head -30
+Enlaces salientes (informativa)
+4
+4 enlaces externos · 4 comprobados: 2 responden, 0 rotos, 2 no comprobables.
+Estable · semántica HTTP
+Informativa: se piden hasta 10 enlaces a otros dominios. Los 404/410 generan un hallazgo menor; 403, 429 y 999 son no comprobables.
+informativa · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE 'href="https?://[^"]*"' | sort -u
+Datos concretos (informativa)
+123
+123 datos concretos por cada 1000 palabras · 0 de 0 cifras con fuente al lado.
+Estable · sin etiqueta: en la muestra no separa
+Informativa: en la muestra no separa webs, y Martinez (arXiv 2607.14035) lo resume: «not to “add numbers”». Se miran como mucho los 200 primeros párrafos con cifra (convención).
+informativa · geo-precondition · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oE '[0-9]+([.,][0-9]+)? ?(%|€)'
+Estructura de la página (informativa)
+<main>: sí · 11 enlaces internos desde el contenido · meta description: 159 caracteres · preloads duplicados: 0 · nombres declarados: Fernando Aporta Franco, Zentimes.
+Informativa: datos de la página sin juicio. Un wordCount inflado, la longitud de la descripción o el número de enlaces no tienen evidencia de efecto: se informan y no puntúan.
+informativa · technical-seo · v2026-09-24
+Reprodúcelo
+curl -s 'https://zentimes.es/' | grep -oiE '<main[^>]*>|<link[^>]+rel="preload"[^>]*>|<meta[^>]+name="(description|author)"[^>]*>|"wordCount":[^,}]*'
+Lo que este inspector no ve
+Maquetación rota, solapes, desbordes y contenedores.
+Imágenes de fondo CSS rotas, sliders e iframes vacíos, lazy-load dudoso.
+Contraste de color.
+Cuánto tapa el banner de cookies.
+Errores de consola (Lighthouse: «An Error message means there's a problem on your page that you need to resolve»).
+Esto lo revisa con navegador la mini-auditoría gratuita, en tus páginas clave, además de hacer consultas reales de tu sector en asistentes de IA.
+Y esto no lo ven ni este inspector ni la mini-auditoría:
+El resto de reglas de accesibilidad de axe.
+La diferencia entre el texto que pinta el navegador y el HTML.
+LCP, INP y CLS.
+Si se mide antes del consentimiento.
+Una misma persona con varios nombres.
+Recorrer el sitio entero: aquí se revisan esta página y 6 más.
+Esto mira una página y hasta 6 más de tu web. La mini-auditoría es gratis: hace consultas reales de tu sector en asistentes de IA y revisa con navegador tus páginas clave (maquetación rota, banner que tapa, contraste, errores de consola), y te dice qué arreglar primero.
+Pedir la mini-auditoría gratuita
+Criterios v2026-09-24
+Esto es una foto del día. Lo marcado como Estable lleva años valiendo. Lo marcado como Cambiante es la parte que el campo aún está descubriendo: cuando aprendamos algo nuevo, la regla cambiará y lo dirá este historial, con fecha y motivo. Por eso una etiqueta puede cambiar aunque tu web no haya cambiado.
+Desde v2026-09-24 cada versión se llama por su fecha de publicación (una segunda el mismo día llevaría el sufijo .2). Las anteriores conservan su nombre: hasta entonces el número era una secuencia, no un mes (v2026.11 no quiere decir noviembre; las siete se publicaron el 23-09-2026).
+Cómo se gradúa la «sustancia»: la muestra de referencia
+n = 56 · medida el 2026-09-23 · muestra pymes-es-2026-09. Se publican n, fecha, método y valores; nunca los nombres ni las direcciones de las webs.
+Método
+Palabras en frases (bloques de 10 palabras o más) legibles sin JavaScript en el HTML inicial de la home, sin menú, pie, banner de cookies ni texto oculto, medidas con el mismo lector que usa el inspector sobre 56 homes de pymes españolas descargadas una sola vez el 23-sep-2026 (muestra de conveniencia; 2 de 58 respondieron 403 y quedan fuera).
+Cortes
+Nula: menos de 250 caracteres en frases (absoluto; convención tomada del tamaño mínimo de extracción de trafilatura, no una regla de ningún buscador).
+Baja: por debajo del p25 (295 palabras).
+Buena: del p25 al p75 (295–949).
+Notable: del p75 al p92 (949–1405).
+Excelente: p92 o más (1405), y además texto legible (Readability), menos del 15 % de bloques-frase repetidos y ningún hallazgo de contenido. Es el 8 % mejor, como el verde de Lighthouse: Lighthouse pone su 50 en el percentil 25 de HTTP Archive y su 90 en el 8, en métricas donde menos es mejor; en palabras, más es mejor, así que su p25 y su p8 son nuestros p75 y p92.
+Percentiles con interpolación lineal. A menos del 5 % de un corte la tarjeta dice «en el límite» y la etiqueta no cambia. Con esta curva solo se etiquetan homes en español; aún no hay muestra de páginas interiores, así que artículos, ofertas y otras solo reciben mínimos y hallazgos.
+Los valores (palabras en frases, de menor a mayor)
+0 · 54 · 74 · 75 · 76 · 151 · 173 · 173 · 183 · 188 · 190 · 197 · 289 · 294 · 295 · 304 · 331 · 353 · 386 · 391 · 397 · 410 · 414 · 415 · 444 · 496 · 501 · 505 · 537 · 537 · 573 · 626 · 647 · 682 · 743 · 765 · 769 · 775 · 819 · 876 · 901 · 946 · 957 · 1047 · 1099 · 1114 · 1232 · 1274 · 1294 · 1308 · 1346 · 1445 · 1464 · 1828 · 1964 · 3504
+Cómo baja la etiqueta cada hallazgo
+La etiqueta es la más baja entre la que da la regla y el techo del peor hallazgo abierto. Los requisitos solo son Cumple / No cumple / No aplica: un fallo es un hallazgo, no una nota. Convención nuestra, por analogía con WCAG 2.2: «Conformance (and conformance level) is for full web page(s) only, and cannot be achieved if part of a web page is excluded».
+Peor hallazgo
+Métrica por percentil
+Comprobación con regla (techo buena)
+Crítico
+Nula
+Nula
+Grave
+Baja
+Baja
+Moderado
+Buena
+Baja
+Menor
+Notable
+Buena
+ninguno
+según el percentil
+Buena
+Qué se exige a cada tipo de página
+portada (home)
+`sustancia` con la curva de homes si está en español; en otro idioma, solo los mínimos y los hallazgos, con el percentil de referencia.
+artículo
+`sustancia` por mínimos (nula o buena); notable y excelente, sin valorar hasta la muestra de páginas interiores. Se aplican autoría y fechas.
+contacto
+No se aplica `sustancia`: se mira `contacto-util` (email, teléfono, formulario, dirección).
+legal
+No se aplica `sustancia`. Si es indexable y tiene menos de 250 caracteres en frases, hallazgo de página vacía.
+listado
+No se aplica `sustancia`: se cuentan sus enlaces a contenido (menos de 3, hallazgo moderado).
+oferta (servicio o producto)
+`sustancia` por mínimos (nula o buena), y la promesa de precios.
+otra
+`sustancia` por mínimos (nula o buena).
+Historial de criterios
+v2026-09-24
+· 2026-09-24 — Los criterios pasan a partir de los defectos. Los requisitos técnicos (respuesta, HTTPS, indexación, robots, codificación, viewport, canonical, idioma, sitemap, hreflang…) se cumplen o no; si no se cumplen, generan un hallazgo con gravedad: crítico, grave, moderado o menor. Solo la sustancia (palabras en frases legibles sin JavaScript, sin menú, pie, banner de cookies ni texto oculto) se gradúa hasta «excelente», por percentil de 56 homes de pymes españolas (muestra publicada con n, fecha, método y valores, sin nombres): «excelente» es solo el 8 % mejor, como el verde de Lighthouse, y además exige texto legible, menos del 15 % de bloques repetidos y ningún hallazgo de contenido. La profundidad del sitio sale «sin valorar» hasta tener una muestra de páginas interiores. Lo demás tiene techo «buena»: no tener defectos es lo esperado, no un mérito. Cada defecto abierto baja la etiqueta de su tarjeta (convención, por analogía con WCAG). Lo que se exige depende del tipo de página: una página de contacto no se mide por palabras. Se revisan hasta 6 páginas más del sitio, elegidas de forma determinista, con un máximo de 24 peticiones al origen, en serie, con 1 s de pausa, y se para si el servidor lo pide; esa parte llega después, con indicación de progreso. Se cierran puertas traseras: título «HOME», sin h1, BreadcrumbList de un elemento contado como completo, skip-links como anclas, soft-404 que no bajaba, responsable solo enlazado. Lo que este inspector no ve (maquetación, contraste, banner que tapa, errores de consola) lo revisa con navegador la mini-auditoría gratuita. Además: si la página no responde 2xx (un bloqueo al inspector, un 404), lo que llega no se analiza como si fuera tu página; cuando el lang de la página contradice el idioma del texto, manda el texto y el lang equivocado es un hallazgo aparte; el texto que React envía oculto por streaming tiene su propio hallazgo; el contenido de ejemplo de WordPress cuenta como relleno; la página de contacto y el aviso legal de un WordPress ya no pasan por artículos. Nota sobre los nombres: hasta aquí el número de versión era una secuencia, no un mes (las siete anteriores se publicaron el 23-09-2026); desde esta, el nombre es la fecha de publicación. Los resultados no son comparables con informes hechos con versiones anteriores. Muchas webs bajarán sin haber cambiado: lo que cambió es el criterio.
+v2026.11.2
+· 2026-09-23 — «Título, descripción y h1»: el h1 puede reflejar el título entero o cualquiera de sus trozos (separados por «|», «–» o «—»), no solo el primero. Con la regla anterior, un título con la marca delante («Marca — tema»), que Google admite con un separador a cualquier lado, nunca podía reflejar el h1.
+v2026.11.1
+· 2026-09-23 — La entidad principal (la que valoran «datos estructurados», «propiedades por tipo» y «sameAs») pasa a ser la que el propio grafo declara como publisher del WebSite; solo si no la declara, la primera entidad raíz. Antes dependía del orden del JSON-LD, no de lo que la web dice de sí misma.
+v2026.11
+· 2026-09-23 — Reglas rehechas con evidencia verificada (64 fuentes confirmadas por un segundo agente y revisadas por el GEO agent). Etiquetas que se mueven respecto a v2026.10 y por qué: ya no se exige un solo h1 ni un número de h2 (la norma HTML permite varios h1); x-default deja de exigirse (Google lo recomienda, no lo exige); og:url y las longitudes de título y descripción dejan de decidir el nivel (Google no los pide; la descripción no tiene límite); las redirecciones desde la URL pegada dejan de contar (dependen de cómo se pegue; Googlebot sigue hasta 10); no tener sitemap pasa a «sin valorar» (Google no lo necesita en sitios pequeños y bien enlazados); el preload de HSTS no se exige (hstspreload.org no lo recomienda); «sin entidad» pasa a «sin valorar» en páginas interiores; robots.txt se evalúa en la ruta de la página y para los 7 agentes que deciden aparecer en búsquedas y respuestas, y la política de entrenamiento pasa a informativa; la indexación se calcula por buscador (Google y Bing). Clases: idioma, viewport e imágenes pasan a accessibility (no es clase del cookbook). Nuevas: tamaño del HTML, codificación, head válido, enlaces rastreables, texto oculto (informativa), datos estructurados visibles y responsable y contacto. Salientes y llms.txt pasan a informativas.
+v2026.10
+· 2026-09-23 — Se cierran los huecos que dejaban sacar «excelente» a páginas incompletas: indexación (noindex, nosnippet, X-Robots-Tag, que manda sobre todo), viewport, fechas, autoría de artículos, propiedades mínimas por tipo de datos estructurados, enlaces salientes rotos y cifras con fuente. Los criterios pasan a tener fecha de revisión: si nadie los revisa en 45 días, el despliegue falla.
+v2026.09.2
+· 2026-09-23 — El HSTS sale de «respuesta» a su propia comprobación, «transporte». Es una buena práctica de seguridad, no de legibilidad: no podía bajar la etiqueta de la respuesta HTTP. Lo señaló el GEO agent al revisar v2026.09.1.
+v2026.09.1
+· 2026-09-23 — Exigencia subida: «excelente» pasa a significar que no queda nada verificable por mejorar en esa área (HSTS, Open Graph, og:locale, retorno de hreflang, sitemap con esta página y lastmod, grafo JSON-LD conectado, jerarquía de encabezados sin saltos, ids únicos). Nueva comprobación: texto alternativo de las imágenes. No se endurecieron las palabras sin JavaScript ni la cantidad de sameAs: ningún dato respalda un listón más alto.
+v2026.09
+· 2026-09-23 — Primera versión: etiqueta por comprobación con su regla publicada, sin nota global. Revisada antes de publicar por el GEO agent contra el cookbook.
+© 2026 Zentimes — Fernando Aporta Franco
+Notas
+Experimentos
+Código abierto
+Inspector
+Preguntas frecuentes
+Glosario
+Aviso legal
+llms.txt
+GitHub
+LinkedIn
+Instagram

@@ -84,3 +84,30 @@
   **Honest consequence:** the `<title>` counts as text visible without JavaScript, so the home metrics moved: 529 words (526 before) and 9,574 bytes of `llms.txt` (9,484 before). The cross-check with the cookbook of 23-09 at 13:32Z no longer matched the live site. The reviewer redid it at 15:59Z with the pinned v0.1.4 recipes: 4 of 4 equal (529, 9, 8 and 9,574). The inspector now shows that time.
 
   **Result measured live:** 27 of 27 pages rated strong or excellent (519 excellent, 36 strong). The remaining "strong" labels are deliberate: the sitemap `lastmod` without a time where the time is not known, because nothing is invented.
+
+## 2026-09-24
+
+- **v2026-09-24: the criteria now start from defects.** The site owner ran the inspector over a prospect's site, a generic WordPress install whose home page has no text: 0 words in sentences without JavaScript and a content that was, in its entirety, one image. It still got 13 "excellent", which is the median of 58 real small businesses. The yardstick did not separate an empty site from a worked one.
+
+  **Why it failed:**
+  - Half the cards measured hygiene that any SEO plugin ships by default and called it "excellent".
+  - What really separates one site from another, how much text there is to cite, came out "not rated".
+  - The inspector looked at one page only, so it saw nothing of what was broken on the rest of the site.
+
+  **What changed** (the site owner's decisions, with a specification produced by 9 agents and an adversarial critique that corrected 22 points):
+  - Technical requirements become "Met / Not met" and never yield a quality label.
+  - Every problem is a finding with a severity (critical, serious, moderate or minor) and caps the label of its block.
+  - Only "substance" can reach "excellent": the words in readable sentences without JavaScript, compared against a published sample of 56 home pages of Spanish small businesses. "Excellent" is only the top 8 %, the same point Lighthouse uses for its green. It is a **convention** and is declared as one: the sample, the exact metric and the command that reproduces it are public; the names of the businesses are not.
+  - What is required depends on the page type: a contact page is not measured in words.
+  - Besides the requested page, 6 more pages of the site are checked, with a maximum of 24 requests in series, a 1 s pause between them, a stop on a 429 or a 503, and at most one inspection per site every 10 minutes.
+  - From this version on, the name is the publication date: "v2026.10" read as October.
+
+  **Tests:** 512, every new rule seen red before green, plus a fuzz of 80 hostile patterns that forced regular expressions of quadratic cost to be rewritten as linear.
+
+  **Result measured live:**
+  - the prospect's site goes from 13 "excellent" to 0: 2 serious (the home page with no content, and lorem ipsum on a page-builder demo page), 8 moderate and 4 minor over 7 pages checked.
+  - zentimes.es/es/ is left with 0 findings, but its content comes out "low, on the edge": 290 words against a p25 of 294.8. The rule is not adjusted to our own figure: if we want more, the home page is expanded.
+
+  **Many sites will drop without having changed: what changed is the criteria.**
+
+  **A process failure, stated plainly:** this version was deployed without first going through the reviewer, as had been agreed. Its review is done after the fact, and whatever it breaks with evidence will come out as v2026-09-24.2.

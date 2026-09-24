@@ -40,6 +40,69 @@ items) is printed next to every number taken this way.
 
 ---
 
+## 2026-09-24
+
+### Criteria v2026-09-24 — requirements are met or not, every problem is a finding with a severity, only "substance" can reach excellent; Instagram in sameAs; skip link, `<main>` and shorter descriptions (measured 13:43:50Z, captured 13:54–13:57Z)
+
+**Criteria v2026-09-24, as reported by the operations side and read on the page.** A redesign, not a delta:
+technical requirements (response, HTTPS, indexing, robots, encoding, viewport, canonical, language, sitemap,
+hreflang) print **Meets / Does not meet / Not applicable** (`data-level` `cumple` / `no-cumple` / `no-aplica`)
+and never a quality label; every problem is a **finding** with a `data-severity` (`critico` / `grave` /
+`moderado` / `menor`, displayed Critical / Serious / Moderate / Minor) that caps its block's label; only the
+"substance" card (words in readable sentences without JavaScript, excluding menu, footer, cookie banner and
+hidden text) can reach **Excellent**, by percentile against a reference sample of 56 Spanish SME home pages
+(p92 or above, plus readability and repetition conditions and no content finding); every other rated card
+is capped at Good. Up to 6 more pages of the site are checked, at most 24 requests in series with a 1 s
+pause, stopping on a 429 or 503; one inspection per origin every 10 minutes. The report is now streamed: the
+served HTML carries the cards that can still change twice, a provisional copy with `data-provisional="true"`
+and the final one inside hidden containers; only the final copies are quoted in this ledger. The four
+cookbook-metric cards keep `data-metric` / `data-recipe` / `data-value` and are computed as before. The page's
+own history entry says results are not comparable with reports from earlier versions. Version names are now
+the publication date. Rule text, vocabulary, the cuts (p25 294.8 · p50 521 · p75 948.8 · p92 1405.4) and the
+home labels that moved against v2026.11.2: [`criteria/v2026-09-24.md`](criteria/v2026-09-24.md); the reference
+sample (n, date, method, the 56 values, no site names): [`criteria/sample-sme-es-2026-09.md`](criteria/sample-sme-es-2026-09.md);
+captures `criteria/captures/2026-09-24T1356Z-*-landing.txt` and `2026-09-24T1357Z-en-report-zentimes-home.txt`.
+The operations side reports 24 citations checked before implementing, 5 of them corrected, and 512 tests
+(`needs-verification` from outside).
+
+**Page changes, as reported by the operations side:** the Instagram profile added to `sameAs` of the `Person`
+and the `ProfessionalService` in EN and ES (the inspector's entity card now prints "3 sameAs (1 respond, 0
+broken, 2 uncheckable)" and stays Good; the label was not lowered); a skip link; a `<main>` element in every
+template; a note on the EN home; meta descriptions of 160 characters or fewer (the home's is 159, per the
+inspector's "Page structure" card).
+
+**Measured by the reviewer, 2026-09-24T13:43:50Z, pinned cookbook v0.1.4 recipes through
+`tools/compare-inspector-vs-recipes.py` on `https://zentimes.es/`:** `words_visible_no_js` **539** (529 on
+2026-09-23), `typed_entities` **9**, `ai_user_agents_allowed` **8**, `llms_txt_bytes` **9332** (9574 before);
+`typed_facts` 51, not shown by the inspector. Inspector final `data-value`s read at about 13:57Z from the saved
+report: 539 · 9 · 8 · 9332 — **4 of 4 equal**. `llms.txt` shrank from 9574 to 9332 bytes and the words rose from
+529 to 539 with the page changes above. On the EN report of the 13:54 UTC run the cross-check line on the cards
+still read `2026-09-23 (15:59Z)`, stale by its own wording for the two values that moved; the ES saved report
+of the 13:57 UTC run, fetched once at 14:11Z (`criteria/captures/2026-09-24T1411Z-es-report-zentimes-home.txt`),
+prints `contrastado el 2026-09-24 (13:43Z) con cookbook v0.1.4` with the same four values. The harness now
+ignores the provisional copies (`data-provisional`) and waits out the 10-minute limit before re-requesting a
+report.
+
+**Process, as the operations side states in its own history:** the version was deployed before the reviewer's
+pass, against what had been agreed; the review was done after the deploy. That post-deploy review found the
+deployed reference curve (the 56 values behind the "substance" cuts) was not exported anywhere outside the
+code; the operations side published the sample file the same day, and its translation is the file linked above.
+The operations history entry is translated in [`operations/03-decision-history.md`](operations/03-decision-history.md).
+
+```sh
+python3 tools/compare-inspector-vs-recipes.py "$COOKBOOK" https://zentimes.es/     # 4 of 4: 539 · 9 · 8 · 9332 (COOKBOOK from the tarball step at the top of this file; the harness skips data-provisional cards and respects the 10-minute limit)
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'data-metric="[^"]*"[^>]*data-value="[^"]*"' | sed -E 's/ data-recipe="[^"]*"//' | sort -u   # four lines: the metric ids and their values. data-recipe sits between the two attributes, so a pattern that expects them adjacent returns nothing (checked on both saved reports)
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'Criteria v2026-09-24[^<]*' | head -1   # Criteria v2026-09-24 · <date and time of the run>
+curl -s 'https://zentimes.es/' | grep -oE '"sameAs":\[[^]]*\]' | head -1   # three profile URLs, Instagram among them
+```
+
+A later request for the same origin does not start a new inspection: the ES request at 14:11Z returned the
+saved report of the 13:57 UTC run with a notice line saying the same site is not re-inspected for a few
+minutes. A client re-running the commands above should expect the saved report inside that window.
+
+Nothing above measures citation by any AI engine. Under this version most labels grade only the absence of a
+defect; "substance" grades a word count against a published sample, and the page says so.
+
 ## 2026-09-23
 
 ### Titles aligned with the h1, tables of contents, HSTS with includeSubDomains, criteria v2026.11.2, and the cross-check redone (measured 15:59:32Z)

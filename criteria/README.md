@@ -13,9 +13,9 @@ capture files; the rule files quote the English page only.
 |---|---|
 | Public pages | https://zentimes.es/tools/ai-inspector/ (EN) · https://zentimes.es/es/herramientas/inspector-ia/ (ES) |
 | Report run used | `?url=https://zentimes.es/` on both pages |
-| Captured | 2026-09-23 13:40Z (v2026.09.2), 14:44Z (v2026.10), 15:03Z (v2026.11) , 15:29Z (v2026.11.1, report pages only) and 17:20Z (v2026.11.2, report pages only), `curl -sL <page>` — visible text saved under [`captures/`](captures/), one file per page and timestamp |
-| Version captured | **v2026.11.2** · 2026-09-23, current on the page at 17:20Z: delta in [`v2026.11.2.md`](v2026.11.2.md) (one history entry, one rule changed on the title/h1 card, HSTS and the cross-check line moved); before it v2026.11.1: delta in [`v2026.11.1.md`](v2026.11.1.md) (one history entry, one convention changed, rule text otherwise identical to v2026.11), captures `2026-09-23T1529Z-*-report-*`. Before it, **v2026.11** (captured 15:03Z, full rule text in [`v2026.11.md`](v2026.11.md), captures `2026-09-23T1503Z-*`), **v2026.10** (captured 14:44Z, [`v2026.10.md`](v2026.10.md)) and **v2026.09.2** (captured 13:40Z, [`v2026.09.2.md`](v2026.09.2.md)); v2026.10 was first observed 13:52Z with seven new cards (see [`CHANGELOG.md`](../CHANGELOG.md)). v2026.11 was already live at 15:03Z and v2026.11.1 at 15:29Z; the minutes they went live (between 14:44Z and 15:03Z, and between 15:03Z and 15:29Z) were not observed. |
-| Versions with their own file | [`v2026.11.2.md`](v2026.11.2.md) (delta) · [`v2026.11.1.md`](v2026.11.1.md) (delta: the one changed convention, home labels that moved) · [`v2026.11.md`](v2026.11.md) (full rule text, 31 cards) · [`v2026.10.md`](v2026.10.md) (full rule text, 24 cards) · [`v2026.09.2.md`](v2026.09.2.md) (full rule text, 17 cards) · [`v2026.09.1.md`](v2026.09.1.md) · [`v2026.09.md`](v2026.09.md) (history entries only; earlier rule text was not captured before it changed) |
+| Captured | 2026-09-24 13:56Z (v2026-09-24, both landing pages), 13:57Z (v2026-09-24, EN report page, saved as raw HTML and converted; the report prints 13:54 UTC as its run time) and 14:11Z (v2026-09-24, ES report page, returned as the saved report of a 13:57 UTC run). 2026-09-23 13:40Z (v2026.09.2), 14:44Z (v2026.10), 15:03Z (v2026.11) , 15:29Z (v2026.11.1, report pages only) and 17:20Z (v2026.11.2, report pages only), `curl -sL <page>` — visible text saved under [`captures/`](captures/), one file per page and timestamp |
+| Version captured | **v2026-09-24** · 2026-09-24, current on the page at 13:54–13:57Z: a redesign, described in [`v2026-09-24.md`](v2026-09-24.md) (requirements met or not, findings with a severity, "substance" by percentile, site-wide checks, a streamed report; rule text of every card, the vocabulary of `data-class`, `data-level` and `data-severity`, and the home labels that moved against v2026.11.2). The reference sample behind the "substance" cuts: [`sample-sme-es-2026-09.md`](sample-sme-es-2026-09.md). Before it, **v2026.11.2** · 2026-09-23, current on the page at 17:20Z: delta in [`v2026.11.2.md`](v2026.11.2.md) (one history entry, one rule changed on the title/h1 card, HSTS and the cross-check line moved); before it v2026.11.1: delta in [`v2026.11.1.md`](v2026.11.1.md) (one history entry, one convention changed, rule text otherwise identical to v2026.11), captures `2026-09-23T1529Z-*-report-*`. Before it, **v2026.11** (captured 15:03Z, full rule text in [`v2026.11.md`](v2026.11.md), captures `2026-09-23T1503Z-*`), **v2026.10** (captured 14:44Z, [`v2026.10.md`](v2026.10.md)) and **v2026.09.2** (captured 13:40Z, [`v2026.09.2.md`](v2026.09.2.md)); v2026.10 was first observed 13:52Z with seven new cards (see [`CHANGELOG.md`](../CHANGELOG.md)). v2026.11 was already live at 15:03Z and v2026.11.1 at 15:29Z; the minutes they went live (between 14:44Z and 15:03Z, and between 15:03Z and 15:29Z) were not observed, nor was the minute v2026-09-24 went live (between 17:20Z on 2026-09-23 and 13:54Z on 2026-09-24). Since v2026-09-24 the version name is the publication date; the page says results are not comparable across that change. |
+| Versions with their own file | [`v2026-09-24.md`](v2026-09-24.md) (full rule text, 36 cards: 12 requirements, 12 rule cards, 2 percentile cards, 10 informative; plus [`sample-sme-es-2026-09.md`](sample-sme-es-2026-09.md)) · [`v2026.11.2.md`](v2026.11.2.md) (delta) · [`v2026.11.1.md`](v2026.11.1.md) (delta: the one changed convention, home labels that moved) · [`v2026.11.md`](v2026.11.md) (full rule text, 31 cards) · [`v2026.10.md`](v2026.10.md) (full rule text, 24 cards) · [`v2026.09.2.md`](v2026.09.2.md) (full rule text, 17 cards) · [`v2026.09.1.md`](v2026.09.1.md) · [`v2026.09.md`](v2026.09.md) (history entries only; earlier rule text was not captured before it changed) |
 | Reference cookbook | The GEO Cookbook **v0.1.4** (tag 2026-09-22), https://github.com/ferinazumaDEV/generative-engine-optimization-cookbook |
 
 ## The promise text (verbatim)
@@ -34,7 +34,25 @@ reranking, generation or citation". The labels below grade **preconditions** of 
 
 ## Label vocabulary
 
-Six states. The page's HTML carries the Spanish token in `data-level`; the English page translates it for display.
+**Since v2026-09-24 (2026-09-24)** the vocabulary has three layers, all carried as Spanish tokens in the HTML
+and translated on the English page (details and the observed counts in [`v2026-09-24.md`](v2026-09-24.md)):
+
+| attribute | tokens | EN display | where |
+|---|---|---|---|
+| `data-class` on `div.insp-item` | `requisito` · `regla` · `percentil` · `informativa` | printed as the token, e.g. `requisito · technical-seo · v2026-09-24` | every card |
+| `data-level` on a `requisito` card | `cumple` · `no-cumple` · `no-aplica` (· `sin-evaluar` when it cannot be checked) | Meets · Does not meet · Not applicable (· Not rated) | 12 cards; only `cumple` and `sin-evaluar` observed on the home |
+| `data-level` on a `regla` card | `nula` · `baja` · `buena` · `sin-evaluar` | None · Low · Good · Not rated | 12 cards, capped at Good by rule; only `buena` and `sin-evaluar` observed |
+| `data-level` on a `percentil` card | `nula` · `baja` · `buena` · `notable` · `excelente` · `sin-evaluar` | None · Low · Good · Strong · Excellent · Not rated | 2 cards ("substance", site depth); only `sin-evaluar` observed (English home page; no inner-page sample) |
+| `data-severity` on `li.insp-hallazgo` | `critico` · `grave` · `moderado` · `menor` | Critical · Serious · Moderate · Minor | one finding per problem, with `data-finding` and `data-block`; only `menor` observed |
+
+The label of a card is the lower of what its rule gives and the cap of the worst open finding in its block
+(Critical → None, Serious → Low, Moderate → Good on a percentile card and Low on a rule card, Minor → Strong
+on a percentile card and Good on a rule card). Informative cards carry no `data-level`. The tokens marked
+"not observed" are what the page's own tables and the operations side state; this record has not seen them
+printed.
+
+**Up to v2026.11.2 (2026-09-23):** six states. The page's HTML carries the Spanish token in `data-level`; the
+English page translates it for display.
 
 | `data-level` (HTML) | ES display | EN display | meaning as the page uses it |
 |---|---|---|---|
@@ -111,6 +129,20 @@ statement was not re-run when the version changed):
 | `typed_entities` | `04-technical/structured-data-jsonld` | Structured data and entity (JSON-LD nodes with @type) | 9 |
 | `ai_user_agents_allowed` | `04-technical/ai-crawler-access` | robots.txt — training and user agents (informative) | 8 |
 | `llms_txt_bytes` | `04-technical/ai-crawler-access` | /llms.txt (informative) | 9484 |
+
+Under v2026-09-24 (2026-09-24, read at 13:54–13:57Z) the four cards are informative (`data-class="informativa"`,
+no `data-level`), keep `data-metric`, `data-recipe` and `data-value` on both the provisional and the final
+copy. The EN report of the 13:54 UTC run still printed `cross-checked 2026-09-23 (15:59Z) against cookbook
+v0.1.4`; the ES saved report of the 13:57 UTC run (fetched 14:11Z) prints `contrastado el 2026-09-24 (13:43Z)
+con cookbook v0.1.4`. Their `data-value`s:
+`words_visible_no_js` **539** · `typed_entities` **9** · `ai_user_agents_allowed` **8** · `llms_txt_bytes`
+**9332** (529 · 9 · 8 · 9574 at 17:20Z on 2026-09-23; the two that moved did so with page changes, not with
+the criteria). The reviewer re-ran the pinned v0.1.4 recipes at 2026-09-24T13:43:50Z: 539 · 9 · 8 · 9332, 4 of
+4 equal to the inspector ([`CHANGELOG.md`](../CHANGELOG.md), 2026-09-24). The printed statement is stale by its
+own wording for the two moved values until the page prints the new time. The titles changed: "Words present
+without running JavaScript" (unchanged), "robots.txt — training and user agents (informative)" (unchanged),
+"JSON-LD nodes with @type (informative)" (was "Structured data and entity (JSON-LD nodes with @type)"; the
+entity rating moved to its own card without a metric id) and "/llms.txt (informative)" (unchanged).
 
 All four ids exist in cookbook v0.1.4 (`<recipe>/reproduce.sh` and `dataset/geo-offline-measurements.csv`).
 Across the v2026.10 → v2026.11 change the four cards kept their `data-metric`, `data-recipe` and `data-value`
@@ -221,8 +253,16 @@ curl -sL https://api.github.com/repos/ferinazumaDEV/generative-engine-optimizati
 COOKBOOK=$(ls -d ferinazumaDEV-generative-engine-optimization-cookbook-*/)
 ```
 
-The report is server-rendered: the `?url=` page arrives with all cards in the HTML, so `curl` is enough and no
-browser is needed to read it.
+Up to v2026.11.2 the report was server-rendered in one piece: the `?url=` page arrived with all cards in the
+HTML, so `curl` was enough and no browser was needed to read it. Since v2026-09-24 the report is streamed:
+`curl` still returns every card, but the cards that depend on the site-wide part appear twice, first as a
+provisional copy (`data-provisional="true"`, label "Checking…" or a value that may still change) and then
+final inside hidden containers. Read the final copies (`grep -v 'data-provisional'` on the `insp-item`
+lines), and expect one inspection per origin every 10 minutes at most: a later request returns the saved
+report of the last run, complete and without provisional copies, with a notice line saying so (the ES capture
+of 14:11Z is one). The 2026-09-24 EN report capture was made from the raw HTML saved at 13:57Z, with comments
+removed as well as tags, scripts and styles; the two 13:56Z landing captures and the 14:11Z ES report were
+fetched with the same command and User-Agent as the 2026-09-23 ones.
 
 ## What this folder does not claim
 
@@ -238,6 +278,12 @@ browser is needed to read it.
 - The v2026.10, v2026.11 and v2026.11.1 home-page values were not re-run with the printed commands for this
   record; they are the report's own output at 14:44Z, 15:03Z and 15:29Z. The v2026.09.2 values were re-run at 13:42Z and matched.
 - The 64 sources the v2026.11 history entry says were confirmed are not listed on the page; this record cannot
-  say which they are.
+  say which they are. The same holds for the 24 citations the operations side says it checked for v2026-09-24.
+- Under v2026-09-24, the tokens `no-cumple`, `no-aplica`, `nula`, `baja`, `notable`, `excelente`, `critico`,
+  `grave` and `moderado` were not observed on the site's own home page; they are recorded from the page's
+  tables and the operations side's description, not from a printed card. The 56 values of the reference
+  sample are as the page and the operations side publish them; the saved HTML files behind them are third
+  parties' pages and are not published, so only the interpolation over the 56 values can be re-run from
+  outside.
 
-Author: Fernando Aporta Franco · ferinazumaDEV / Zentimes. Captured 2026-09-23 (13:40Z, 14:44Z, 15:03Z and 15:29Z).
+Author: Fernando Aporta Franco · ferinazumaDEV / Zentimes. Captured 2026-09-23 (13:40Z, 14:44Z, 15:03Z, 15:29Z and 17:20Z) and 2026-09-24 (13:56Z and 13:57Z).

@@ -64,12 +64,25 @@ def run_recipe(cookbook, name, files):
 
 def inspector(url):
     report, code = fetch(f"{INSPECTOR}?{urllib.parse.urlencode({'url': url})}", timeout=90)
-    out = {}
-    for m in re.finditer(r'(?is)<[^>]*\bdata-metric=["\']([^"\']+)["\'][^>]*\bdata-value=["\']([^"\']*)["\']', report):
-        out[m.group(1)] = int(m.group(2)) if m.group(2).isdigit() else m.group(2)
+    # Since criteria v2026-09-24 the report is streamed: the raw HTML carries every card twice, a provisional
+    # copy marked data-provisional="true" and the final one. Only the final copy counts. The inspector also
+    # allows one inspection per origin every 10 minutes; when it serves the "inspected too recently" notice
+    # there is no report, and the values are left empty rather than read from a stale page.
+    out, provisional = {}, {}
+    for m in re.finditer(r'(?is)<[^>]*\bdata-metric=["\']([^"\']+)["\'][^>]*>', report):
+        tag = m.group(0)
+        v = re.search(r'\bdata-value=["\']([^"\']*)["\']', tag)
+        if not v:
+            continue
+        val = int(v.group(1)) if v.group(1).isdigit() else v.group(1)
+        (provisional if re.search(r"\bdata-provisional\b", tag) else out)[m.group(1)] = val
+    for mid, val in provisional.items():
+        out.setdefault(mid, f"{val} (provisional)")
+    if re.search(r"(?i)hace muy poco|inspected .{0,30}recently", report):
+        print("   notice: the inspector served its rate-limit notice (one inspection per origin every 10 minutes); no report")
     prose = re.sub(r"\s+", " ", re.sub(r"(?s)<[^>]+>", " ", re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", report)))
     stamp = re.search(r"cross-checked\s+(\d{4}-\d{2}-\d{2}\s*\(\d{2}:\d{2}Z\))\s+against\s+cookbook\s+(v[\d.]+)", prose)
-    crit = re.search(r"Criteria\s+(v\d{4}\.\d{2}[.\d]*)", prose)
+    crit = re.search(r"Criteria\s+(v\d{4}[.\-]\d{2}[.\-\d]*)", prose)
     return out, code, (stamp.group(1) + " " + stamp.group(2)) if stamp else None, crit.group(1) if crit else None
 
 

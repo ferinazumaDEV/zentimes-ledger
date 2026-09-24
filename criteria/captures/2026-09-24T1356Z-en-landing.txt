@@ -1,0 +1,124 @@
+# Visible text of https://zentimes.es/tools/ai-inspector/
+# Captured 2026-09-24 13:56Z with: curl -sL --compressed -A 'Mozilla/5.0 (compatible; ledger-capture/1.0)' 'https://zentimes.es/tools/ai-inspector/' (HTML tags, <script>, <style> and comments removed, entities unescaped, whitespace normalised; no other edits)
+
+What an AI client sees on your page — AI citability inspector
+Skip to content
+Zentimes
+Menu
+Services
+GEO audit
+GEO implementation
+GEO monitoring
+Web & technical SEO
+All services →
+Work
+Cases
+kenetg.com
+In the open
+Experiments
+Open source
+Resources
+Notes
+Lo que no se mide no cuenta: cómo se prueba que el GEO funciona
+Cómo hacer que ChatGPT te cite: háblale en su idioma
+GEO no es SEO (pero lo necesita por debajo)
+All notes
+Reference
+Glossary
+FAQ
+Tools
+Inspector
+About
+Contact
+EN
+/
+ES
+Zentimes
+/
+Inspector
+Free tool
+What an AI client actually sees on your page
+Paste a URL. Each check comes with its rating, the rule that decides it and the command that reproduces it, so you never have to take my word for any of them.
+Your page URL
+Inspect
+No overall score and no prediction. Technical requirements are met or not; every problem is a finding with a severity; only the content can reach "excellent", and only the top 8% of a published sample. These are properties of your page, not a promise: no check measures whether an AI cites you, which is the engine's decision and nobody outside it controls.
+Criteria v2026-09-24
+This is a snapshot of today. Checks marked Stable have held for years. Checks marked Changing are the part the field is still working out: when we learn something new, the rule changes and this history says so, with the date and the reason. That is why a label can change even if your site has not.
+Since v2026-09-24 a version is named after its publication date (a second one on the same day would get the suffix .2). Earlier versions keep their names: until then the number was a sequence, not a month (v2026.11 does not mean November; all seven were published on 2026-09-23).
+How "substance" is graded: the reference sample
+n = 56 · measured on 2026-09-23 · sample pymes-es-2026-09. Only n, date, method and values are published, never the sites' names or addresses.
+Method
+Words in sentences (blocks of 10 words or more) readable without JavaScript in the initial HTML of the home page, excluding menu, footer, cookie banner and hidden text, measured with the same reader the inspector uses on 56 home pages of Spanish small businesses downloaded once on 23 Sep 2026 (convenience sample; 2 of 58 returned 403 and are excluded).
+Cut-offs
+None: under 250 characters in sentences (absolute; a convention taken from trafilatura's minimum extraction size, not a search engine rule).
+Low: below p25 (295 words).
+Good: p25 to p75 (295–949).
+Strong: p75 to p92 (949–1405).
+Excellent: p92 or above (1405), and also readable text (Readability), under 15% repeated sentence blocks and no content finding. That is the top 8%, like Lighthouse's green: Lighthouse puts its 50 at the 25th percentile of HTTP Archive and its 90 at the 8th, for metrics where less is better; with words more is better, so their p25 and p8 are our p75 and p92.
+Percentiles by linear interpolation. Within 5% of a cut the card says "on the edge" and the label does not change. Only Spanish home pages are labelled with this curve; there is no inner-page sample yet, so articles, offers and other pages only get minimums and findings.
+The values (words in sentences, sorted)
+0 · 54 · 74 · 75 · 76 · 151 · 173 · 173 · 183 · 188 · 190 · 197 · 289 · 294 · 295 · 304 · 331 · 353 · 386 · 391 · 397 · 410 · 414 · 415 · 444 · 496 · 501 · 505 · 537 · 537 · 573 · 626 · 647 · 682 · 743 · 765 · 769 · 775 · 819 · 876 · 901 · 946 · 957 · 1047 · 1099 · 1114 · 1232 · 1274 · 1294 · 1308 · 1346 · 1445 · 1464 · 1828 · 1964 · 3504
+How each finding lowers a label
+The label is the lower of what the rule gives and the cap of the worst open finding. Requirements are only Met / Not met / Not applicable: a failure is a finding, not a grade. Our convention, by analogy with WCAG 2.2: "Conformance (and conformance level) is for full web page(s) only, and cannot be achieved if part of a web page is excluded".
+Worst finding
+Percentile metric
+Rule check (capped at good)
+Critical
+None
+None
+Serious
+Low
+Low
+Moderate
+Good
+Low
+Minor
+Strong
+Good
+none
+per percentile
+Good
+What each page type is asked for
+home page
+`substance` on the home-page curve if it is in Spanish; in another language, only the minimums and findings, with the reference percentile.
+article
+`substance` by minimums (none or good); strong and excellent not rated until the inner-page sample exists. Authorship and dates apply.
+contact
+`substance` does not apply: `contact-usefulness` is checked (email, phone, form, address).
+legal
+`substance` does not apply. If indexable with under 250 characters in sentences, empty-page finding.
+listing
+`substance` does not apply: its links to content are counted (under 3, moderate finding).
+offer (service or product)
+`substance` by minimums (none or good), and the price promise.
+other
+`substance` by minimums (none or good).
+Criteria history
+v2026-09-24
+· 2026-09-24 — The criteria now start from defects. Technical requirements (response, HTTPS, indexing, robots, encoding, viewport, canonical, language, sitemap, hreflang…) are met or not; if not, they raise a finding with a severity: critical, serious, moderate or minor. Only substance (words in sentences readable without JavaScript, excluding menu, footer, cookie banner and hidden text) is graded up to "excellent", by percentile of 56 home pages of Spanish small businesses (sample published with n, date, method and values, without names): "excellent" is only the top 8%, like Lighthouse's green, and also requires readable text, under 15% repeated blocks and no content finding. Site depth is "not rated" until there is an inner-page sample. Everything else is capped at "good": having no defects is expected, not a merit. Every open defect lowers its card's label (convention, by analogy with WCAG). What is required depends on the page type: a contact page is not measured in words. Up to 6 more pages of the site are checked, chosen deterministically, with at most 24 requests to the origin, one at a time, 1 s apart, stopping if the server asks; that part arrives later, with a progress indicator. Back doors are closed: a "HOME" title, no h1, a one-item BreadcrumbList counted as complete, skip links as anchors, a soft 404 that did not lower anything, an owner only linked. What this inspector cannot see (layout, contrast, a covering banner, console errors) is reviewed in a browser by the free mini-audit. Also: if the page does not return 2xx (a block on the inspector, a 404), what arrives is not analysed as if it were your page; when the page's lang contradicts the language of the text, the text wins and the wrong lang is a separate finding; text that React streams in hidden has its own finding; WordPress sample content counts as filler; a WordPress contact page and legal notice are no longer taken for articles. On names: until now the version number was a sequence, not a month (the previous seven were all published on 2026-09-23); from this one on, the name is the publication date. Results are not comparable with reports made under earlier versions. Many sites will drop without having changed: what changed is the criteria.
+v2026.11.2
+· 2026-09-23 — "Title, description and h1": the h1 may reflect the whole title or any of its segments (split by "|", "–" or "—"), not just the first. Under the previous rule, a brand-first title ("Brand — topic"), which Google accepts with a delimiter on either side, could never reflect the h1.
+v2026.11.1
+· 2026-09-23 — The main entity (rated by "structured data", "properties per type" and "sameAs") becomes the one the graph itself declares as the WebSite's publisher; only if it declares none, the first root entity. It used to depend on the JSON-LD order, not on what the site says about itself.
+v2026.11
+· 2026-09-23 — Rules rebuilt from verified evidence (64 sources confirmed by a second agent and reviewed by the GEO agent). Labels that move from v2026.10, and why: one h1 and a number of h2 are no longer required (HTML allows several h1); x-default is no longer required (Google recommends it, does not require it); og:url and title/description lengths no longer decide the level (Google does not ask for them; the description has no limit); redirects from the pasted URL no longer count (they depend on how it is pasted; Googlebot follows up to 10); having no sitemap becomes "not rated" (Google does not need one on small, well-linked sites); HSTS preload is not required (hstspreload.org does not recommend it); "no entity" becomes "not rated" on inner pages; robots.txt is evaluated on the page's path and for the 7 agents that decide appearing in search and answers, and training policy becomes informative; indexing is computed per engine (Google and Bing). Classes: language, viewport and images move to accessibility (not a cookbook class). New: HTML size, encoding, valid head, crawlable links, hidden text (informative), visible structured data, and owner and contact. Outbound links and llms.txt become informative.
+v2026.10
+· 2026-09-23 — Closes the gaps that let incomplete pages score "excellent": indexing (noindex, nosnippet, X-Robots-Tag, which overrides everything), viewport, dates, article authorship, minimum properties per structured-data type, broken outbound links and figures with a source. The criteria now carry a review date: if nobody reviews them within 45 days, deployment fails.
+v2026.09.2
+· 2026-09-23 — HSTS moves out of "response" into its own check, "transport". It is a security practice, not a legibility one: it could not lower the HTTP response label. Flagged by the GEO agent reviewing v2026.09.1.
+v2026.09.1
+· 2026-09-23 — Bar raised: "excellent" now means nothing verifiable is left to improve in that area (HSTS, Open Graph, og:locale, hreflang return links, sitemap listing this page with lastmod, linked JSON-LD graph, heading hierarchy without skips, unique ids). New check: image alt text. Words without JavaScript and sameAs count were not tightened: no data backs a higher bar.
+v2026.09
+· 2026-09-23 — First version: one label per check with its rule published, no overall score. Reviewed before release by the GEO agent against the cookbook.
+© 2026 Zentimes · ferinazumaDEV — Fernando Aporta Franco
+Notes
+Experiments
+Open source
+Inspector
+FAQ
+Glossary
+Legal notice
+llms.txt
+GitHub
+LinkedIn
+Instagram

@@ -1,0 +1,124 @@
+# Visible text of https://zentimes.es/es/herramientas/inspector-ia/
+# Captured 2026-09-24 13:56Z with: curl -sL --compressed -A 'Mozilla/5.0 (compatible; ledger-capture/1.0)' 'https://zentimes.es/es/herramientas/inspector-ia/' (HTML tags, <script>, <style> and comments removed, entities unescaped, whitespace normalised; no other edits)
+
+Lo que un cliente de IA ve en tu página — inspector de citabilidad
+Saltar al contenido
+Zentimes
+Menú
+Servicios
+Auditoría GEO
+Implementación GEO
+Monitorización mensual
+Web y SEO técnico
+Todos los servicios →
+Trabajo
+Casos
+kenetg.com
+En abierto
+Experimentos
+Código abierto
+Recursos
+Notas
+Lo que no se mide no cuenta: cómo se prueba que el GEO funciona
+Cómo hacer que ChatGPT te cite: háblale en su idioma
+GEO no es SEO (pero lo necesita por debajo)
+Todas las notas
+Consulta
+Glosario
+Preguntas frecuentes
+Herramientas
+Inspector
+Sobre mí
+Contacto
+ES
+/
+EN
+Zentimes
+/
+Inspector
+Herramienta gratuita
+Lo que un cliente de IA ve de verdad en tu página
+Pega una URL. Cada comprobación sale con su valoración, la regla que la decide y el comando que la reproduce, para que no tengas que fiarte de mi palabra en ninguna.
+URL de tu página
+Inspeccionar
+Sin nota global y sin predicción. Los requisitos técnicos se cumplen o no; cada problema es un hallazgo con su gravedad; solo el contenido puede llegar a «excelente», y solo el 8 % mejor de una muestra publicada. Son propiedades de tu página, no una promesa: ninguna comprobación mide si una IA te cita, y eso es decisión del motor, que no controla nadie de fuera.
+Criterios v2026-09-24
+Esto es una foto del día. Lo marcado como Estable lleva años valiendo. Lo marcado como Cambiante es la parte que el campo aún está descubriendo: cuando aprendamos algo nuevo, la regla cambiará y lo dirá este historial, con fecha y motivo. Por eso una etiqueta puede cambiar aunque tu web no haya cambiado.
+Desde v2026-09-24 cada versión se llama por su fecha de publicación (una segunda el mismo día llevaría el sufijo .2). Las anteriores conservan su nombre: hasta entonces el número era una secuencia, no un mes (v2026.11 no quiere decir noviembre; las siete se publicaron el 23-09-2026).
+Cómo se gradúa la «sustancia»: la muestra de referencia
+n = 56 · medida el 2026-09-23 · muestra pymes-es-2026-09. Se publican n, fecha, método y valores; nunca los nombres ni las direcciones de las webs.
+Método
+Palabras en frases (bloques de 10 palabras o más) legibles sin JavaScript en el HTML inicial de la home, sin menú, pie, banner de cookies ni texto oculto, medidas con el mismo lector que usa el inspector sobre 56 homes de pymes españolas descargadas una sola vez el 23-sep-2026 (muestra de conveniencia; 2 de 58 respondieron 403 y quedan fuera).
+Cortes
+Nula: menos de 250 caracteres en frases (absoluto; convención tomada del tamaño mínimo de extracción de trafilatura, no una regla de ningún buscador).
+Baja: por debajo del p25 (295 palabras).
+Buena: del p25 al p75 (295–949).
+Notable: del p75 al p92 (949–1405).
+Excelente: p92 o más (1405), y además texto legible (Readability), menos del 15 % de bloques-frase repetidos y ningún hallazgo de contenido. Es el 8 % mejor, como el verde de Lighthouse: Lighthouse pone su 50 en el percentil 25 de HTTP Archive y su 90 en el 8, en métricas donde menos es mejor; en palabras, más es mejor, así que su p25 y su p8 son nuestros p75 y p92.
+Percentiles con interpolación lineal. A menos del 5 % de un corte la tarjeta dice «en el límite» y la etiqueta no cambia. Con esta curva solo se etiquetan homes en español; aún no hay muestra de páginas interiores, así que artículos, ofertas y otras solo reciben mínimos y hallazgos.
+Los valores (palabras en frases, de menor a mayor)
+0 · 54 · 74 · 75 · 76 · 151 · 173 · 173 · 183 · 188 · 190 · 197 · 289 · 294 · 295 · 304 · 331 · 353 · 386 · 391 · 397 · 410 · 414 · 415 · 444 · 496 · 501 · 505 · 537 · 537 · 573 · 626 · 647 · 682 · 743 · 765 · 769 · 775 · 819 · 876 · 901 · 946 · 957 · 1047 · 1099 · 1114 · 1232 · 1274 · 1294 · 1308 · 1346 · 1445 · 1464 · 1828 · 1964 · 3504
+Cómo baja la etiqueta cada hallazgo
+La etiqueta es la más baja entre la que da la regla y el techo del peor hallazgo abierto. Los requisitos solo son Cumple / No cumple / No aplica: un fallo es un hallazgo, no una nota. Convención nuestra, por analogía con WCAG 2.2: «Conformance (and conformance level) is for full web page(s) only, and cannot be achieved if part of a web page is excluded».
+Peor hallazgo
+Métrica por percentil
+Comprobación con regla (techo buena)
+Crítico
+Nula
+Nula
+Grave
+Baja
+Baja
+Moderado
+Buena
+Baja
+Menor
+Notable
+Buena
+ninguno
+según el percentil
+Buena
+Qué se exige a cada tipo de página
+portada (home)
+`sustancia` con la curva de homes si está en español; en otro idioma, solo los mínimos y los hallazgos, con el percentil de referencia.
+artículo
+`sustancia` por mínimos (nula o buena); notable y excelente, sin valorar hasta la muestra de páginas interiores. Se aplican autoría y fechas.
+contacto
+No se aplica `sustancia`: se mira `contacto-util` (email, teléfono, formulario, dirección).
+legal
+No se aplica `sustancia`. Si es indexable y tiene menos de 250 caracteres en frases, hallazgo de página vacía.
+listado
+No se aplica `sustancia`: se cuentan sus enlaces a contenido (menos de 3, hallazgo moderado).
+oferta (servicio o producto)
+`sustancia` por mínimos (nula o buena), y la promesa de precios.
+otra
+`sustancia` por mínimos (nula o buena).
+Historial de criterios
+v2026-09-24
+· 2026-09-24 — Los criterios pasan a partir de los defectos. Los requisitos técnicos (respuesta, HTTPS, indexación, robots, codificación, viewport, canonical, idioma, sitemap, hreflang…) se cumplen o no; si no se cumplen, generan un hallazgo con gravedad: crítico, grave, moderado o menor. Solo la sustancia (palabras en frases legibles sin JavaScript, sin menú, pie, banner de cookies ni texto oculto) se gradúa hasta «excelente», por percentil de 56 homes de pymes españolas (muestra publicada con n, fecha, método y valores, sin nombres): «excelente» es solo el 8 % mejor, como el verde de Lighthouse, y además exige texto legible, menos del 15 % de bloques repetidos y ningún hallazgo de contenido. La profundidad del sitio sale «sin valorar» hasta tener una muestra de páginas interiores. Lo demás tiene techo «buena»: no tener defectos es lo esperado, no un mérito. Cada defecto abierto baja la etiqueta de su tarjeta (convención, por analogía con WCAG). Lo que se exige depende del tipo de página: una página de contacto no se mide por palabras. Se revisan hasta 6 páginas más del sitio, elegidas de forma determinista, con un máximo de 24 peticiones al origen, en serie, con 1 s de pausa, y se para si el servidor lo pide; esa parte llega después, con indicación de progreso. Se cierran puertas traseras: título «HOME», sin h1, BreadcrumbList de un elemento contado como completo, skip-links como anclas, soft-404 que no bajaba, responsable solo enlazado. Lo que este inspector no ve (maquetación, contraste, banner que tapa, errores de consola) lo revisa con navegador la mini-auditoría gratuita. Además: si la página no responde 2xx (un bloqueo al inspector, un 404), lo que llega no se analiza como si fuera tu página; cuando el lang de la página contradice el idioma del texto, manda el texto y el lang equivocado es un hallazgo aparte; el texto que React envía oculto por streaming tiene su propio hallazgo; el contenido de ejemplo de WordPress cuenta como relleno; la página de contacto y el aviso legal de un WordPress ya no pasan por artículos. Nota sobre los nombres: hasta aquí el número de versión era una secuencia, no un mes (las siete anteriores se publicaron el 23-09-2026); desde esta, el nombre es la fecha de publicación. Los resultados no son comparables con informes hechos con versiones anteriores. Muchas webs bajarán sin haber cambiado: lo que cambió es el criterio.
+v2026.11.2
+· 2026-09-23 — «Título, descripción y h1»: el h1 puede reflejar el título entero o cualquiera de sus trozos (separados por «|», «–» o «—»), no solo el primero. Con la regla anterior, un título con la marca delante («Marca — tema»), que Google admite con un separador a cualquier lado, nunca podía reflejar el h1.
+v2026.11.1
+· 2026-09-23 — La entidad principal (la que valoran «datos estructurados», «propiedades por tipo» y «sameAs») pasa a ser la que el propio grafo declara como publisher del WebSite; solo si no la declara, la primera entidad raíz. Antes dependía del orden del JSON-LD, no de lo que la web dice de sí misma.
+v2026.11
+· 2026-09-23 — Reglas rehechas con evidencia verificada (64 fuentes confirmadas por un segundo agente y revisadas por el GEO agent). Etiquetas que se mueven respecto a v2026.10 y por qué: ya no se exige un solo h1 ni un número de h2 (la norma HTML permite varios h1); x-default deja de exigirse (Google lo recomienda, no lo exige); og:url y las longitudes de título y descripción dejan de decidir el nivel (Google no los pide; la descripción no tiene límite); las redirecciones desde la URL pegada dejan de contar (dependen de cómo se pegue; Googlebot sigue hasta 10); no tener sitemap pasa a «sin valorar» (Google no lo necesita en sitios pequeños y bien enlazados); el preload de HSTS no se exige (hstspreload.org no lo recomienda); «sin entidad» pasa a «sin valorar» en páginas interiores; robots.txt se evalúa en la ruta de la página y para los 7 agentes que deciden aparecer en búsquedas y respuestas, y la política de entrenamiento pasa a informativa; la indexación se calcula por buscador (Google y Bing). Clases: idioma, viewport e imágenes pasan a accessibility (no es clase del cookbook). Nuevas: tamaño del HTML, codificación, head válido, enlaces rastreables, texto oculto (informativa), datos estructurados visibles y responsable y contacto. Salientes y llms.txt pasan a informativas.
+v2026.10
+· 2026-09-23 — Se cierran los huecos que dejaban sacar «excelente» a páginas incompletas: indexación (noindex, nosnippet, X-Robots-Tag, que manda sobre todo), viewport, fechas, autoría de artículos, propiedades mínimas por tipo de datos estructurados, enlaces salientes rotos y cifras con fuente. Los criterios pasan a tener fecha de revisión: si nadie los revisa en 45 días, el despliegue falla.
+v2026.09.2
+· 2026-09-23 — El HSTS sale de «respuesta» a su propia comprobación, «transporte». Es una buena práctica de seguridad, no de legibilidad: no podía bajar la etiqueta de la respuesta HTTP. Lo señaló el GEO agent al revisar v2026.09.1.
+v2026.09.1
+· 2026-09-23 — Exigencia subida: «excelente» pasa a significar que no queda nada verificable por mejorar en esa área (HSTS, Open Graph, og:locale, retorno de hreflang, sitemap con esta página y lastmod, grafo JSON-LD conectado, jerarquía de encabezados sin saltos, ids únicos). Nueva comprobación: texto alternativo de las imágenes. No se endurecieron las palabras sin JavaScript ni la cantidad de sameAs: ningún dato respalda un listón más alto.
+v2026.09
+· 2026-09-23 — Primera versión: etiqueta por comprobación con su regla publicada, sin nota global. Revisada antes de publicar por el GEO agent contra el cookbook.
+© 2026 Zentimes — Fernando Aporta Franco
+Notas
+Experimentos
+Código abierto
+Inspector
+Preguntas frecuentes
+Glosario
+Aviso legal
+llms.txt
+GitHub
+LinkedIn
+Instagram
