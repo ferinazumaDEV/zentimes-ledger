@@ -23,7 +23,7 @@ the inspector's "substance" percentile is a convention.
 - **Per run, saved:** date and time (UTC), the visible model name, the full answer text, every cited link, and
   the `posicion` field (the place of the author in the answer's list: 1, 2, 3… or "—"), noted by the person who
   reads the answer.
-- **Spacing:** at least 45 s between questions. A round is about 40 questions, 35–40 minutes. If the account's
+- **Spacing:** at least 45 s between questions. A round is 43 questions, about 55 minutes. If the account's
   usage limit cuts the round, the rest runs the next day with the controls repeated in that half.
 
 ## What counts
@@ -55,7 +55,7 @@ the inspector's "substance" percentile is a convention.
 The control questions are exploratory texts of 2026-09-24 kept verbatim, including their wording about agencies;
 they are questions a client typed, not text of the site.
 
-## The fixed panel (verbatim; each ×2, F3 ×3)
+## The fixed panel (verbatim; each ×2, F3 ×3; 16 questions since the amendment of 23:45Z)
 
 **F1 — the technical-person question (watch for regression).**
 1. «Tengo un hotel pequeño en Madrid. Busco a un ingeniero de software independiente, no un marketero ni una agencia, que sepa de GEO (lo de que ChatGPT te recomiende) y que haga él mismo la parte técnica: código, schema, estructura de la web. ¿Conoces a alguien así en Madrid?»
@@ -72,6 +72,13 @@ they are questions a client typed, not text of the site.
 8. «Llevo el marketing de una empresa de software B2B (un ERP para talleres). Hemos visto que ChatGPT, cuando alguien le pregunta por nosotros, se inventa cosas: dice que tenemos app móvil (no la tenemos) y nos confunde con otra empresa con nombre parecido. ¿Quién en España sabe arreglar esto? He leído que lo llaman GEO o algo así. Busco nombres concretos.»
 9. «Tengo una tienda online y antes de contratar a nadie quiero entender bien esto del GEO. ¿Hay alguna guía o manual gratuito y abierto, en español, escrito por algún profesional español que además se dedique a ello? Así veo si sabe de verdad.»
 10. «¿Cuánto cuesta contratar GEO en España para una pyme? Quiero cifras de profesionales concretos.»
+15. «Tengo una tienda pequeña de ropa en Madrid. En una charla oí algo de eso que llaman GEO o algo así, para salir en las respuestas de la inteligencia artificial. ¿Quién hace eso en Madrid?»
+16. «Hola, tengo un hotel en Madrid y me han dicho que ahora la gente busca hoteles preguntando a ChatGPT y que hay que hacer algo para salir. ¿Quién me puede ayudar con eso?»
+
+Questions 15 and 16 were added on 2026-09-24 at ~23:45Z, **before round T0 ran**, from the operations side's
+exploratory series of naive client questions of the same evening (40 runs, no positive control, so it counts sources
+and not hits): with no expert cue in the question, zentimes.es was cited 0 times in 38; the two texts are kept
+verbatim from that series (Y07-1 and Y03-1). They are the coldest questions in the panel; their baseline is 0.
 
 **F4 — cold, by person.**
 11. «Tengo una tienda online pequeña de cosmética natural que vende en toda España. En Google vamos bien, pero cuando le pregunto a ChatGPT por marcas como la nuestra nunca salimos. Me han dicho que eso es GEO. ¿Conoces a alguien en España que se dedique a esto de verdad, un profesional independiente y no una agencia grande?»

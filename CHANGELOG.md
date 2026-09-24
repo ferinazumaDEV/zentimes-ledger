@@ -52,6 +52,8 @@ what counts as a hit (presence of the author with one of his own pages cited; po
 and are marked as such; the only hypothesis in the file is labelled as one. The exploratory series of the same
 day (65 runs) is the baseline the file quotes; its raw captures are not published. Round T0 is scheduled before
 the site's first IndexNow notification, so that it measures the engine's older copy of the index.
+Amended at ~23:45Z, still before T0: two naive client questions (15, 16) added to F3, verbatim from the operations
+side's exploratory series of the evening, baseline 0 of 38.
 
 ### Afternoon changes verified live: intent phrases in the inspector titles, free-audit and method pages, a note, "a photo of today, not a measurement", open-source pages generated from the ecosystem manifest; home re-measured 575 · 9 · 8 · 10938 (4 of 4); the report's stale cross-check line found, reported, fixed and re-read (measured 20:00Z–20:17Z)
 
