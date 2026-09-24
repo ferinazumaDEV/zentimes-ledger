@@ -42,6 +42,60 @@ items) is printed next to every number taken this way.
 
 ## 2026-09-24
 
+### Afternoon changes verified live: intent phrases in the inspector titles, free-audit and method pages, a note, "a photo of today, not a measurement", open-source pages generated from the ecosystem manifest; home re-measured 575 · 9 · 8 · 10938 (4 of 4) while the report's cross-check line still reads 13:43Z (measured 20:00Z–20:03Z)
+
+**Page changes, as reported by the operations side and checked by the reviewer on the live site at 20:01Z–20:02Z
+(every URL HTTP 200; titles quoted verbatim from the served `<title>`):**
+
+- The inspector landing pages carry the intent phrase in the title: EN `Free GEO checker: see if AI can read your
+  website — no sign-up` (`/tools/ai-inspector/`), ES `Herramienta GEO gratuita: comprueba si la IA puede leer tu web
+  — en español y sin registro` (`/es/herramientas/inspector-ia/`).
+- New free-audit pages: `/es/auditoria-geo-gratis/` (`Auditoría GEO gratis: qué ve la IA de tu marca — antes de pagar
+  nada`) and `/free-geo-audit/` (`Free GEO audit: what AI sees about your brand — before you pay anything`).
+- New method pages: `/es/metodo/` (`Método de medición GEO: panel fijo de consultas, con control — y sin prometer
+  citas`) and `/method/` (`GEO measurement method: a fixed panel of queries, with controls — and no promised
+  citations`).
+- New note: `/es/notas/tu-empresa-no-sale-en-chatgpt-o-sale-mal/` (`Tu empresa no sale en ChatGPT, o sale mal: son
+  dos problemas distintos`).
+- The ES home says `Publico el método en código abierto, en GitHub` (present in the served HTML of `/es/`).
+- The phrase `foto de hoy, no una medida` ("a photo of today, not a measurement") qualifies the free mini-audit;
+  the operations side reports it in 11 places, the reviewer saw it on the three ES pages fetched for it (the audit
+  page, the method page and the note).
+- The open-source pages (`/open-source/`, `/es/codigo-abierto/`) are now generated from the profile's
+  `ecosystem-manifest.json` (generated 2026-09-23T18:12:05Z): **9 of 9 latest tags match** the manifest on both
+  pages, and the stale `v 0.1.2` of the previous day is gone. The version is printed as `v 0.1.4` with a space, so
+  a pattern that expects `v0.1.4` returns nothing (checked; the first pass of this comparison failed that way).
+- `instagram.com/zentimesesp` appears in the `sameAs` of every page fetched (11 of 11).
+
+The operations side's own history entry for these changes had not been received when this was written; the
+paragraph above is the reviewer's reading of the live site, not a translation.
+
+**Measured by the reviewer, 2026-09-24T20:00Z–20:03Z, pinned cookbook v0.1.4 recipes through
+`tools/compare-inspector-vs-recipes.py` on `https://zentimes.es/`:** `words_visible_no_js` **575** (539 at 13:43Z),
+`typed_entities` **9**, `ai_user_agents_allowed` **8**, `llms_txt_bytes` **10938** (9332 at 13:43Z); `typed_facts`
+51, not shown by the inspector. The request started a new inspection (report stamped `2026-09-24 20:00 UTC`);
+its final `data-value`s read 575 · 9 · 8 · 10938 — **4 of 4 equal**. Words and `llms.txt` bytes rose with the pages
+above; entities and agents did not move. Captures of the EN and ES saved reports at 20:03Z:
+`criteria/captures/2026-09-24T2003Z-en-report-zentimes-home.txt`, `…-es-report-zentimes-home.txt`.
+
+**Finding, open:** on the cards of the 20:00 UTC run the cross-check line still reads `cross-checked 2026-09-24
+(13:43Z) against cookbook v0.1.4` (ES `contrastado el 2026-09-24 (13:43Z) con cookbook v0.1.4`), for two values that
+have changed since that cross-check (539 → 575, 9332 → 10938). The same lag was recorded on the 13:54 UTC run of the
+morning. The line dates a cross-check the page did not perform on the values it prints; until it is derived from the
+run itself (or removed), the re-run above is the cross-check that stands for 575 and 10938. Reported to the operations
+side at 20:05Z.
+
+```sh
+python3 tools/compare-inspector-vs-recipes.py "$COOKBOOK" https://zentimes.es/     # 4 of 4: 575 · 9 · 8 · 10938 (COOKBOOK from the tarball step at the top of this file)
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'data-metric="[^"]*"[^>]*data-value="[^"]*"' | sed -E 's/ data-recipe="[^"]*"//' | sort -u   # the four final values (the saved report inside the 10-minute window)
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'cross-checked [^<]{0,60}' | head -1   # the cross-check line and its date
+for u in /tools/ai-inspector/ /es/herramientas/inspector-ia/ /es/auditoria-geo-gratis/ /free-geo-audit/ /es/metodo/ /method/; do curl -s "https://zentimes.es$u" | grep -oE '<title>[^<]*' ; done   # the six titles above
+curl -s https://raw.githubusercontent.com/ferinazumaDEV/ferinazumaDEV/main/ecosystem-manifest.json | grep -oE '"latest_tag": *"[^"]*"'   # nine tags to compare with the "v 0.1.x" printed on /open-source/
+```
+
+Nothing above measures citation by any AI engine. New titles and pages change what a machine can read, not
+whether an engine cites the site.
+
 ### Criteria v2026-09-24 — requirements are met or not, every problem is a finding with a severity, only "substance" can reach excellent; Instagram in sameAs; skip link, `<main>` and shorter descriptions (measured 13:43:50Z, captured 13:54–13:57Z)
 
 **Criteria v2026-09-24, as reported by the operations side and read on the page.** A redesign, not a delta:
