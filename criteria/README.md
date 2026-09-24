@@ -44,6 +44,7 @@ and translated on the English page (details and the observed counts in [`v2026-0
 | `data-level` on a `regla` card | `nula` · `baja` · `buena` · `sin-evaluar` | None · Low · Good · Not rated | 12 cards, capped at Good by rule; only `buena` and `sin-evaluar` observed |
 | `data-level` on a `percentil` card | `nula` · `baja` · `buena` · `notable` · `excelente` · `sin-evaluar` | None · Low · Good · Strong · Excellent · Not rated | 2 cards ("substance", site depth); only `sin-evaluar` observed (English home page; no inner-page sample) |
 | `data-severity` on `li.insp-hallazgo` | `critico` · `grave` · `moderado` · `menor` | Critical · Serious · Moderate · Minor | one finding per problem, with `data-finding` and `data-block`; only `menor` observed |
+| `data-value-kind` on every card that carries `data-value` (added 2026-09-24 as an interface change, same version) | `words` · `count` · `broken` · `bytes` · `http-status` · `per-1000-words` | what the number in `data-value` is | on `anclas` and `salientes` the value counts BROKEN links and `data-total` carries the total; measured 14 of 14 cards with a kind, see [`v2026-09-24.md`](v2026-09-24.md) |
 
 The label of a card is the lower of what its rule gives and the cap of the worst open finding in its block
 (Critical → None, Serious → Low, Moderate → Good on a percentile card and Low on a rule card, Minor → Strong
