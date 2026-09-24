@@ -42,6 +42,17 @@ items) is printed next to every number taken this way.
 
 ## 2026-09-24
 
+### Citation panel published before its first round (convention, ~21:30Z)
+
+The measurement programme that will follow the changes of this day is fixed in
+[`criteria/citation-panel-2026-09-24.md`](criteria/citation-panel-2026-09-24.md) before any round runs: fourteen
+questions kept verbatim, a subject control and an external control, the conditions of the account and the engine,
+what counts as a hit (presence of the author with one of his own pages cited; position reported separately), a
+`declined` state that never counts as a "no", a stop rule, and the thresholds. The thresholds are a convention
+and are marked as such; the only hypothesis in the file is labelled as one. The exploratory series of the same
+day (65 runs) is the baseline the file quotes; its raw captures are not published. Round T0 is scheduled before
+the site's first IndexNow notification, so that it measures the engine's older copy of the index.
+
 ### Afternoon changes verified live: intent phrases in the inspector titles, free-audit and method pages, a note, "a photo of today, not a measurement", open-source pages generated from the ecosystem manifest; home re-measured 575 · 9 · 8 · 10938 (4 of 4); the report's stale cross-check line found, reported, fixed and re-read (measured 20:00Z–20:17Z)
 
 **Page changes, as reported by the operations side and checked by the reviewer on the live site at 20:01Z–20:02Z
