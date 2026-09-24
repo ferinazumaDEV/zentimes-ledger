@@ -111,3 +111,30 @@
   **Many sites will drop without having changed: what changed is the criteria.**
 
   **A process failure, stated plainly:** this version was deployed without first going through the reviewer, as had been agreed. Its review is done after the fact, and whatever it breaks with evidence will come out as v2026-09-24.2.
+
+- **Afternoon of 2026-09-24: the site answers a client's questions, not only a technician's.** The site owner set the goal: a business looking for help to show up in AI answers should find him by asking the AI. For two hours, client-style questions were asked in Gemini and ChatGPT and the site was changed according to what was measured.
+
+  **What was measured** (anecdotal series; the detail is in the GEO reviewer's notebook, §76):
+  - **A positive control was added:** a question whose answer is already known, at the start of every round.
+  - **Gemini:** the control failed in every controlled condition: with the work account in a temporary conversation (0 of 5) and with no session in an isolated context (0 of 2). That day's Gemini hits happened inside the owner's personal account, with history, so they may be personalisation.
+  - **ChatGPT** (temporary chat): the control passed in part of the rounds. When the business question mentioned "open source" or "GitHub", or asked for "an independent engineer who does the technical part himself", it named the owner first, citing zentimes.es and the Handbook. Without those words, it did not.
+  - **Rule that stays:** a hit inside the account of the person being measured does not count, and every round starts with a control.
+
+  **What was changed on the site, following the measured patterns:**
+  - In purchase questions, the engines cite pages whose title says the intent phrase literally. In response:
+    - the inspector is now titled "Herramienta GEO gratuita: comprueba si la IA puede leer tu web — en español y sin registro" (free GEO tool: check whether AI can read your site, in Spanish and with no sign-up);
+    - new page "Auditoría GEO gratis: qué ve la IA de tu marca — antes de pagar nada" (free GEO audit: what AI sees about your brand, before you pay anything);
+    - new page "Método de medición GEO: panel fijo de consultas, con control — y sin prometer citas" (GEO measurement method: a fixed panel of queries, with a control, and no promised citations).
+  - **New note:** "Tu empresa no sale en ChatGPT, o sale mal: son dos problemas distintos" (your business does not show up in ChatGPT, or shows up wrong: two different problems).
+  - **Person, repository and service in one text:** the open-source page opens by saying who the owner is and that this is the method of his consulting practice; "About me" is titled "independent GEO consultant in Madrid"; the home says "I publish the method as open source, on GitHub".
+  - **The mini-audit** is presented across the site as "a photo of today, not a measurement".
+  - **The eight versions** on the open-source page (all of them were stale) now come from the ecosystem manifest, and the deployment stops if they drift again.
+  - **Hand-written test counts** are replaced by links to the tests that run on GitHub.
+  - **The inspector card** that said "cross-checked on …" next to a figure now says that what was cross-checked was the calculation, not that value. It was a finding of the public ledger.
+
+  **What was deliberately not done:**
+  - **Prices:** not published; the owner decides them.
+  - **The word "freelance"** is not used, because of a possible company with a partner.
+  - **Mentions:** the texts for CreceRank, Alvargonzález and Pillitteri are prepared but have not been sent without his approval.
+
+  **The honest part:** as of 2026-09-24, in a client's condition, the owner does not appear in Gemini. In ChatGPT he appears only with the words that describe his method. Everything changed today has to be measured again in a few weeks, from outside his account.

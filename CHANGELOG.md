@@ -42,7 +42,7 @@ items) is printed next to every number taken this way.
 
 ## 2026-09-24
 
-### Afternoon changes verified live: intent phrases in the inspector titles, free-audit and method pages, a note, "a photo of today, not a measurement", open-source pages generated from the ecosystem manifest; home re-measured 575 · 9 · 8 · 10938 (4 of 4) while the report's cross-check line still reads 13:43Z (measured 20:00Z–20:03Z)
+### Afternoon changes verified live: intent phrases in the inspector titles, free-audit and method pages, a note, "a photo of today, not a measurement", open-source pages generated from the ecosystem manifest; home re-measured 575 · 9 · 8 · 10938 (4 of 4); the report's stale cross-check line found, reported, fixed and re-read (measured 20:00Z–20:17Z)
 
 **Page changes, as reported by the operations side and checked by the reviewer on the live site at 20:01Z–20:02Z
 (every URL HTTP 200; titles quoted verbatim from the served `<title>`):**
@@ -67,8 +67,10 @@ items) is printed next to every number taken this way.
   a pattern that expects `v0.1.4` returns nothing (checked; the first pass of this comparison failed that way).
 - `instagram.com/zentimesesp` appears in the `sameAs` of every page fetched (11 of 11).
 
-The operations side's own history entry for these changes had not been received when this was written; the
-paragraph above is the reviewer's reading of the live site, not a translation.
+The operations side's own account of the afternoon (goal, what was measured with a positive control, what was
+changed and why, what was deliberately not done) is translated in
+[`operations/03-decision-history.md`](operations/03-decision-history.md) under "Afternoon of 2026-09-24"; the
+list above is the reviewer's check of that account against the live site.
 
 **Measured by the reviewer, 2026-09-24T20:00Z–20:03Z, pinned cookbook v0.1.4 recipes through
 `tools/compare-inspector-vs-recipes.py` on `https://zentimes.es/`:** `words_visible_no_js` **575** (539 at 13:43Z),
@@ -78,17 +80,25 @@ its final `data-value`s read 575 · 9 · 8 · 10938 — **4 of 4 equal**. Words 
 above; entities and agents did not move. Captures of the EN and ES saved reports at 20:03Z:
 `criteria/captures/2026-09-24T2003Z-en-report-zentimes-home.txt`, `…-es-report-zentimes-home.txt`.
 
-**Finding, open:** on the cards of the 20:00 UTC run the cross-check line still reads `cross-checked 2026-09-24
+**Finding, closed the same evening:** on the cards of the 20:00 UTC run the cross-check line still reads `cross-checked 2026-09-24
 (13:43Z) against cookbook v0.1.4` (ES `contrastado el 2026-09-24 (13:43Z) con cookbook v0.1.4`), for two values that
 have changed since that cross-check (539 → 575, 9332 → 10938). The same lag was recorded on the 13:54 UTC run of the
 morning. The line dates a cross-check the page did not perform on the values it prints; until it is derived from the
 run itself (or removed), the re-run above is the cross-check that stands for 575 and 10938. Reported to the operations
-side at 20:05Z.
+side at 20:05Z. **Fixed and verified:** the operations side changed the line the same evening; the reviewer read the
+report of the `2026-09-24 20:17 UTC` run at 20:17Z and each cookbook-metric card now says `the calculation (not this
+value) was cross-checked against cookbook v0.1.4 on 2026-09-24 (20:00Z), on zentimes.es` (ES `el cálculo (no este
+valor) se contrastó con el cookbook v0.1.4 el 2026-09-24 (20:00Z), sobre zentimes.es`), with the same four final values
+575 · 9 · 8 · 10938. The line now states what was cross-checked (the calculation) and when, and no longer dates a
+cross-check of the printed value. One observation stays: between 20:07Z and 20:15Z every request for the home returned
+the "inspected very recently, try again in a few minutes" notice with no saved report behind it (the deploy had
+emptied it), so the window a client sees after a deploy can be the notice alone, and it lasted about 17 minutes
+after the 20:00 run rather than 10, because the operations side's own check in between restarted it.
 
 ```sh
 python3 tools/compare-inspector-vs-recipes.py "$COOKBOOK" https://zentimes.es/     # 4 of 4: 575 · 9 · 8 · 10938 (COOKBOOK from the tarball step at the top of this file)
 curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'data-metric="[^"]*"[^>]*data-value="[^"]*"' | sed -E 's/ data-recipe="[^"]*"//' | sort -u   # the four final values (the saved report inside the 10-minute window)
-curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'cross-checked [^<]{0,60}' | head -1   # the cross-check line and its date
+curl -s 'https://zentimes.es/tools/ai-inspector/?url=https%3A%2F%2Fzentimes.es%2F' | grep -oE 'the calculation \(not this value\) was cross-checked [^<]{0,80}' | head -1   # the cross-check line after the fix: what was cross-checked, and when
 for u in /tools/ai-inspector/ /es/herramientas/inspector-ia/ /es/auditoria-geo-gratis/ /free-geo-audit/ /es/metodo/ /method/; do curl -s "https://zentimes.es$u" | grep -oE '<title>[^<]*' ; done   # the six titles above
 curl -s https://raw.githubusercontent.com/ferinazumaDEV/ferinazumaDEV/main/ecosystem-manifest.json | grep -oE '"latest_tag": *"[^"]*"'   # nine tags to compare with the "v 0.1.x" printed on /open-source/
 ```
