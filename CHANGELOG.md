@@ -65,6 +65,13 @@ three price questions (F3-10) name other providers and attribute nothing to the 
 Nothing here says anything went up or down: this is the baseline. The next rounds are read against it, per family,
 accumulated, and the first claim needs four rounds.
 
+**IndexNow notification sent after this round, as reported by the operations side** (2026-09-25, after 00:31Z; the
+exact minute is `needs-verification` from outside): 20 URLs, all checked for HTTP 200 before sending, accepted with
+HTTP 202 and the key pending validation: the home in both languages, the free-audit pages, the method pages, the
+inspector pages, the about pages, the services pages, the open-source pages, the FAQ and glossary pages, and the two
+notes changed on 2026-09-24. URLs that did not change are not resent. The precondition for round T1 is that the
+engine's web index shows the new titles and the engine's crawler has fetched these URLs; until then, no round.
+
 ### Round T0 — 43 runs, 2026-09-24T23:39Z to 00:17Z; visible model: gpt-5-6, —
 
 Condition: account unrelated to the person measured, temporary chat, memory off, no custom instructions (checked before the round), one fixed network exit. Hit = surname in the answer and one of his own pages cited. `declined` never counts as a no. Position noted by the reader; third parties are not named here.
