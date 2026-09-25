@@ -65,8 +65,8 @@ three price questions (F3-10) name other providers and attribute nothing to the 
 Nothing here says anything went up or down: this is the baseline. The next rounds are read against it, per family,
 accumulated, and the first claim needs four rounds.
 
-**IndexNow notification sent after this round, as reported by the operations side** (2026-09-25, after 00:31Z; the
-exact minute is `needs-verification` from outside): 20 URLs, all checked for HTTP 200 before sending, accepted with
+**IndexNow notification sent after this round, as reported by the operations side** (2026-09-25T00:33:57Z, the time the HTTP 202
+response was logged on the operations side, two minutes after the round ended): 20 URLs, all checked for HTTP 200 before sending, accepted with
 HTTP 202 and the key pending validation: the home in both languages, the free-audit pages, the method pages, the
 inspector pages, the about pages, the services pages, the open-source pages, the FAQ and glossary pages, and the two
 notes changed on 2026-09-24. URLs that did not change are not resent. The precondition for round T1 is that the
