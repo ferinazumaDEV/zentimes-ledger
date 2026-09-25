@@ -40,6 +40,93 @@ items) is printed next to every number taken this way.
 
 ---
 
+## 2026-09-25
+
+### Citation panel, round T0 (2026-09-24 23:39Z to 2026-09-25 00:31Z): the baseline before the first IndexNow notification
+
+First round of the panel fixed in [`criteria/citation-panel-2026-09-24.md`](criteria/citation-panel-2026-09-24.md),
+run **before** the site's first IndexNow notification, so it measures the engine's older copy of the index while the
+pages changed on 2026-09-24 were already live. 43 questions, 52 minutes, no stop, one visible model throughout
+(`gpt-5-6`), every run in a temporary chat; the account check (no custom instructions, memory off, empty chat
+history) was done at 23:35Z–23:37Z and its captures kept with the runs. Position was read by the reviewer after the
+round and is reported as secondary information, with no threshold.
+
+**Read against the convention.** Subject control 1 of 3: the round is valid, and the control's own variability is
+the same seen on 2026-09-24 (4 of 13). External control 2 of 2: the Barcelona third parties appeared both times and
+the author never did, so the instrument is comparable with the exploratory series. F1 (technical person): 3 of 4,
+each time in first position, including one of the two Sevilla-plus-remote runs, which had no baseline. F2 (open
+method): 1 of 2, first position. **F3 (cold, by need) 0 of 24 and F4 (cold, by person) 0 of 6:** the cold baseline
+is zero, as the exploratory series said (0 of 19 there), and the two naive questions added before the round are at
+0 of 6. F5 (accuracy) 2 of 2: both answers describe the author as a software and security engineer in Madrid, cite
+only his own pages, state correctly that no prices are published, attribute **no figure** to him, and apply neither
+"freelance" nor "agencia" to him (the word appears once, in the engine's offer to compare against agencies). The
+three price questions (F3-10) name other providers and attribute nothing to the author.
+
+Nothing here says anything went up or down: this is the baseline. The next rounds are read against it, per family,
+accumulated, and the first claim needs four rounds.
+
+### Round T0 — 43 runs, 2026-09-24T23:39Z to 00:17Z; visible model: gpt-5-6, —
+
+Condition: account unrelated to the person measured, temporary chat, memory off, no custom instructions (checked before the round), one fixed network exit. Hit = surname in the answer and one of his own pages cited. `declined` never counts as a no. Position noted by the reader; third parties are not named here.
+
+| id | family | UTC | state | own URL cited | position |
+|---|---|---|---|---|---|
+| GC-a | GC | 23:39 | no | — | — |
+| GC-b | GC | 23:40 | no | https://github.com/ferinazumaDEV/generative-engine-optimization-handbook/blob/main/docs/06-measurement.md | — |
+| GC-c | GC | 00:29 | hit | https://github.com/ferinazumaDEV/generative-engine-optimization-handbook, https://zentimes.es/ | 1 |
+| CE-a | CE | 23:41 | no | — | — |
+| CE-b | CE | 00:31 | no | — | — |
+| F1-1-r1 | F1 | 23:42 | hit | https://zentimes.es/, https://zentimes.es/es/ | 1 |
+| F1-1-r2 | F1 | 00:00 | hit | https://zentimes.es/es/ | 1 |
+| F1-3-r1 | F1 | 23:43 | no | — | — |
+| F1-3-r2 | F1 | 00:01 | hit | https://zentimes.es/ | 1 |
+| F2-4-r1 | F2 | 23:45 | no | — | — |
+| F2-4-r2 | F2 | 00:03 | hit | https://zentimes.es/ | 1 |
+| F3-10-r1 | F3 | 23:52 | no | — | — |
+| F3-10-r2 | F3 | 00:10 | no | — | — |
+| F3-10-r3 | F3 | 00:26 | no | — | — |
+| F3-15-r1 | F3 | 23:53 | no | — | — |
+| F3-15-r2 | F3 | 00:11 | no | — | — |
+| F3-15-r3 | F3 | 00:27 | no | — | — |
+| F3-16-r1 | F3 | 23:54 | no | — | — |
+| F3-16-r2 | F3 | 00:12 | no | — | — |
+| F3-16-r3 | F3 | 00:28 | no | — | — |
+| F3-5-r1 | F3 | 23:46 | no | — | — |
+| F3-5-r2 | F3 | 00:04 | no | — | — |
+| F3-5-r3 | F3 | 00:18 | no | — | — |
+| F3-6-r1 | F3 | 23:47 | no | — | — |
+| F3-6-r2 | F3 | 00:05 | no | — | — |
+| F3-6-r3 | F3 | 00:19 | no | — | — |
+| F3-7-r1 | F3 | 23:48 | no | — | — |
+| F3-7-r2 | F3 | 00:06 | no | — | — |
+| F3-7-r3 | F3 | 00:21 | no | — | — |
+| F3-8-r1 | F3 | 23:49 | no | — | — |
+| F3-8-r2 | F3 | 00:07 | no | — | — |
+| F3-8-r3 | F3 | 00:22 | no | — | — |
+| F3-9-r1 | F3 | 23:51 | no | — | — |
+| F3-9-r2 | F3 | 00:09 | no | — | — |
+| F3-9-r3 | F3 | 00:25 | no | — | — |
+| F4-11-r1 | F4 | 23:55 | no | — | — |
+| F4-11-r2 | F4 | 00:13 | no | — | — |
+| F4-12-r1 | F4 | 23:56 | no | — | — |
+| F4-12-r2 | F4 | 00:15 | no | — | — |
+| F4-13-r1 | F4 | 23:58 | no | — | — |
+| F4-13-r2 | F4 | 00:16 | no | — | — |
+| F5-14-r1 | F5 | 23:59 | hit | https://zentimes.es/es/, https://zentimes.es/ | n/a (sujeto de la pregunta) |
+| F5-14-r2 | F5 | 00:17 | hit | https://zentimes.es/es/ | n/a (sujeto de la pregunta) |
+
+| family | hit | no | declined | of |
+|---|---|---|---|---|
+| GC | 1 | 2 | 0 | 3 |
+| CE | 0 | 2 | 0 | 2 |
+| F1 | 3 | 1 | 0 | 4 |
+| F2 | 1 | 1 | 0 | 2 |
+| F3 | 0 | 24 | 0 | 24 |
+| F4 | 0 | 6 | 0 | 6 |
+| F5 | 2 | 0 | 0 | 2 |
+
+Subject control: 1 of 3 (valid). External control: the third party present in 2 of 2 (the author is expected not to appear; he appeared in 0).
+
 ## 2026-09-24
 
 ### Citation panel published before its first round (convention, ~21:30Z)
